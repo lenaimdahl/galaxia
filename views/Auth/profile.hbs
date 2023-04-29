@@ -1,3 +1,7 @@
 <h1>Hello User</h1>
 
 <a href="/private-library">Library</a>
+
+{{#if isAdmin}}
+  <a class="btn" href="/admin">Private</a>
+{{/if}}
