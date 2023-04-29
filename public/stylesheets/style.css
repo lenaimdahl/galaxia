@@ -10,3 +10,19 @@ a {
 h1 {
   color: 15px;
 }
+
+.layout-nav {
+  background-color: #252525;
+  padding: 15px;
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: right;
+  align-items: center;
+}
+.container-layout {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 30px;
+}
