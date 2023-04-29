@@ -13,7 +13,7 @@ router.get("/signup", (req, res) => {
   res.render("auth/signup");
 });
 
-router.get("/library", (req, res) => {
+router.get("/private-library", (req, res) => {
   res.render("auth/private-library");
 });
 
