@@ -11,9 +11,24 @@
   <body>
     <nav class="layout-nav">
       <div class="container-layout">
-        <img src="/images/house.png" alt="house" />
         <a href="/">Home</a>
       </div>
+
+      <div class="dropdown">
+        <button class="dropbtn">Profil</button>
+        <div class="dropdown-content">
+          <div class="container-layout">
+            <a href="/profile">Profile</a>
+          </div>
+          <div class="container-layout">
+            <a href="/private-library">Private Library</a>
+          </div>
+          <div class="container-layout">
+            <a href="/admin">Settings</a>
+          </div>
+        </div>
+      </div>
+
       <div class="container-layout">
         <a href="/library">library</a>
       </div>
@@ -23,15 +38,7 @@
       <div class="container-layout">
         <a href="/login">Login</a>
       </div>
-      <div class="container-layout">
-        <a href="/profile">Profile</a>
-      </div>
-      <div class="container-layout">
-        <a href="/private-library">Private Library</a>
-      </div>
-      <div class="container-layout">
-        <a href="/admin">Settings</a>
-      </div>
+
     </nav>
 
     {{{body}}}

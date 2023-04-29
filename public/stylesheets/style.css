@@ -1,6 +1,7 @@
 body {
-  padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  margin: 0;
+  background-image: url("/images/stars-background.avif");
 }
 
 a {
@@ -12,8 +13,8 @@ h1 {
 }
 
 .layout-nav {
-  background-color: #252525;
-  padding: 15px;
+  background-color: #000000;
+  padding: 10px;
   text-align: center;
   display: flex;
   flex-direction: row;
@@ -29,13 +30,49 @@ h1 {
   align-items: center;
   margin: 0 30px;
 }
-.container-layout img {
-  width: 30px;
-  height: 30px;
-  background-size: cover;
-  margin: 0 20px;
-  display: flex;
-  justify-content: center;
-  text-align: center;
-  align-items: center;
+
+.dropbtn {
+  background-color: #000000;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: black;
+  min-width: 50px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: white;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {
+  background-color: #000000;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {
+  background-color: #000000;
 }
