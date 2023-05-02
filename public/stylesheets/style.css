@@ -15,6 +15,10 @@ a {
   /* font-family: TheWastesOfSpace; */
 }
 
+img {
+  height: 400px;
+}
+
 h1 {
   color: white;
 }
