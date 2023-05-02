@@ -32,5 +32,9 @@ router.post("/private/create", async (req, res) => {
     res.redirect("/create");
   }
 });
+//routes to detailed private image page to edit image
+router.get("/private-library/:ImageId", isLoggedIn, (req, res) => {
+  res.render("private-page/new-space-image");
+});
 
 module.exports = router;
