@@ -5,16 +5,6 @@ const saltRounds = 12;
 const isAdmin = require("../middlewares/isAdmin");
 const isLoggedIn = require("../middlewares/isLoggedIn");
 
-router.get("/profile", isLoggedIn, (req, res) => {
-  const isAdmin = req.session.user.admin;
-  console.log(isAdmin);
-  res.render("auth/profile", { isAdmin });
-});
-
-router.get("/private-library", isLoggedIn, (req, res) => {
-  res.render("auth/private-library");
-});
-
 router.get("/admin", isAdmin, isLoggedIn, (req, res) => {
   res.render("auth/admin-settings");
 });
