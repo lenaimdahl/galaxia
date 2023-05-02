@@ -10,8 +10,10 @@ router.get("/", async (req, res, next) => {
   res.render("index", { ...pictureOfTheDay, randomLibrary });
 });
 
-router.get("/library", (req, res) => {
-  res.render("library");
+router.get("/library", async (req, res) => {
+  const randomLibrary = await nasaAPIInstance.getRandomSpaceImages(30);
+
+  res.render("library", { randomLibrary });
 });
 
 module.exports = router;

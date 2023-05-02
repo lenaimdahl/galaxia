@@ -1,1 +1,9 @@
-hello
+<h1>Library</h1>
+<div>
+  {{#each randomLibrary}}
+    <div>
+      <img class="img-day" src="{{links.0.href}}" alt="Picture of the day" />
+      <h1>{{data.0.title}}</h1>
+    </div>
+  {{/each}}
+</div>
