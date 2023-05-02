@@ -1,1 +1,13 @@
-<p>Hello Spacelover!</p>
+<h1>Hello Spacelover!</h1>
+<h2> Picture Of the day</h2>
+<img class="img-day" src="{{url}}" alt="Picture of the day" />
+
+{{title}}
+{{date}}
+{{explanation}}
+
+<div>
+  {{#each randomLibrary}}
+    <img class="img-day" src="{{links.0.href}}" alt="Picture of the day" />
+  {{/each}}
+</div>

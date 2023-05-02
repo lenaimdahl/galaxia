@@ -2,6 +2,7 @@ body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
   margin: 0;
   background-image: url("/images/stars-background.avif");
+  color: white;
 }
 
 a {
@@ -9,7 +10,11 @@ a {
 }
 
 h1 {
-  color: 15px;
+  color: white;
+}
+
+.img-day {
+  width: 400px;
 }
 
 .layout-nav {

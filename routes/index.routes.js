@@ -1,8 +1,13 @@
 const express = require("express");
 const router = express.Router();
+const NasaAPIHandler = require("../NasaAPIHandler");
+//instantiation of NasaAPI class
+const nasaAPIInstance = new NasaAPIHandler();
 
-router.get("/", (req, res, next) => {
-  res.render("index");
+router.get("/", async (req, res, next) => {
+  const pictureOfTheDay = await nasaAPIInstance.getPictureOfTheDay();
+  const randomLibrary = await nasaAPIInstance.getRandomSpaceImages(12);
+  res.render("index", { ...pictureOfTheDay, randomLibrary });
 });
 
 router.get("/library", (req, res) => {
