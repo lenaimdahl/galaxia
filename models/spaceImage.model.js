@@ -6,5 +6,5 @@ const privateSpaceSchema = new Schema({
   image: String,
 });
 
-const privateSpaceModel = model("privateSpaceModel", privateSpaceSchema);
-module.exports = privateSpaceModel;
+const PrivateSpaceModel = model("privateSpaceModel", privateSpaceSchema);
+module.exports = PrivateSpaceModel;

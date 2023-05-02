@@ -1,1 +1,13 @@
 <h1>This is your private Library</h1>
+
+{{#each allImages}}
+  <h1>{{name}}</h1>
+  {{#if image}}
+    <a href="/private/{{_id}}">
+      <img src="{{image}}" alt={{title}} />
+    </a>
+  {{/if}}
+  <p>{{description}}</p>
+  <a href="/private/{{_id}}">See more</a>
+
+{{/each}}
