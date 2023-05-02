@@ -6,7 +6,13 @@ body {
 }
 
 a {
-  color: #00b7ff;
+  color: white;
+  font-size: 20px;
+  text-decoration: none;
+  font-family: Astrobia;
+  /* font-family: DigitalSpace; */
+  /* font-family: Midnight Moon; */
+  /* font-family: TheWastesOfSpace; */
 }
 
 h1 {
