@@ -10,42 +10,44 @@
 
   <body>
     <nav class="layout-nav">
-      <div class="container-layout">
-        <a href="/">Home</a>
+      <div>
+        <img class="img-logo" src="/images/nasa-logo.png" alt="Nasa Logo" />
       </div>
+      <div class="nav-links-container">
+        <div class="container-layout">
+          <a href="/">Home</a>
+        </div>
+        <div class="dropdown">
+          <button class="dropbtn">Profil</button>
+          <div class="dropdown-content">
+            <div class="container-layout">
+              <a href="/profile">Profile</a>
+            </div>
+            <div class="container-layout">
+              <a href="/private-library">Private Library</a>
+            </div>
+            <div class="container-layout">
+              <a href="/private/create">create new image</a>
+            </div>
+            <div class="container-layout">
+              <a href="/admin">Settings</a>
+            </div></div>
+        </div>
 
-      <div class="dropdown">
-        <button class="dropbtn">Profil</button>
-        <div class="dropdown-content">
-          <div class="container-layout">
-            <a href="/profile">Profile</a>
-          </div>
-          <div class="container-layout">
-            <a href="/private-library">Private Library</a>
-          </div>
-          <div class="container-layout">
-            <a href="/private/create">create new image</a>
-          </div>
-          <div class="container-layout">
-            <a href="/admin">Settings</a>
-          </div>
+        <div class="container-layout">
+          <a href="/library">Library</a>
+        </div>
+        <div class="container-layout">
+          <a href="/signup">Sign up</a>
+        </div>
+        <div class="container-layout">
+          <a href="/login">Login</a>
+        </div>
+
+        <div class="container-layout">
+          <a href="/logout">Logout</a>
         </div>
       </div>
-
-      <div class="container-layout">
-        <a href="/library">Library</a>
-      </div>
-      <div class="container-layout">
-        <a href="/signup">Sign up</a>
-      </div>
-      <div class="container-layout">
-        <a href="/login">Login</a>
-      </div>
-
-      <div class="container-layout">
-        <a href="/logout">Logout</a>
-      </div>
-
     </nav>
 
     {{{body}}}

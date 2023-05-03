@@ -1,13 +1,26 @@
 <h1>Hello Spacelover!</h1>
-<h2> Picture Of the day</h2>
-<img class="img-day" src="{{url}}" alt="Picture of the day" />
-<!--because we destructured pictureOftheDay, we don't have to write it each times-->
-{{title}}
-{{date}}
-{{explanation}}
 
-<div>
-  {{#each randomLibrary}}
-    <img class="img-day" src="{{links.0.href}}" alt="Picture of the day" />
-  {{/each}}
+<div class="background-container">
+  <h2> Picture Of the day</h2>
+  <div class="flex-container">
+    <div class="center-container">
+      <img class="img-day" src="{{url}}" alt="Picture of the day" />
+    </div>
+    <div class="text-container">
+      <h2>{{title}}</h2>
+      <h3>Date: {{date}}</h3>
+      <p>{{explanation}}</p>
+    </div>
+  </div>
+</div>
+<br />
+<br />
+<div class="background-container">
+  <h2> Nasa Library</h2>
+  <a href="/Library">See more</a>
+  <div class="flex-container">
+    {{#each randomLibrary}}
+      <img class="img-day" src="{{links.0.href}}" alt="Picture of the day" />
+    {{/each}}
+  </div>
 </div>

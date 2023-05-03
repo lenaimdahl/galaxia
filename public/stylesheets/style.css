@@ -9,18 +9,19 @@ a {
   color: white;
   font-size: 20px;
   text-decoration: none;
-  font-family: Astrobia;
-  /* font-family: DigitalSpace; */
+  /*font-family: Astrobia;*/
+  font-family: DigitalSpace;
   /* font-family: Midnight Moon; */
   /* font-family: TheWastesOfSpace; */
 }
 
-img {
-  height: 400px;
+.img-logo {
+  width: 50px;
+  height: 50px;
 }
 
-h1 {
-  color: white;
+img {
+  height: 400px;
 }
 
 .img-day {
@@ -29,15 +30,18 @@ h1 {
 
 .layout-nav {
   background-color: #000000;
-  padding: 10px;
+  padding: 20px;
   text-align: center;
   display: flex;
   flex-direction: row;
-  justify-content: right;
+  justify-content: space-between;
   align-items: center;
 }
-.layout-nav a {
-  text-decoration: none;
+.nav-links-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: end;
 }
 .container-layout {
   display: flex;
@@ -87,4 +91,27 @@ h1 {
 /* Change the background color of the dropdown button when the dropdown content is shown */
 .dropdown:hover .dropbtn {
   background-color: #000000;
+}
+
+.background-container {
+  margin: 0 50px;
+  padding: 20px;
+  background-color: rgb(24, 24, 24);
+}
+.center-container {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
+.flex-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin: 20px;
+}
+
+.text-container {
+  padding: 0 30px;
+  width: 400px;
 }
