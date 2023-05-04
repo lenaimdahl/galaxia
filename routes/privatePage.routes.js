@@ -68,5 +68,14 @@ router.post("/private-library/edit/:spaceImageId", async (req, res) => {
 });
 
 //delete image
+router.post("/private-library/delete/:spaceImageId", async (req, res) => {
+  try {
+    const { spaceImageId } = req.params;
+    await PrivateSpaceModel.findByIdAndDelete(spaceImageId);
+    res.redirect("/private-library");
+  } catch (err) {
+    console.log("There was an error", err);
+  }
+});
 
 module.exports = router;
