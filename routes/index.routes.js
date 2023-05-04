@@ -20,7 +20,6 @@ router.get("/library/:nasaImageId", async (req, res) => {
   try {
     const { nasaImageId } = req.params;
     const imageData = await nasaAPIInstance.getdetailedNasaImage(nasaImageId);
-    console.log(imageData);
     res.render("nasaImage-detail", { imageData });
   } catch (err) {
     console.log("There was an error", err);

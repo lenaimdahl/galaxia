@@ -33,7 +33,6 @@ class NasaAPI {
 
   async getdetailedNasaImage(id) {
     const response = await axios.get(`${this.BASE_URL_IMG}/search`, {
-      //?mediatype and q (for query)
       params: {
         nasa_id: id,
       },
