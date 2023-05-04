@@ -1,5 +1,5 @@
 body {
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font: 14px "Aloevera", Helvetica, Arial;
   margin: 0;
   background-image: url("/images/stars-background.avif");
   color: white;
@@ -10,7 +10,7 @@ a {
   font-size: 20px;
   text-decoration: none;
   /*font-family: Astrobia;*/
-  font-family: DigitalSpace;
+  /* font-family: DigitalSpace; */
   /* font-family: Midnight Moon; */
   /* font-family: TheWastesOfSpace; */
 }
@@ -98,20 +98,25 @@ img {
   padding: 20px;
   background-color: rgb(24, 24, 24);
 }
-.center-container {
-  display: flex;
-  justify-content: center;
-  align-content: center;
-}
-
 .flex-container {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   margin: 20px;
 }
-
+.center-container {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
 .text-container {
   padding: 0 30px;
   width: 400px;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 30px;
+  text-align: center;
 }
