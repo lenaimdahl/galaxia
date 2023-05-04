@@ -30,6 +30,17 @@ class NasaAPI {
     const shuffled = items.sort(() => 0.5 - Math.random());
     return shuffled.slice(0, num);
   }
+
+  async getdetailedNasaImage(id) {
+    const response = await axios.get(`${this.BASE_URL_IMG}/search`, {
+      //?mediatype and q (for query)
+      params: {
+        nasa_id: id,
+      },
+    });
+    const item = response.data.collection.items[0];
+    return item;
+  }
 }
 
 module.exports = NasaAPI;

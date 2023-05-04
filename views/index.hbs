@@ -22,8 +22,14 @@
   <a href="/Library">See more</a>
 
   <div class="grid-container">
+
     {{#each randomLibrary}}
-      <img class="img-day" src="{{links.0.href}}" alt="Picture of the day" />
+
+      <a href="/Library"><img
+          class="img-day"
+          src="{{links.0.href}}"
+          alt="Picture of the day"
+        /></a>
     {{/each}}
   </div>
 </div>
