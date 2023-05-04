@@ -1,0 +1,22 @@
+<form action="/private-library/edit/{{spaceImage._id}}" method="post">
+  <h2>
+    Edit the Image
+  </h2>
+
+  <label>Name:
+    <input type="text" name="name" value="{{spaceImage.name}}" />
+  </label>
+
+  <label>Description:
+    <input type="text" name="description" value="{{spaceImage.description}}" />
+  </label>
+
+  <label>Image:
+    <input type="text" name="image" value="{{spaceImage.image}}" />
+  </label>
+
+  <div>
+    <button type="submit">save updated Image</button>
+  </div>
+
+</form>

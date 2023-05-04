@@ -8,6 +8,7 @@ router.get("/profile", isLoggedIn, (req, res) => {
   res.render("private-page/profile", { isAdmin });
 });
 
+//get all images
 router.get("/private-library", isLoggedIn, async (req, res) => {
   try {
     const allImages = await PrivateSpaceModel.find();
@@ -32,9 +33,40 @@ router.post("/private/create", async (req, res) => {
     res.redirect("/create");
   }
 });
-//routes to detailed private image page to edit image
-router.get("/private-library/:ImageId", isLoggedIn, (req, res) => {
-  res.render("private-page/new-space-image");
+
+//get Image detailed page
+router.get("/private-library/:spaceImageId", async (req, res) => {
+  try {
+    const { spaceImageId } = req.params;
+    const imageData = await PrivateSpaceModel.findById(spaceImageId);
+    res.render("private-page/image-detail", { imageData });
+  } catch (err) {
+    console.log("There was an error", err);
+  }
 });
+
+// edit image
+router.get(
+  "/private-library/edit/:spaceImageId",
+  isLoggedIn,
+  async (req, res) => {
+    const { spaceImageId } = req.params;
+    const spaceImage = await PrivateSpaceModel.findById(spaceImageId);
+
+    res.render("private-page/edit-spaceImage", { spaceImage });
+  }
+);
+
+router.post("/private-library/edit/:spaceImageId", async (req, res) => {
+  try {
+    const { spaceImageId } = req.params;
+    await PrivateSpaceModel.findByIdAndUpdate({ _id: spaceImageId }, req.body);
+    res.redirect("/private-library");
+  } catch (err) {
+    console.log("There was an error", err);
+  }
+});
+
+//delete image
 
 module.exports = router;

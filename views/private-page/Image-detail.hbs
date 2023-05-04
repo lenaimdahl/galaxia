@@ -1,1 +1,22 @@
-<h1>Image detail</h1>
+<h2>{{imageData.name}}</h2>
+
+<div>
+  {{#if imageData.image}}
+    <img src="{{imageData.image}}" alt={{imageData.name}} />
+  {{/if}}
+
+  <div>
+    <h2><strong>Description</strong></h2>
+    <p class="movies-plot">{{imageData.description}}</p>
+  </div>
+
+</div>
+
+<div>
+  <a href="/private-library/edit/{{imageData._id}}">edit movie</a>
+  <div>
+    <form action="/private-library/{{imageData._id}}/delete" method="post">
+      <button type="submit">Delete</button>
+    </form>
+  </div>
+</div>
