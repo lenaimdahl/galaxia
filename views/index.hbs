@@ -19,13 +19,13 @@
 
 <div class="background-container">
   <h2> Nasa Library</h2>
-  <a href="/Library">See more</a>
+  <a href="/Library">Go to Library</a>
 
   <div class="grid-container">
 
     {{#each randomLibrary}}
 
-      <a href="/Library"><img
+      <a href="/library/{{data.0.nasa_id}}"><img
           class="img-day"
           src="{{links.0.href}}"
           alt="Picture of the day"
