@@ -116,9 +116,9 @@ img {
 
 .grid-container {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-gap: 30px;
-  text-align: center;
+  grid-template-columns: repeat(auto-fill, 400px);
+  grid-gap: 20px;
+  justify-content: center;
 }
 .search-form {
   margin-top: 20px;

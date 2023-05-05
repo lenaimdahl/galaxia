@@ -4,7 +4,12 @@
   <h2> Picture Of the day</h2>
   <div class="flex-container">
     <div class="center-container">
-      <img class="img-day" src="{{url}}" alt="Picture of the day" />
+      <img
+        class="img-day"
+        src="{{url}}"
+        loading="lazy"
+        alt="Picture of the day"
+      />
     </div>
     <div class="text-container">
       <h2>{{title}}</h2>
@@ -42,6 +47,7 @@
       <a href="/gallery/{{id}}"><img
           class="img-day"
           src="{{img_src}}"
+          loading="lazy"
           alt="Mars Rover Image"
         /></a>
     {{/each}}
@@ -59,6 +65,7 @@
       <a href="/gallery/{{data.0.nasa_id}}"><img
           class="img-day"
           src="{{links.0.href}}"
+          loading="lazy"
           alt="Mars Rover Image"
         /></a>
     {{/each}}
