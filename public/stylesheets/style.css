@@ -116,7 +116,15 @@ img {
 
 .grid-container {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   grid-gap: 30px;
   text-align: center;
+}
+.search-form {
+  margin-top: 20px;
+  padding: 10px;
+  font-size: 17px;
+  border: 1px solid grey;
+  width: 400px;
+  background: #000000;
 }

@@ -18,7 +18,6 @@ class NasaAPI {
 
   async getRandomSpaceImages(num) {
     const response = await axios.get(`${this.BASE_URL_IMG}/search`, {
-      //?mediatype and q (for query)
       params: {
         media_type: "image",
         q: "earth",
@@ -26,7 +25,6 @@ class NasaAPI {
     });
 
     const items = response.data.collection.items;
-    //randomize the 100 items by 0.5 - random (0-1)
     const shuffled = items.sort(() => 0.5 - Math.random());
     return shuffled.slice(0, num);
   }
@@ -57,7 +55,6 @@ class NasaAPI {
     const response = await axios.get(
       `${this.BASE_URL}/mars-photos/api/v1/rovers/curiosity/photos`,
       {
-        //?mediatype and q (for query)
         params: {
           sol: 1000,
           api_key: this.API_KEY,
@@ -66,7 +63,18 @@ class NasaAPI {
     );
 
     const items = response.data.photos;
-    //randomize the 100 items by 0.5 - random (0-1)
+    const shuffled = items.sort(() => 0.5 - Math.random());
+    return shuffled.slice(0, num);
+  }
+
+  async SearchNasaImages(keyWord) {
+    const response = await axios.get(`${this.BASE_URL_IMG}/search`, {
+      params: {
+        media_type: "image",
+        q: keyWord,
+      },
+    });
+    const items = response.data.collection.items;
     const shuffled = items.sort(() => 0.5 - Math.random());
     return shuffled.slice(0, num);
   }

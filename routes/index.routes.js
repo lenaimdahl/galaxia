@@ -50,4 +50,22 @@ router.get("/gallery", async (req, res) => {
   }
 });
 
+//create new private image
+router.get("/library/search", (req, res) => {
+  res.render("search");
+});
+
+router.post("/library/search/keyWord ", async (req, res) => {
+  try {
+    const { keyWord } = req.params;
+    await nasaAPIInstance.SearchNasaImages(keyWord);
+    const searchedImages = await nasaAPIInstance.getMarsRoverImages(15);
+
+    res.render("search", { searchedImages });
+  } catch (err) {
+    console.log("there was an error", err);
+    res.redirect("/library");
+  }
+});
+
 module.exports = router;
