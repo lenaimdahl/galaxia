@@ -53,6 +53,7 @@ img {
 .dropdown {
   position: relative;
   display: inline-block;
+  cursor: pointer;
 }
 .dropdown-content {
   display: none;
