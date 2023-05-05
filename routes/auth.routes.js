@@ -23,15 +23,19 @@ router.post("/signup", async (req, res, next) => {
     }
 
     const salt = await bcryptjs.genSalt(saltRounds);
-    console.log(salt);
     const hash = await bcryptjs.hash(req.body.password, salt);
-    console.log(hash);
 
-    await User.create({
+    const user = await User.create({
       username: req.body.username,
       password: hash,
       admin: false,
     });
+
+    req.session.user = {
+      username: user.username,
+      admin: user.admin,
+      id: user._id,
+    };
 
     res.redirect("/profile");
   } catch (err) {
@@ -48,8 +52,6 @@ router.get("/login", (req, res) => {
 router.post("/login", async (req, res, next) => {
   try {
     const user = await User.findOne({ username: req.body.username });
-
-    console.log(user);
 
     if (!user) {
       return res.render("auth/login", { error: "User is not existent" });
@@ -69,9 +71,9 @@ router.post("/login", async (req, res, next) => {
     req.session.user = {
       username: user.username,
       admin: user.admin,
+      id: user._id,
     };
 
-    console.log(req.body);
     res.redirect("/profile");
   } catch (err) {
     next(err);

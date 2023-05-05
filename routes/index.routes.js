@@ -1,6 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const NasaAPIHandler = require("../NasaAPIHandler");
+const User = require("../models/User.model");
 //instantiation of NasaAPI class
 const nasaAPIInstance = new NasaAPIHandler();
 
@@ -69,6 +70,22 @@ router.post("/library/search", async (req, res) => {
     const { keyword } = req.body;
     const searchedImages = await nasaAPIInstance.SearchNasaImages(keyword, 12);
     res.render("search", { searchedImages, keyword });
+  } catch (err) {
+    console.log("there was an error", err);
+    res.redirect("/library");
+  }
+});
+
+// added favorites to user in library
+router.post("/profile/add-favorite", async (req, res, next) => {
+  try {
+    const { imageId } = req.body;
+    console.log(req.session.user.id);
+    await User.findByIdAndUpdate(
+      { _id: req.session.user.id },
+      { $push: { favorites: imageId } }
+    );
+    return res.sendStatus(200);
   } catch (err) {
     console.log("there was an error", err);
     res.redirect("/library");

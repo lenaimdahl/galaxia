@@ -17,6 +17,11 @@ const userSchema = new Schema(
       type: Boolean,
       required: true,
     },
+    favorites: [
+      {
+        type: String,
+      },
+    ],
   },
   {
     // this second object adds extra properties: `createdAt` and `updatedAt`

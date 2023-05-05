@@ -10,6 +10,15 @@
           /></a>
         <h1>{{data.0.title}}</h1>
         <a href="/gallery/{{data.0.nasa_id}}">See more</a>
+        <form action="/profile/add-favorite" method="post">
+          <button type="submit">save as favorite</button>
+          <input
+            type="text"
+            name="imageId"
+            value="{{data.0.nasa_id}}"
+            hidden="true"
+          />
+        </form>
       </div>
     {{/each}}
   </div>
