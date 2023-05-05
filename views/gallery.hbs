@@ -1,24 +1,7 @@
 <div class="background-container">
-  <h1>Mars Photo Gallery</h1>
+  <h1>Mars Curiosity Gallery</h1>
   <div class="grid-container">
     {{#each marsPhotoData}}
-      <div>
-        <a href="/gallery/{{id}}"><img
-            class="img-day"
-            src="{{img_src}}"
-            alt="Mars Rover Image"
-          /></a>
-        <h1>{{earth_date}}</h1>
-        <a href="/gallery/{{id}}">See more</a>
-      </div>
-    {{/each}}
-  </div>
-</div>
-
-<div class="background-container">
-  <h1>Mars Rover</h1>
-  <div class="grid-container">
-    {{#each marsImageData}}
       <div>
         <a href="/gallery/{{data.0.nasa_id}}"><img
             class="img-day"

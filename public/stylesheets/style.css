@@ -80,7 +80,8 @@ img {
 .background-container {
   margin: 0 50px;
   padding: 20px;
-  background-color: rgb(24, 24, 24);
+  background-color: white;
+  color: #000000;
 }
 .flex-container {
   display: flex;

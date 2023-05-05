@@ -39,37 +39,15 @@ class NasaAPI {
     return item;
   }
 
-  async getMarsRoverImages(num) {
+  async getMarsCuriosityImages(num) {
     const response = await axios.get(`${this.BASE_URL_IMG}/search`, {
       params: {
         media_type: "image",
-        q: "Mars Exploration Rover MER",
+        q: "Curiosity",
       },
     });
+
     const items = response.data.collection.items;
-    const itemsMapped = items.map((item) => {
-      if (item.data[0].title.length > 30) {
-        item.data[0].title = `${item.data[0].title.slice(0, 30)}...`;
-      }
-      return item;
-    });
-
-    const shuffled = itemsMapped.sort(() => 0.5 - Math.random());
-    return shuffled.slice(0, num);
-  }
-
-  async getMarsCuriosityImages(num) {
-    const response = await axios.get(
-      `${this.BASE_URL}/mars-photos/api/v1/rovers/curiosity/photos`,
-      {
-        params: {
-          sol: 1000,
-          api_key: this.API_KEY,
-        },
-      }
-    );
-
-    const items = response.data.photos;
     const shuffled = items.sort(() => 0.5 - Math.random());
     return shuffled.slice(0, num);
   }

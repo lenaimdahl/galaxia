@@ -9,11 +9,10 @@ router.get("/", async (req, res, next) => {
   const pictureOfTheDay = await nasaAPIInstance.getPictureOfTheDay();
   const randomLibrary = await nasaAPIInstance.getRandomSpaceImages(4);
   const marsPhotoData = await nasaAPIInstance.getMarsCuriosityImages(4);
-  const marsImageData = await nasaAPIInstance.getMarsRoverImages(4);
+
   res.render("index", {
     ...pictureOfTheDay,
     randomLibrary,
-    marsImageData,
     marsPhotoData,
   });
 });
@@ -42,9 +41,9 @@ router.get("/library/:nasaImageId", async (req, res) => {
 // get Nasa Space Image and Mars Photos for Mars Rover
 router.get("/gallery", async (req, res) => {
   try {
-    const marsImageData = await nasaAPIInstance.getMarsRoverImages(15);
     const marsPhotoData = await nasaAPIInstance.getMarsCuriosityImages(15);
-    res.render("gallery", { marsImageData, marsPhotoData });
+
+    res.render("gallery", { marsPhotoData });
   } catch (err) {
     console.log("There was an error", err);
   }
