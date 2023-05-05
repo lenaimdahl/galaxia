@@ -47,7 +47,14 @@ class NasaAPI {
       },
     });
     const items = response.data.collection.items;
-    const shuffled = items.sort(() => 0.5 - Math.random());
+    const itemsMapped = items.map((item) => {
+      if (item.data[0].title.length > 30) {
+        item.data[0].title = `${item.data[0].title.slice(0, 30)}...`;
+      }
+      return item;
+    });
+
+    const shuffled = itemsMapped.sort(() => 0.5 - Math.random());
     return shuffled.slice(0, num);
   }
 

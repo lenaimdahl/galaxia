@@ -50,6 +50,16 @@ router.get("/gallery", async (req, res) => {
   }
 });
 
+router.get("/gallery/:nasaImageId", async (req, res) => {
+  try {
+    const { nasaImageId } = req.params;
+    const imageData = await nasaAPIInstance.getdetailedNasaImage(nasaImageId);
+    res.render("nasaImage-detail", { imageData });
+  } catch (err) {
+    console.log("There was an error", err);
+  }
+});
+
 //create new private image
 router.get("/library/search", (req, res) => {
   res.render("search");
