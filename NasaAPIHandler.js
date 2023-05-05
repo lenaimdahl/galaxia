@@ -67,16 +67,15 @@ class NasaAPI {
     return shuffled.slice(0, num);
   }
 
-  async SearchNasaImages(keyWord) {
+  async SearchNasaImages(keyword, num) {
     const response = await axios.get(`${this.BASE_URL_IMG}/search`, {
       params: {
         media_type: "image",
-        q: keyWord,
+        q: keyword,
       },
     });
     const items = response.data.collection.items;
-    const shuffled = items.sort(() => 0.5 - Math.random());
-    return shuffled.slice(0, num);
+    return items.slice(0, num);
   }
 }
 
