@@ -85,10 +85,10 @@ router.post("/profile/add-favorite", async (req, res, next) => {
       { _id: req.session.user.id },
       { $push: { favorites: imageId } }
     );
-    return res.sendStatus(200);
+    res.redirect("/gallery");
   } catch (err) {
     console.log("there was an error", err);
-    res.redirect("/library");
+    res.redirect("/gallery");
   }
 });
 
