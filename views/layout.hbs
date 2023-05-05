@@ -18,22 +18,24 @@
           <a href="/">Home</a>
         </div>
         <div class="dropdown container-layout">
-          <span>Profile</span>
-          <div class="dropdown-content">
-            <a href="/profile">Profile</a>
-            <a href="/private-library">Private Library</a>
-            <a href="/private/create">create new image</a>
-            <a href="/admin">Settings</a>
-          </div>
-        </div>
-
-        <div class="dropdown container-layout">
           <span>Gallery</span>
           <div class="dropdown-content">
             <a href="/library">Library</a>
             <a href="/gallery">Mars Rover Gallery</a>
           </div>
         </div>
+        {{#if isLoggedIn}}
+          <div class="dropdown container-layout">
+            <span>Profile</span>
+            <div class="dropdown-content">
+              <a href="/profile">Profile</a>
+              <a href="/private-library">Private Library</a>
+              <a href="/private/create">create new image</a>
+              <a href="/admin">Settings</a>
+            </div>
+          </div>
+        {{/if}}
+
         <!--isLoggedIn function in app.js-->
         {{#if isLoggedIn}}
           <div class="container-layout">

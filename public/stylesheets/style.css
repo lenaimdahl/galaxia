@@ -37,6 +37,7 @@ img {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  margin-bottom: 20px;
 }
 .nav-links-container {
   display: flex;
@@ -112,4 +113,9 @@ img {
   border: 1px solid grey;
   width: 400px;
   background: #000000;
+}
+
+.img-description {
+  text-align: justify;
+  font-size: 18pt;
 }

@@ -1,22 +1,24 @@
-<h2>{{imageData.name}}</h2>
-
-<div>
-  {{#if imageData.image}}
-    <img src="{{imageData.image}}" alt={{imageData.name}} />
-  {{/if}}
+<div class="background-container">
+  <h2>{{imageData.name}}</h2>
 
   <div>
-    <h2><strong>Description</strong></h2>
-    <p class="movies-plot">{{imageData.description}}</p>
+    {{#if imageData.image}}
+      <img src="{{imageData.image}}" alt={{imageData.name}} />
+    {{/if}}
+
+    <div>
+      <h2><strong>Description</strong></h2>
+      <p class="img-description">{{imageData.description}}</p>
+    </div>
+
   </div>
 
-</div>
-
-<div>
-  <a href="/private-library/edit/{{imageData._id}}">edit movie</a>
   <div>
-    <form action="/private-library/delete/{{imageData._id}}" method="post">
-      <button type="submit">Delete</button>
-    </form>
+    <a href="/private-library/edit/{{imageData._id}}">edit movie</a>
+    <div>
+      <form action="/private-library/delete/{{imageData._id}}" method="post">
+        <button type="submit">Delete</button>
+      </form>
+    </div>
   </div>
 </div>
