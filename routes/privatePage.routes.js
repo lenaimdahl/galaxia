@@ -35,7 +35,7 @@ router.post("/private/create", async (req, res) => {
 });
 
 //get Image detailed page
-router.get("/private-library/:spaceImageId", async (req, res) => {
+router.get("/private-library/:spaceImageId", isLoggedIn, async (req, res) => {
   try {
     const { spaceImageId } = req.params;
     const imageData = await PrivateSpaceModel.findById(spaceImageId);

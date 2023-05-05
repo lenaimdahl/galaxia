@@ -18,44 +18,34 @@
           <a href="/">Home</a>
         </div>
         <div class="dropdown">
-          <button class="dropbtn">Profil</button>
+          <span>Profile</span>
           <div class="dropdown-content">
-            <div class="container-layout">
-              <a href="/profile">Profile</a>
-            </div>
-            <div class="container-layout">
-              <a href="/private-library">Private Library</a>
-            </div>
-            <div class="container-layout">
-              <a href="/private/create">create new image</a>
-            </div>
-            <div class="container-layout">
-              <a href="/admin">Settings</a>
-            </div></div>
-        </div>
-
-        <div class="dropdown">
-          <button class="dropbtn">Gallery</button>
-          <div class="dropdown-content">
-            <div class="container-layout">
-              <a href="/library">Library</a>
-            </div>
-            <div class="container-layout">
-              <a href="/gallery">Mars Rover Gallery</a>
-            </div>
+            <a href="/profile">Profile</a>
+            <a href="/private-library">Private Library</a>
+            <a href="/private/create">create new image</a>
+            <a href="/admin">Settings</a>
           </div>
         </div>
 
-        <div class="container-layout">
-          <a href="/signup">Sign up</a>
+        <div class="dropdown container-layout">
+          <span>Gallery</span>
+          <div class="dropdown-content">
+            <a href="/library">Library</a>
+            <a href="/gallery">Mars Rover Gallery</a>
+          </div>
         </div>
-        <div class="container-layout">
-          <a href="/login">Login</a>
-        </div>
-
-        <div class="container-layout">
-          <a href="/logout">Logout</a>
-        </div>
+        {{#if isLoggedIn}}
+          <div class="container-layout">
+            <a href="/logout">Logout</a>
+          </div>
+        {{else}}
+          <div class="container-layout">
+            <a href="/signup">Sign up</a>
+          </div>
+          <div class="container-layout">
+            <a href="/login">Login</a>
+          </div>
+        {{/if}}
       </div>
     </nav>
 

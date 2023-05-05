@@ -22,7 +22,12 @@ require("./config")(app);
 const capitalize = require("./utils/capitalize");
 const projectName = "Nasa-Library";
 
-app.locals.appTitle = `${capitalize(projectName)} created with IronLauncher`;
+//helper for: check if user is logged in
+//!! create boolean from value, if it exists, its true
+app.use((req, res, next) => {
+  res.locals.isLoggedIn = !!req.session.user;
+  next();
+});
 
 // 👇 Start handling routes here
 const indexRoutes = require("./routes/index.routes");
