@@ -20,15 +20,29 @@
 <div class="background-container">
   <h2> Nasa Library</h2>
   <a href="/Library">Go to Library</a>
-
   <div class="grid-container">
-
     {{#each randomLibrary}}
-
       <a href="/library/{{data.0.nasa_id}}"><img
           class="img-day"
           src="{{links.0.href}}"
           alt="Picture of the day"
+        /></a>
+    {{/each}}
+  </div>
+</div>
+
+<br />
+<br />
+
+<div class="background-container">
+  <h2> Mars Rover Gallery</h2>
+  <a href="/gallery">Go to Gallery</a>
+  <div class="grid-container">
+    {{#each marsImageData}}
+      <a href="/gallery/{{data.0.nasa_id}}"><img
+          class="img-day"
+          src="{{links.0.href}}"
+          alt="Mars Rover Image"
         /></a>
     {{/each}}
   </div>

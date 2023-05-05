@@ -40,6 +40,18 @@ class NasaAPI {
     const item = response.data.collection.items[0];
     return item;
   }
+
+  async getMarsRoverImages(num) {
+    const response = await axios.get(`${this.BASE_URL_IMG}/search`, {
+      params: {
+        media_type: "image",
+        q: "Mars Exploration Rover MER",
+      },
+    });
+    const items = response.data.collection.items;
+    const shuffled = items.sort(() => 0.5 - Math.random());
+    return shuffled.slice(0, num);
+  }
 }
 
 module.exports = NasaAPI;
