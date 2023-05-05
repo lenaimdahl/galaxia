@@ -52,6 +52,24 @@ class NasaAPI {
     const shuffled = items.sort(() => 0.5 - Math.random());
     return shuffled.slice(0, num);
   }
+
+  async getMarsCuriosityImages(num) {
+    const response = await axios.get(
+      `${this.BASE_URL}/mars-photos/api/v1/rovers/curiosity/photos`,
+      {
+        //?mediatype and q (for query)
+        params: {
+          sol: 1000,
+          api_key: this.API_KEY,
+        },
+      }
+    );
+
+    const items = response.data.photos;
+    //randomize the 100 items by 0.5 - random (0-1)
+    const shuffled = items.sort(() => 0.5 - Math.random());
+    return shuffled.slice(0, num);
+  }
 }
 
 module.exports = NasaAPI;

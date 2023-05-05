@@ -35,7 +35,24 @@
 <br />
 
 <div class="background-container">
-  <h2> Mars Rover Gallery</h2>
+  <h2> Mars Photo Gallery</h2>
+  <a href="/gallery">Go to Gallery</a>
+  <div class="grid-container">
+    {{#each marsPhotoData}}
+      <a href="/gallery/{{id}}"><img
+          class="img-day"
+          src="{{img_src}}"
+          alt="Mars Rover Image"
+        /></a>
+    {{/each}}
+  </div>
+</div>
+
+<br />
+<br />
+
+<div class="background-container">
+  <h2> Mars Rover</h2>
   <a href="/gallery">Go to Gallery</a>
   <div class="grid-container">
     {{#each marsImageData}}
