@@ -17,7 +17,7 @@
         <div class="container-layout">
           <a href="/">Home</a>
         </div>
-        <div class="dropdown">
+        <div class="dropdown container-layout">
           <span>Profile</span>
           <div class="dropdown-content">
             <a href="/profile">Profile</a>
@@ -34,6 +34,7 @@
             <a href="/gallery">Mars Rover Gallery</a>
           </div>
         </div>
+        <!--isLoggedIn function in app.js-->
         {{#if isLoggedIn}}
           <div class="container-layout">
             <a href="/logout">Logout</a>
