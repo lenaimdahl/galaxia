@@ -76,20 +76,4 @@ router.post("/library/search", async (req, res) => {
   }
 });
 
-// added favorites to user in library
-router.post("/profile/add-favorite", async (req, res, next) => {
-  try {
-    const { imageId } = req.body;
-    console.log(req.session.user.id);
-    await User.findByIdAndUpdate(
-      { _id: req.session.user.id },
-      { $push: { favorites: imageId } }
-    );
-    res.redirect("/gallery");
-  } catch (err) {
-    console.log("there was an error", err);
-    res.redirect("/gallery");
-  }
-});
-
 module.exports = router;
