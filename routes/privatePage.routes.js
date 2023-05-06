@@ -82,17 +82,17 @@ router.post("/private-library/delete/:spaceImageId", async (req, res) => {
 });
 
 // added favorites to user in library
-router.post("/private/favorites", async (req, res, next) => {
+router.post("/favorites", async (req, res, next) => {
   try {
     const { imageId } = req.body;
     await User.findByIdAndUpdate(
       { _id: req.session.user.id },
       { $push: { favorites: imageId } }
     );
-    res.redirect("/gallery");
+    res.redirect("/curiosity");
   } catch (err) {
     console.log("there was an error", err);
-    res.redirect("/gallery");
+    res.redirect("/curiosity");
   }
 });
 
