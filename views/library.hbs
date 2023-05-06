@@ -18,6 +18,17 @@
           /></a>
         <h1>{{data.0.title}}</h1>
         <a href="/library/{{data.0.nasa_id}}">See more</a>
+         {{#if ../isLoggedIn}}
+          <form action="/favorites" method="post">
+            <button type="submit">Save as favorite</button>
+            <input
+              type="text"
+              name="imageId"
+              value="{{data.0.nasa_id}}"
+              hidden="true"
+            />
+          </form>
+        {{/if}}
       </div>
     {{/each}}
   </div>
