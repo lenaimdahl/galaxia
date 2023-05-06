@@ -4,13 +4,13 @@
   <div class="grid-container">
     {{#each favorites}}
       <div>
-        <a href="/library/{{data.0.nasa_id}}"><img
+        <a href="/library/{{this.0.data.0.nasa_id}}"><img
             class="img-day"
-            src="{{links.0.href}}"
+            src="{{this.0.links.0.href}}"
             alt="Picture of the day"
           /></a>
-        <h1>{{data.0.title}}</h1>
-        <a href="/library/{{data.0.nasa_id}}">See more</a>
+        <h1>{{this.0.data.0.title}}</h1>
+        <a href="/library/{{this.0.data.0.nasa_id}}">See more</a>
       </div>
     {{/each}}
   </div>

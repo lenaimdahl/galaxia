@@ -1,7 +1,9 @@
 const router = require("express").Router();
-const PrivateSpaceModel = require("../models/spaceImage.model");
-const isLoggedIn = require("../middlewares/isLoggedIn");
 const User = require("../models/User.model");
+const PrivateSpaceModel = require("../models/spaceImage.model");
+const NasaAPIHandler = require("../NasaAPIHandler");
+const nasaAPIInstance = new NasaAPIHandler();
+const isLoggedIn = require("../middlewares/isLoggedIn");
 
 router.get("/profile", isLoggedIn, (req, res) => {
   const isAdmin = req.session.user.admin;
@@ -94,15 +96,19 @@ router.post("/private/favorites", async (req, res, next) => {
   }
 });
 
-//get all images
-router.get("/private/favorites", isLoggedIn, async (req, res) => {
-  try {
-    const allImages = await PrivateSpaceModel.find();
-    res.render("private-page/private-library", { allImages });
-  } catch (err) {
-    console.log("There was an error", err);
-  }
-  res.render("private-page/private-library");
+//try route to get favorites from nasa api
+router.get("/favorites", isLoggedIn, async (req, res) => {
+  const userId = req.session.user.id;
+  const { favorites: favoritesIds } = await User.findById(userId);
+  console.log(favoritesIds);
+
+  const listOfPromises = favoritesIds.map((favoriteId) => {
+    return nasaAPIInstance.getDetailsForNasaId(favoriteId);
+  });
+  console.log(listOfPromises);
+  const favorites = await Promise.all(listOfPromises);
+  console.log(favorites);
+  res.render("private-page/favorites", { favorites });
 });
 
 module.exports = router;

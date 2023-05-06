@@ -62,6 +62,17 @@ class NasaAPI {
     const items = response.data.collection.items;
     return items.slice(0, num);
   }
+
+  //try to get find nasa id and show its picture, by using the mongodb id from favorites
+  async getDetailsForNasaId(id) {
+    const response = await axios.get(`${this.BASE_URL_IMG}/search`, {
+      params: {
+        nasa_id: id,
+      },
+    });
+    const item = response.data.collection.items;
+    return item;
+  }
 }
 
 module.exports = NasaAPI;
