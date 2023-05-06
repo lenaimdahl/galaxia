@@ -50,32 +50,6 @@ router.get("/curiosity", async (req, res) => {
   }
 });
 
-router.get("/curiosity/:nasaImageId", async (req, res) => {
-  try {
-    const { nasaImageId } = req.params;
-    const imageData = await nasaAPIInstance.getdetailedNasaImage(nasaImageId);
-    res.render("nasaImage-detail", { imageData });
-  } catch (err) {
-    console.log("There was an error", err);
-  }
-});
-
-//create new private image
-router.get("/library/search", (req, res) => {
-  res.render("search");
-});
-
-router.post("/library/search", async (req, res) => {
-  try {
-    const { keyword } = req.body;
-    const searchedImages = await nasaAPIInstance.SearchNasaImages(keyword, 12);
-    res.render("search", { searchedImages, keyword });
-  } catch (err) {
-    console.log("there was an error", err);
-    res.redirect("/library");
-  }
-});
-
 // get Nasa Sun Image
 router.get("/The-Sun", async (req, res) => {
   try {
@@ -95,6 +69,22 @@ router.get("/The-Moon", async (req, res) => {
     res.render("moon", { moonPhotoData });
   } catch (err) {
     console.log("There was an error", err);
+  }
+});
+
+//create new private image
+router.get("/library/search", (req, res) => {
+  res.render("search");
+});
+
+router.post("/library/search", async (req, res) => {
+  try {
+    const { keyword } = req.body;
+    const searchedImages = await nasaAPIInstance.SearchNasaImages(keyword, 12);
+    res.render("search", { searchedImages, keyword });
+  } catch (err) {
+    console.log("there was an error", err);
+    res.redirect("/library");
   }
 });
 

@@ -70,7 +70,7 @@ router.post("/private-library/edit/:spaceImageId", async (req, res) => {
   }
 });
 
-//delete image
+//delete  created image
 router.post("/private-library/delete/:spaceImageId", async (req, res) => {
   try {
     const { spaceImageId } = req.params;
@@ -78,6 +78,32 @@ router.post("/private-library/delete/:spaceImageId", async (req, res) => {
     res.redirect("/private-library");
   } catch (err) {
     console.log("There was an error", err);
+  }
+});
+
+//get Nasa Space Image in detail
+router.get("/favorite/:nasaImageId", async (req, res) => {
+  try {
+    const { nasaImageId } = req.params;
+    const imageData = await nasaAPIInstance.getdetailedNasaImage(nasaImageId);
+    res.render("private-page/favorite-Imagedetail", { imageData });
+  } catch (err) {
+    console.log("There was an error", err);
+  }
+});
+
+//delete favorite image
+router.post("/favorite/delete/:spaceImageId", async (req, res) => {
+  try {
+    const { imageId } = req.body;
+    await User.findByIdAndUpdate(
+      { _id: req.session.user.id },
+      { $pull: { favorites: imageId } }
+    );
+    res.redirect("/favorites");
+  } catch (err) {
+    console.log("There was an error", err);
+    res.redirect("/favorites");
   }
 });
 
@@ -98,17 +124,19 @@ router.post("/favorites", async (req, res, next) => {
 
 //try route to get favorites from nasa api
 router.get("/favorites", isLoggedIn, async (req, res) => {
-  const userId = req.session.user.id;
-  const { favorites: favoritesIds } = await User.findById(userId);
-  console.log(favoritesIds);
+  try {
+    const userId = req.session.user.id;
+    const { favorites: favoritesIds } = await User.findById(userId);
 
-  const listOfPromises = favoritesIds.map((favoriteId) => {
-    return nasaAPIInstance.getDetailsForNasaId(favoriteId);
-  });
-  console.log(listOfPromises);
-  const favorites = await Promise.all(listOfPromises);
-  console.log(favorites);
-  res.render("private-page/favorites", { favorites });
+    const listOfPromises = favoritesIds.map((favoriteId) => {
+      return nasaAPIInstance.getDetailsForNasaId(favoriteId);
+    });
+    const favorites = await Promise.all(listOfPromises);
+    res.render("private-page/favorites", { favorites });
+  } catch (err) {
+    console.log("there was an error", err);
+    res.redirect("/profile");
+  }
 });
 
 module.exports = router;

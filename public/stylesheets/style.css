@@ -4,10 +4,13 @@ body {
   background-image: url("/images/stars-background.avif");
   color: white;
 }
+.link-button {
+  color: #000000;
+}
 
 a,
 .dropdown span {
-  color: white;
+  color: rgb(255, 255, 255);
   font-size: 20px;
   text-decoration: none;
   /*font-family: Astrobia;*/

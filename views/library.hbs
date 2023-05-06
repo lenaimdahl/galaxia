@@ -17,7 +17,7 @@
             alt="Picture of the day"
           /></a>
         <h1>{{data.0.title}}</h1>
-        <a href="/library/{{data.0.nasa_id}}">See more</a>
+        <a class="link-button" href="/library/{{data.0.nasa_id}}">See more</a>
          {{#if ../isLoggedIn}}
           <form action="/favorites" method="post">
             <button type="submit">Save as favorite</button>
