@@ -12,7 +12,7 @@
         <a href="/gallery/{{data.0.nasa_id}}">See more</a>
         <!-- ../ reach variable outside of #each-->
         {{#if ../isLoggedIn}}
-          <form action="/private-library" method="post">
+          <form action="/private/favorites" method="post">
             <button type="submit">Save as favorite</button>
             <input
               type="text"
