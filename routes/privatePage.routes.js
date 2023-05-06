@@ -1,6 +1,7 @@
 const router = require("express").Router();
 const PrivateSpaceModel = require("../models/spaceImage.model");
 const isLoggedIn = require("../middlewares/isLoggedIn");
+const User = require("../models/User.model");
 
 router.get("/profile", isLoggedIn, (req, res) => {
   const isAdmin = req.session.user.admin;
