@@ -80,7 +80,7 @@ router.post("/private-library/delete/:spaceImageId", async (req, res) => {
 });
 
 // added favorites to user in library
-router.post("/private-library", async (req, res, next) => {
+router.post("/private/favorites", async (req, res, next) => {
   try {
     const { imageId } = req.body;
     await User.findByIdAndUpdate(
@@ -92,6 +92,17 @@ router.post("/private-library", async (req, res, next) => {
     console.log("there was an error", err);
     res.redirect("/gallery");
   }
+});
+
+//get all images
+router.get("/private/favorites", isLoggedIn, async (req, res) => {
+  try {
+    const allImages = await PrivateSpaceModel.find();
+    res.render("private-page/private-library", { allImages });
+  } catch (err) {
+    console.log("There was an error", err);
+  }
+  res.render("private-page/private-library");
 });
 
 module.exports = router;
