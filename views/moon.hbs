@@ -1,0 +1,28 @@
+<div class="background-container">
+  <h1>The Moon</h1>
+  <div class="grid-container">
+    {{#each moonPhotoData}}
+      <div>
+        <a href="/gallery/{{data.0.nasa_id}}"><img
+            class="img-day"
+            src="{{links.0.href}}"
+            alt="Moon Image"
+          /></a>
+        <h1>{{data.0.title}}</h1>
+        <a href="/gallery/{{data.0.nasa_id}}">See more</a>
+      
+        {{#if ../isLoggedIn}}
+          <form action="/favorites" method="post">
+            <button type="submit">Save as favorite</button>
+            <input
+              type="text"
+              name="imageId"
+              value="{{data.0.nasa_id}}"
+              hidden="true"
+            />
+          </form>
+        {{/if}}
+      </div>
+    {{/each}}
+  </div>
+</div>

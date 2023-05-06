@@ -76,4 +76,26 @@ router.post("/library/search", async (req, res) => {
   }
 });
 
+// get Nasa Sun Image
+router.get("/The-Sun", async (req, res) => {
+  try {
+    const sunPhotoData = await nasaAPIInstance.SearchNasaImages("sun", 15);
+
+    res.render("sun", { sunPhotoData });
+  } catch (err) {
+    console.log("There was an error", err);
+  }
+});
+
+// get Nasa Moon Image
+router.get("/The-Moon", async (req, res) => {
+  try {
+    const moonPhotoData = await nasaAPIInstance.SearchNasaImages("moon", 15);
+
+    res.render("moon", { moonPhotoData });
+  } catch (err) {
+    console.log("There was an error", err);
+  }
+});
+
 module.exports = router;
