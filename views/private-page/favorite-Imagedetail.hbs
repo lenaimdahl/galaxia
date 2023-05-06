@@ -3,9 +3,7 @@
 
   <div>
     {{#if imageData.links.0.href}}
-
       <img src="{{imageData.links.0.href}}" alt={{imageData.data.0.title}} />
-
     {{/if}}
 
     <div>
@@ -13,7 +11,7 @@
       <p class="img-description">{{imageData.data.0.description}}</p>
     </div>
     <div>
-      <form action="/favorite/remove/{{imageData._id}}" method="post">
+      <form action="/favorites/{{imageData._id}}" method="post">
         <button type="submit">Remove as Favorite Image</button>
       </form>
     </div>

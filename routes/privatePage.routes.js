@@ -124,7 +124,7 @@ router.get("/favorites/:nasaImageId", async (req, res) => {
 });
 
 //delete favorite image
-router.post("/favorite/remove/:spaceImageId", async (req, res) => {
+router.post("/favorites/:imageId", async (req, res) => {
   try {
     const { imageId } = req.body;
     await User.findByIdAndUpdate(
