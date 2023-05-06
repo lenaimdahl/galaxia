@@ -40,17 +40,17 @@ router.get("/library/:nasaImageId", async (req, res) => {
 });
 
 // get Nasa Space Image and Mars Photos for Mars Rover
-router.get("/gallery", async (req, res) => {
+router.get("/curiosity", async (req, res) => {
   try {
     const marsPhotoData = await nasaAPIInstance.getMarsCuriosityImages(15);
 
-    res.render("gallery", { marsPhotoData });
+    res.render("curiosity", { marsPhotoData });
   } catch (err) {
     console.log("There was an error", err);
   }
 });
 
-router.get("/gallery/:nasaImageId", async (req, res) => {
+router.get("/curiosity/:nasaImageId", async (req, res) => {
   try {
     const { nasaImageId } = req.params;
     const imageData = await nasaAPIInstance.getdetailedNasaImage(nasaImageId);

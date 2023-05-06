@@ -3,13 +3,13 @@
   <div class="grid-container">
     {{#each sunPhotoData}}
       <div>
-        <a href="/gallery/{{data.0.nasa_id}}"><img
+        <a href="/curiosity/{{data.0.nasa_id}}"><img
             class="img-day"
             src="{{links.0.href}}"
             alt="sun Rover Image"
           /></a>
         <h1>{{data.0.title}}</h1>
-        <a href="/gallery/{{data.0.nasa_id}}">See more</a>
+        <a href="/curiosity/{{data.0.nasa_id}}">See more</a>
         <!-- ../ reach variable outside of #each-->
         {{#if ../isLoggedIn}}
           <form action="/favorites" method="post">
