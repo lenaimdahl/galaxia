@@ -1,8 +1,16 @@
 body {
-  font: 14px "Aloevera", Helvetica, Arial;
+  font: 14px Fragile Bombers;
   margin: 0;
   background-image: url("/images/stars-background.avif");
   color: white;
+}
+h1 {
+  text-align: center;
+  padding: 10px;
+}
+h2 {
+  font-size: 40px;
+  text-align: center;
 }
 .link-button {
   color: #000000;
@@ -11,12 +19,8 @@ body {
 a,
 .dropdown span {
   color: rgb(255, 255, 255);
-  font-size: 20px;
+  font-size: 25px;
   text-decoration: none;
-  /*font-family: Astrobia;*/
-  /* font-family: DigitalSpace; */
-  /* font-family: Midnight Moon; */
-  /* font-family: TheWastesOfSpace; */
 }
 
 .img-logo {
@@ -39,7 +43,7 @@ img {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 20px;
+  margin-bottom: 40px;
 }
 .nav-links-container {
   display: flex;
@@ -82,8 +86,8 @@ img {
 }
 
 .background-container {
-  margin: 0 50px;
-  padding: 20px;
+  margin: 0 90 50px;
+  padding: 0 50px;
   background-color: rgb(0, 0, 0);
   color: #ffffff;
 }
@@ -97,11 +101,13 @@ img {
   display: flex;
   justify-content: center;
   align-content: center;
+  padding: 100px;
 }
 .text-container {
-  background-color: rgb(164, 164, 164);
-  color: #000000;
-  padding: 0 30px;
+  background-color: rgb(0, 0, 0);
+  color: white;
+  padding: 0 80px;
+  margin: 40px;
   width: 400px;
 }
 
@@ -111,13 +117,30 @@ img {
   grid-gap: 20px;
   justify-content: center;
 }
+
+/* .library-link {
+  text-align: center;
+} */
+
 .search-form {
+  color: #000000;
   margin-top: 20px;
-  padding: 10px;
-  font-size: 17px;
-  border: 1px solid grey;
+  text-align: center;
+  padding: 20px;
+  font-size: 20px;
+  /* border: 1px solid grey; */
   width: 400px;
   background: #000000;
+}
+.search-btn,
+input {
+  font-size: larger;
+  background-color: #000000;
+  color: white;
+  font-family: Fragile Bombers;
+  border-radius: 10px;
+  padding: 10px;
+  margin: 5px;
 }
 
 .img-description {
