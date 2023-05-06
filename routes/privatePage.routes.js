@@ -47,6 +47,16 @@ router.get("/private-library/:spaceImageId", isLoggedIn, async (req, res) => {
     console.log("There was an error", err);
   }
 });
+//delete  created image
+router.post("/private-library/delete/:spaceImageId", async (req, res) => {
+  try {
+    const { spaceImageId } = req.params;
+    await PrivateSpaceModel.findByIdAndDelete(spaceImageId);
+    res.redirect("/private-library");
+  } catch (err) {
+    console.log("There was an error", err);
+  }
+});
 
 // edit image
 router.get(
@@ -70,40 +80,20 @@ router.post("/private-library/edit/:spaceImageId", async (req, res) => {
   }
 });
 
-//delete  created image
-router.post("/private-library/delete/:spaceImageId", async (req, res) => {
+//try route to get favorites from nasa api
+router.get("/favorites", isLoggedIn, async (req, res) => {
   try {
-    const { spaceImageId } = req.params;
-    await PrivateSpaceModel.findByIdAndDelete(spaceImageId);
-    res.redirect("/private-library");
-  } catch (err) {
-    console.log("There was an error", err);
-  }
-});
+    const userId = req.session.user.id;
+    const { favorites: favoritesIds } = await User.findById(userId);
 
-//get Nasa Space Image in detail
-router.get("/favorite/:nasaImageId", async (req, res) => {
-  try {
-    const { nasaImageId } = req.params;
-    const imageData = await nasaAPIInstance.getdetailedNasaImage(nasaImageId);
-    res.render("private-page/favorite-Imagedetail", { imageData });
+    const listOfPromises = favoritesIds.map((favoriteId) => {
+      return nasaAPIInstance.getDetailsForNasaId(favoriteId);
+    });
+    const favorites = await Promise.all(listOfPromises);
+    res.render("private-page/favorites", { favorites });
   } catch (err) {
-    console.log("There was an error", err);
-  }
-});
-
-//delete favorite image
-router.post("/favorite/delete/:spaceImageId", async (req, res) => {
-  try {
-    const { imageId } = req.body;
-    await User.findByIdAndUpdate(
-      { _id: req.session.user.id },
-      { $pull: { favorites: imageId } }
-    );
-    res.redirect("/favorites");
-  } catch (err) {
-    console.log("There was an error", err);
-    res.redirect("/favorites");
+    console.log("there was an error", err);
+    res.redirect("/profile");
   }
 });
 
@@ -122,20 +112,29 @@ router.post("/favorites", async (req, res, next) => {
   }
 });
 
-//try route to get favorites from nasa api
-router.get("/favorites", isLoggedIn, async (req, res) => {
+//get Nasa Space Image in detail
+router.get("/favorites/:nasaImageId", async (req, res) => {
   try {
-    const userId = req.session.user.id;
-    const { favorites: favoritesIds } = await User.findById(userId);
-
-    const listOfPromises = favoritesIds.map((favoriteId) => {
-      return nasaAPIInstance.getDetailsForNasaId(favoriteId);
-    });
-    const favorites = await Promise.all(listOfPromises);
-    res.render("private-page/favorites", { favorites });
+    const { nasaImageId } = req.params;
+    const imageData = await nasaAPIInstance.getdetailedNasaImage(nasaImageId);
+    res.render("private-page/favorite-Imagedetail", { imageData });
   } catch (err) {
-    console.log("there was an error", err);
-    res.redirect("/profile");
+    console.log("There was an error", err);
+  }
+});
+
+//delete favorite image
+router.post("/favorite/remove/:spaceImageId", async (req, res) => {
+  try {
+    const { imageId } = req.body;
+    await User.findByIdAndUpdate(
+      { _id: req.session.user.id },
+      { $pull: { favorites: imageId } }
+    );
+    res.redirect("/favorites");
+  } catch (err) {
+    console.log("There was an error", err);
+    res.redirect("/favorites");
   }
 });
 
