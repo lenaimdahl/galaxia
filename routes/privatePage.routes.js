@@ -124,9 +124,10 @@ router.get("/favorites/:nasaImageId", async (req, res) => {
 });
 
 //delete favorite image
+//use fetch with eventlistener
 router.post("/favorites/:imageId", async (req, res) => {
   try {
-    const { imageId } = req.body;
+    const { imageId } = req.params;
     await User.findByIdAndUpdate(
       { _id: req.session.user.id },
       { $pull: { favorites: imageId } }

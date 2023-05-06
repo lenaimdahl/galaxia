@@ -11,7 +11,7 @@
       <p class="img-description">{{imageData.data.0.description}}</p>
     </div>
     <div>
-      <form action="/favorites/{{imageData._id}}" method="post">
+      <form action="/favorites/{{imageData.data.0.nasa_id}}" method="post">
         <button type="submit">Remove as Favorite Image</button>
       </form>
     </div>

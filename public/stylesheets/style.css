@@ -84,8 +84,8 @@ img {
 .background-container {
   margin: 0 50px;
   padding: 20px;
-  background-color: white;
-  color: #000000;
+  background-color: rgb(0, 0, 0);
+  color: #ffffff;
 }
 .flex-container {
   display: flex;
@@ -99,6 +99,8 @@ img {
   align-content: center;
 }
 .text-container {
+  background-color: rgb(164, 164, 164);
+  color: #000000;
   padding: 0 30px;
   width: 400px;
 }

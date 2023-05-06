@@ -59,4 +59,11 @@ module.exports = (app) => {
   app.use(
     favicon(path.join(__dirname, "..", "public", "images", "favicon.ico"))
   );
+
+  //helper for: check if user is logged in
+  //!! create boolean from value, if it exists, its true
+  app.use((req, res, next) => {
+    res.locals.isLoggedIn = !!req.session.user;
+    next();
+  });
 };
