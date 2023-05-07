@@ -29,8 +29,12 @@ a,
   text-decoration: none;
 }
 
-.img-logo {
+/* .img-logo {
   height: 50px;
+} */
+
+.moon-logo {
+  height: 80px;
 }
 
 img {
@@ -243,4 +247,9 @@ input {
 
 .profile-btn {
   padding: 20px;
+}
+
+.man-looking-stars {
+  position: absolute;
+  width: 500px;
 }
