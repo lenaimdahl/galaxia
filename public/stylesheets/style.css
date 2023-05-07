@@ -19,7 +19,11 @@ h3 {
   font-size: 20px;
 }
 .link-button {
-  color: #000000;
+  color: white;
+}
+
+.btn {
+  color: white;
 }
 
 a,
@@ -91,7 +95,8 @@ img {
   display: block;
 }
 
-.background-container {
+.background-container,
+.library-link {
   margin: 0 90 50px;
   padding: 0 50px;
   text-align: center;
@@ -125,10 +130,6 @@ img {
   justify-content: center;
 }
 
-/* .library-link {
-  text-align: center;
-} */
-
 .search-form {
   color: #000000;
   margin-top: 20px;
@@ -153,4 +154,10 @@ input {
 .img-description {
   text-align: justify;
   font-size: 18pt;
+}
+
+.login {
+  text-align: center;
+  padding: 30px;
+  /* background-image: url(/public/images/man-looking-stars.jpeg); */
 }
