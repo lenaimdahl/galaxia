@@ -72,6 +72,17 @@ router.get("/The-Moon", async (req, res) => {
   }
 });
 
+// get Solar System  Images
+router.get("/The-Venus", async (req, res) => {
+  try {
+    const venusPhotoData = await nasaAPIInstance.SearchNasaImages("venus", 15);
+
+    res.render("venus", { venusPhotoData });
+  } catch (err) {
+    console.log("There was an error", err);
+  }
+});
+
 //create new private image
 router.get("/library/search", (req, res) => {
   res.render("search");

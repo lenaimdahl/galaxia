@@ -1,0 +1,28 @@
+<div class="background-container">
+  <h1>The Venus</h1>
+  <div class="grid-container">
+    {{#each venusPhotoData}}
+      <div>
+        <a href="/library/{{data.0.nasa_id}}"><img
+            class="img-day"
+            src="{{links.0.href}}"
+            alt="Venus Image"
+          /></a>
+        <h1>{{data.0.title}}</h1>
+        <a class="link-button" href="/library/{{data.0.nasa_id}}">See more</a>
+      
+        {{#if ../isLoggedIn}}
+          <form action="/favorites" method="post">
+            <button class="favorites-btn" type="submit">Add to favorites</button>
+            <input
+              type="text"
+              name="imageId"
+              value="{{data.0.nasa_id}}"
+              hidden="true"
+            />
+          </form>
+        {{/if}}
+      </div>
+    {{/each}}
+  </div>
+</div>
