@@ -1,4 +1,8 @@
-<form action="/private-library/edit/{{spaceImage._id}}" method="post">
+<form
+  class="edit-form"
+  action="/private-library/edit/{{spaceImage._id}}"
+  method="post"
+>
   <h2>
     Edit the Image
   </h2>
@@ -15,8 +19,8 @@
     <input type="text" name="image" value="{{spaceImage.image}}" />
   </label>
 
-  <div>
-    <button type="submit">save updated Image</button>
+  <div class="save-div">
+    <button class="save-img-btn" type="submit">Save Updated Image</button>
   </div>
 
 </form>

@@ -165,3 +165,64 @@ input {
   padding: 10px;
   margin: 5px;
 }
+
+.submit-btn {
+  background-color: #000000;
+  color: white;
+  font-family: Fragile Bombers;
+  font-size: 20px;
+  border-radius: 10px;
+  padding: 20px;
+  margin: 5px;
+}
+
+.new-img-form {
+  text-align: center;
+  font-size: 20px;
+
+  padding: 60px;
+}
+
+.sub-btn {
+  padding: 20px;
+}
+
+.edit-btn {
+  background-color: #000000;
+  color: white;
+  font-family: Fragile Bombers;
+  font-size: 20px;
+  border-radius: 10px;
+  padding: 10px;
+  margin: 5px;
+}
+
+.delete-btn {
+  background-color: #000000;
+  color: white;
+  font-family: Fragile Bombers;
+  font-size: 20px;
+  border-radius: 10px;
+  padding: 10px;
+  margin: 5px;
+}
+
+.edit-form {
+  text-align: center;
+  padding: 30px;
+  font-size: 20px;
+}
+
+.save-img-btn {
+  background-color: #000000;
+  color: white;
+  font-family: Fragile Bombers;
+  font-size: 20px;
+  border-radius: 10px;
+  padding: 10px;
+  margin: 5px;
+}
+
+.save-div {
+  padding: 20px;
+}
