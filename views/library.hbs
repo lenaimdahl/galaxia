@@ -20,7 +20,7 @@
         <a class="link-button" href="/library/{{data.0.nasa_id}}">See more</a>
           {{#if ../isLoggedIn}}
           <form action="/favorites" method="post">
-            <button type="submit">Save as favorite</button>
+            <button class="favorites-btn" type="submit">Add to favorites</button>
             <input
               type="text"
               name="imageId"

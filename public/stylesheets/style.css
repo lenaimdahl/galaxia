@@ -22,10 +22,6 @@ h3 {
   color: white;
 }
 
-.btn {
-  color: white;
-}
-
 a,
 .dropdown span {
   color: rgb(255, 255, 255);
@@ -160,4 +156,12 @@ input {
   text-align: center;
   padding: 30px;
   /* background-image: url(/public/images/man-looking-stars.jpeg); */
+}
+.favorites-btn {
+  background-color: #000000;
+  color: white;
+  font-family: Fragile Bombers;
+  border-radius: 10px;
+  padding: 10px;
+  margin: 5px;
 }
