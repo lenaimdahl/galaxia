@@ -72,7 +72,7 @@ router.get("/The-Moon", async (req, res) => {
   }
 });
 
-// get Solar System  Images
+// get Venus  Images
 router.get("/The-Venus", async (req, res) => {
   try {
     const venusPhotoData = await nasaAPIInstance.SearchNasaImages("venus", 15);
