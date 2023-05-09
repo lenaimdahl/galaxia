@@ -9,12 +9,18 @@ const nasaAPIInstance = new NasaAPIHandler();
 router.get("/", async (req, res, next) => {
   const pictureOfTheDay = await nasaAPIInstance.getPictureOfTheDay();
   const randomLibrary = await nasaAPIInstance.getRandomSpaceImages(6);
-  const marsPhotoData = await nasaAPIInstance.getMarsCuriosityImages(6);
+  const marsPhotoData = await nasaAPIInstance.getMarsCuriosityImages(1);
+  const sunPhotoData = await nasaAPIInstance.SearchNasaImages("sun", 1);
+  const moonPhotoData = await nasaAPIInstance.SearchNasaImages("moon", 1);
+  const venusPhotoData = await nasaAPIInstance.SearchNasaImages("venus", 1);
 
   res.render("index", {
     ...pictureOfTheDay,
     randomLibrary,
     marsPhotoData,
+    sunPhotoData,
+    moonPhotoData,
+    venusPhotoData,
   });
 });
 

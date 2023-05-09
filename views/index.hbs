@@ -1,10 +1,14 @@
 {{! <h1>Hello Spacelover!</h1> }}
 
 <div class="background-container">
+
   <h2 class="page-title"> Picture Of the day</h2>
-  <h3>Discover the cosmos! Each day a different image or photograph of our
-    fascinating universe is featured, along with a brief explanation written by
-    a professional astronomer.</h3>
+  <h3 class="subtitle">Discover the cosmos!
+    <br />
+    Each day a different image or photograph of our fascinating universe is
+    featured, along with a brief explanation written by a professional
+    astronomer.</h3>
+
   <div class="flex-container">
     <div class="center-container">
       <img
@@ -44,10 +48,47 @@
 <br />
 
 <div class="background-container">
-  <h2 class="page-title"> Mars Curiosity Gallery</h2>
+
+  <h2 class="page-title"> Mars Curiosity</h2>
   <a href="/curiosity">Go to Gallery</a>
   <div class="grid-container">
     {{#each marsPhotoData}}
+      <a href="/library/{{data.0.nasa_id}}"><img
+          class="img-gallery"
+          src="{{links.0.href}}"
+          loading="lazy"
+          alt="Mars Rover Image"
+        /></a>
+    {{/each}}
+  </div>
+  <h2 class="page-title">The Sun</h2>
+  <a href="/curiosity">Go to Gallery</a>
+  <div class="grid-container">
+    {{#each sunPhotoData}}
+      <a href="/library/{{data.0.nasa_id}}"><img
+          class="img-gallery"
+          src="{{links.0.href}}"
+          loading="lazy"
+          alt="Mars Rover Image"
+        /></a>
+    {{/each}}
+  </div>
+  <h2 class="page-title">The Moon</h2>
+  <a href="/curiosity">Go to Gallery</a>
+  <div class="grid-container">
+    {{#each moonPhotoData}}
+      <a href="/library/{{data.0.nasa_id}}"><img
+          class="img-gallery"
+          src="{{links.0.href}}"
+          loading="lazy"
+          alt="Mars Rover Image"
+        /></a>
+    {{/each}}
+  </div>
+  <h2 class="page-title">The Venus</h2>
+  <a href="/curiosity">Go to Gallery</a>
+  <div class="grid-container">
+    {{#each venusPhotoData}}
       <a href="/library/{{data.0.nasa_id}}"><img
           class="img-gallery"
           src="{{links.0.href}}"
