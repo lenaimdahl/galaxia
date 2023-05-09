@@ -1,7 +1,7 @@
 {{! <h1>Hello Spacelover!</h1> }}
 
 <div class="background-container">
-  <h2> Picture Of the day</h2>
+  <h2 class="page-title"> Picture Of the day</h2>
   <h3>Discover the cosmos! Each day a different image or photograph of our
     fascinating universe is featured, along with a brief explanation written by
     a professional astronomer.</h3>
@@ -26,12 +26,12 @@
 <br />
 
 <div class="background-container">
-  <h2> NASA Image Library</h2>
+  <h2 class="page-title"> NASA Image Library</h2>
   <a class="library-link" href="/Library">Go to Library</a>
   <div class="grid-container">
     {{#each randomLibrary}}
       <a href="/library/{{data.0.nasa_id}}"><img
-          class="img-day"
+          class="img-gallery"
           src="{{links.0.href}}"
           alt="Picture of the day"
         /></a>
@@ -43,12 +43,12 @@
 <br />
 
 <div class="background-container">
-  <h2> Mars Curiosity Gallery</h2>
+  <h2 class="page-title"> Mars Curiosity Gallery</h2>
   <a href="/curiosity">Go to Gallery</a>
   <div class="grid-container">
     {{#each marsPhotoData}}
       <a href="/library/{{data.0.nasa_id}}"><img
-          class="img-day"
+          class="img-gallery"
           src="{{links.0.href}}"
           loading="lazy"
           alt="Mars Rover Image"
