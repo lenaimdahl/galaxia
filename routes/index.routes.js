@@ -8,7 +8,7 @@ const nasaAPIInstance = new NasaAPIHandler();
 // get Picture of the day
 router.get("/", async (req, res, next) => {
   const pictureOfTheDay = await nasaAPIInstance.getPictureOfTheDay();
-  const randomLibrary = await nasaAPIInstance.getRandomSpaceImages(6);
+  const randomLibrary = await nasaAPIInstance.getRandomSpaceImages(3);
   const marsPhotoData = await nasaAPIInstance.getMarsCuriosityImages(1);
   const sunPhotoData = await nasaAPIInstance.SearchNasaImages("sun", 1);
   const moonPhotoData = await nasaAPIInstance.SearchNasaImages("moon", 1);

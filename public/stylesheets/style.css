@@ -4,7 +4,6 @@ body {
   background-image: url("/images/stars-background.avif");
   color: rgb(255, 255, 255);
 }
-
 h1 {
   text-align: center;
   padding: 10px;
@@ -19,6 +18,7 @@ h3 {
   text-align: center;
   font-size: 20px;
 }
+
 .link-button {
   color: rgb(255, 255, 255);
 }
@@ -42,8 +42,8 @@ a,
   width: 350px;
   height: 350px;
   border-radius: 20px;
-  box-shadow: 0 4px 8px 0 rgba(80, 80, 80, 0.2),
-    0 6px 20px 0 rgba(94, 94, 94, 0.2);
+  box-shadow: 2px 4px 8px 2px rgba(205, 205, 205, 0.405),
+    0 6px 20px 0 rgba(130, 130, 130, 0.393);
 }
 
 .img-day {
@@ -104,7 +104,7 @@ a,
 .background-container {
   align-items: center;
   margin: 150px;
-  padding: 0 50px;
+  padding: 50px 50px;
   text-align: center;
   background-color: rgb(0, 0, 0);
 }
@@ -144,6 +144,7 @@ a,
   grid-template-columns: repeat(auto-fill, 400px);
   grid-gap: 20px;
   justify-content: center;
+  margin: 20px;
 }
 
 .search-form {
