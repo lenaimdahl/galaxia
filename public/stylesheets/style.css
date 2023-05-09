@@ -42,7 +42,7 @@ a,
   width: 350px;
   height: 350px;
   border-radius: 20px;
-  box-shadow: 2px 4px 8px 2px rgba(205, 205, 205, 0.405),
+  box-shadow: 2px 4px 8px 2px rgba(0, 11, 64, 0.542),
     0 6px 20px 0 rgba(130, 130, 130, 0.393);
 }
 
@@ -50,7 +50,7 @@ a,
   height: 400px;
   width: 400px;
   border-radius: 20px;
-  box-shadow: 0 4px 8px 0 rgba(80, 80, 80, 0.2),
+  box-shadow: 0 4px 8px 0 rgba(0, 11, 64, 0.542),
     0 6px 20px 0 rgba(94, 94, 94, 0.2);
 }
 
