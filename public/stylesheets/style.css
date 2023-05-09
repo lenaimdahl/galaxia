@@ -1,27 +1,26 @@
 body {
   font: 14px Fragile Bombers;
   margin: 0;
-  background-image: url("/images/stars-background.avif");
-  color: white;
+  background-image: url("/images/universe.jpg");
+  color: black;
 }
 
 h1 {
   text-align: center;
   padding: 10px;
-  color: white;
+  color: rgb(0, 0, 0);
 }
 h2 {
   font-size: 40px;
   text-align: center;
   padding: 20px;
 }
-
 h3 {
   text-align: center;
   font-size: 20px;
 }
 .link-button {
-  color: white;
+  color: rgb(0, 0, 0);
 }
 
 a,
@@ -40,30 +39,27 @@ a,
 }
 
 .img-gallery {
-  width: 400px;
-  height: auto;
-  object-fit: cover;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px 0 rgba(85, 213, 255, 0.2),
-    0 6px 20px 0 rgba(78, 78, 78, 0.2);
+  width: 350px;
+  height: 350px;
+  border-radius: 20px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.2);
 }
 
 .img-day {
-  height: auto;
+  height: 400px;
   width: 400px;
-  object-fit: cover;
-  border-radius: 10px;
+  border-radius: 20px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.2);
 }
 
 .layout-nav {
-  background-color: #000000;
+  background-color: #4c7db5;
   padding: 20px;
   text-align: center;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 40px;
 }
 .nav-links-container {
   display: flex;
@@ -104,18 +100,20 @@ a,
 }
 
 .background-container {
-  margin: 0 50px;
+  align-items: center;
+  margin: 150px;
   padding: 0 50px;
   text-align: center;
-  background-color: rgb(0, 0, 0);
-  color: #ffffff;
+  background-color: rgb(238, 243, 255);
 }
 
 .page-title {
-  color: rgb(255, 255, 255);
   text-align: center;
   font-size: 30pt;
-  text-shadow: 4px 4px rgba(85, 212, 255, 0.607);
+  text-shadow: 2px 4px rgba(0, 0, 0, 0.607);
+}
+.subtitle {
+  padding: 0 50px;
 }
 
 .library-link {
@@ -123,13 +121,11 @@ a,
   padding: 0 50px;
   text-align: center;
   background-color: rgb(0, 0, 0);
-  color: #ffffff;
 }
 .flex-container {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  margin: 20px;
 }
 .center-container {
   display: flex;
@@ -138,10 +134,6 @@ a,
   padding: 100px;
 }
 .text-container {
-  background-color: rgb(0, 0, 0);
-  color: white;
-  padding: 0 80px;
-  margin: 40px;
   width: 400px;
 }
 
