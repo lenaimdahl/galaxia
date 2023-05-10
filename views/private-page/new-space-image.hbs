@@ -1,15 +1,29 @@
-<form class="new-img-form" action="/private/create" method="post">
-  <label>Name:
-    <input type="text" name="name" />
-  </label>
-  <label>Description:
-    <input type="text" name="description" />
-  </label>
-  <label>
-    Image Url:
-    <input type="text" name="image" />
-  </label>
-  <div class="sub-btn">
-    <button class="submit-btn" type="submit">Create Image</button>
+<div class="background-container">
+  <div class="flex-container-column">
+    <form class="new-img-form" action="/private/create" method="post">
+
+      <div class="form-container">
+        <label>Name:
+          <input type="text" name="name" />
+        </label>
+      </div>
+
+      <div class="form-container">
+        <label>Description:
+          <input type="text" name="description" />
+        </label>
+      </div>
+
+      <div class="form-container">
+        <label>
+          Image Url:
+          <input type="text" name="image" />
+        </label>
+      </div>
+
+      <div class="sub-btn">
+        <button class="submit-btn" type="submit">Create Image</button>
+      </div>
+    </form>
   </div>
-</form>
+</div>

@@ -5,14 +5,12 @@
     {{#each favorites}}
       <div>
         <a href="/favorites/{{this.0.data.0.nasa_id}}"><img
-            class="img-day"
+            class="img-gallery"
             src="{{this.0.links.0.href}}"
             alt="Picture of the day"
           /></a>
-        <h1>{{this.0.data.0.title}}</h1>
+        <h3>{{this.0.data.0.title}}</h3>
 
-        <a class="link-button" href="/favorites/{{this.0.data.0.nasa_id}}">See
-          more</a>
       </div>
     {{/each}}
   </div>
