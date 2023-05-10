@@ -103,27 +103,36 @@ h3 {
 .carousel-inner {
   height: ;
 }
-/* different */
+
+/* library */
+.center-container {
+  margin: 20px;
+  width: 650px;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-wrap: wrap;
+  background-color: rgb(20, 20, 20);
+  border-radius: 20px;
+  box-shadow: 0 4px 8px 0 rgba(0, 11, 211, 0.542),
+    0 6px 20px 0 rgba(0, 10, 205, 0.2);
+}
+
 .search-form {
-  color: #000000;
-  margin-top: 20px;
-  text-align: center;
   padding: 20px;
   font-size: 20px;
-  /* border: 1px solid grey; */
-  width: 400px;
-  background: #000000;
+  width: 500px;
 }
 .search-btn,
 input {
-  font-size: larger;
-  background-color: #000000;
   color: white;
   font-family: Fragile Bombers;
   border-radius: 10px;
   padding: 10px;
-  margin: 5px;
+  background-color: #000000;
 }
+
+/* different */
 
 .img-description {
   text-align: justify;
