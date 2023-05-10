@@ -7,16 +7,16 @@
 
 <div class="background-container">
   <div class="gallery-container">
-  <h1>Nasa Image Library</h1>
-  <div class="grid-container">
-    {{#each randomLibrary}}
-      <div>
-        <a href="/library/{{data.0.nasa_id}}"><img
+        <h1>Nasa Image Library</h1>
+      <div class="grid-container">
+       {{#each randomLibrary}}
+        <div>
+          <a href="/library/{{data.0.nasa_id}}"><img
             class="img-gallery"
             src="{{links.0.href}}"
             alt="Picture of the day"
           /></a>
-        <h3>{{data.0.title}}</h3>
+          <h3>{{data.0.title}}</h3>
           {{#if ../isLoggedIn}}
           <form action="/favorites" method="post">
             <button class="favorites-btn" type="submit">Add to favorites</button>
@@ -27,9 +27,9 @@
               hidden="true"
             />
           </form>
-        {{/if}}
+            {{/if}}
+        </div>
+        {{/each}}
       </div>
-    {{/each}}
-  </div>
   </div>
 </div>

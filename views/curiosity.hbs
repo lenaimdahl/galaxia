@@ -1,15 +1,16 @@
 <div class="background-container">
-  <h1>Mars Curiosity Images</h1>
-  <div class="grid-container">
-    {{#each marsPhotoData}}
+  <div class="gallery-container">
+   <h1>Mars Curiosity Images</h1>
+    <div class="grid-container">
+      {{#each marsPhotoData}}
       <div>
         <a href="/library/{{data.0.nasa_id}}"><img
-            class="img-day"
+            class="img-gallery"
             src="{{links.0.href}}"
             alt="Mars Rover Image"
           /></a>
-        <h1>{{data.0.title}}</h1>
-        <a href="/library/{{data.0.nasa_id}}">See more</a>
+        <h3>{{data.0.title}}</h3>
+      
         <!-- ../ reach variable outside of #each-->
         {{#if ../isLoggedIn}}
           <form action="/favorites" method="post">
@@ -23,6 +24,7 @@
           </form>
         {{/if}}
       </div>
-    {{/each}}
+        {{/each}}
+    </div>
   </div>
 </div>
