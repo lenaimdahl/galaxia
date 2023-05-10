@@ -1,43 +1,49 @@
 {{! <h1>Hello Spacelover!</h1> }}
 
 <div class="background-container">
-
-  <h2 class="page-title"> Picture Of the day</h2>
-  <h3 class="subtitle">Discover the cosmos!
-    <br />
-    Each day a different image or photograph of our fascinating universe is
-    featured, along with a brief explanation written by a professional
-    astronomer.</h3>
-
-  <div class="flex-container">
-    <div class="center-container">
-      <img
-        class="img-day"
-        src="{{url}}"
-        loading="lazy"
-        alt="Picture of the day"
-      />
+  <div class="flex-container-column">
+    <div class="flex-container-row">
+      <div class="flex-container-column-day">
+        <h2> Picture Of the day</h2>
+        <h3 class="subtitle">Discover the cosmos!
+          <br />
+          Each day a different image or photograph of our fascinating universe
+          is featured, along with a brief explanation written by a professional
+          astronomer.</h3>
+      </div>
+      <div class="flex-container-column-day">
+        <img
+          class="img-day"
+          src="{{url}}"
+          loading="lazy"
+          alt="Picture of the day"
+        />
+        <div class="text-container">
+          <h3>{{title}} <br /> {{date}}</h3>
+          <h3 class="img-description">{{explanation}}</h3>
+        </div>
+      </div>
     </div>
-    <div class="text-container">
-      <h2>{{title}}</h2>
-      <h3>Date: {{date}}</h3>
-      <p class="img-description">{{explanation}}</p>
-    </div>
+
   </div>
 </div>
 
 <div class="background-container">
-  <h2 class="page-title"> NASA Image Library</h2>
-  <a class="library-link" href="/Library">Go to Library</a>
-  <div class="grid-container">
-    {{#each randomLibrary}}
-      {{! do background image in a div}}
-      <a href="/library/{{data.0.nasa_id}}"><img
-          class="img-gallery"
-          src="{{links.0.href}}"
-          alt="Picture of the day"
-        /></a>
-    {{/each}}
+  <div class="gallery-container">
+    <h2> NASA Image Library</h2>
+
+    <div class="grid-container">
+      {{#each randomLibrary}}
+        {{! do background image in a div}}
+        <a href="/library/{{data.0.nasa_id}}"><img
+            class="img-gallery"
+            src="{{links.0.href}}"
+            alt="Picture of the day"
+          /></a>
+      {{/each}}
+    </div>
+    <br />
+    <a class="library-link" href="/Library">Go to Library</a>
   </div>
 </div>
 
@@ -82,7 +88,6 @@
         {{/each}}
         <div class="carousel-caption d-none d-md-block">
           <h5>The Sun Gallery</h5>
-          <p>Some representative placeholder content for the second slide.</p>
         </div>
       </div>
 
@@ -93,7 +98,6 @@
         {{/each}}
         <div class="carousel-caption d-none d-md-block">
           <h5>The Moon Gallery</h5>
-          <p>Some representative placeholder content for the third slide.</p>
         </div>
       </div>
 
@@ -104,7 +108,6 @@
         {{/each}}
         <div class="carousel-caption d-none d-md-block">
           <h5>The Venus Gallery</h5>
-          <p>Some representative placeholder content for the third slide.</p>
         </div>
       </div>
 
@@ -115,7 +118,6 @@
         {{/each}}
         <div class="carousel-caption d-none d-md-block">
           <h5>Mars Curiosity Images</h5>
-          <p>Some representative placeholder content for the first slide.</p>
         </div>
       </div>
     </div>
