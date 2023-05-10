@@ -3,17 +3,14 @@
 
   <div>
     {{#if imageData.links.0.href}}
-
       <img
         class="img-detail"
         src="{{imageData.links.0.href}}"
         alt={{imageData.data.0.title}}
       />
-
     {{/if}}
 
     <div>
-      <h3><strong>Description</strong></h3>
       <h3>{{imageData.data.0.description}}</h3>
     </div>
   </div>

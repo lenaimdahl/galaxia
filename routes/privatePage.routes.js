@@ -5,10 +5,23 @@ const NasaAPIHandler = require("../NasaAPIHandler");
 const nasaAPIInstance = new NasaAPIHandler();
 const isLoggedIn = require("../middlewares/isLoggedIn");
 
-router.get("/profile", isLoggedIn, (req, res) => {
-  const isAdmin = req.session.user.admin;
-  console.log(isAdmin);
-  res.render("private-page/profile", { isAdmin });
+router.get("/profile", isLoggedIn, async (req, res) => {
+  try {
+    const isAdmin = req.session.user.admin;
+    const allImages = await PrivateSpaceModel.find();
+    const userId = req.session.user.id;
+    const { favorites: favoritesIds } = await User.findById(userId);
+
+    const listOfPromises = favoritesIds.map((favoriteId) => {
+      return nasaAPIInstance.getDetailsForNasaId(favoriteId);
+    });
+    const favorites = await Promise.all(listOfPromises);
+    console.log(isAdmin);
+    res.render("private-page/profile", { isAdmin, allImages, favorites });
+  } catch (err) {
+    console.log("There was an error", err);
+  }
+  res.render("private-page/profile");
 });
 
 //get all images

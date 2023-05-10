@@ -1,6 +1,39 @@
 {{! <h1>Hello</h1> }}
 
-<a class="profile-btn" href="/private-library">Library</a>
+<div class="background-container">
+  <div class="gallery-container">
+    <h2> Your private Library</h2>
+
+    <div class="flex-container-column">
+      {{#if allImages.0.image}}
+        <a href="/private-library/{{allImages.0._id}}">
+          <img src="{{allImages.0.image}}" alt={{allImages.0.title}} />
+        </a>
+      {{/if}}
+      <h2>{{allImages.0.name}}</h2>
+    </div>
+
+    <br />
+    <a class="library-link" href="/private-library">Go to Library</a>
+  </div>
+</div>
+
+<div class="background-container">
+  <div class="gallery-container">
+    <h2> Your Favorites</h2>
+
+    <div class="flex-container-column">
+      {{! do background image in a div}}
+      <a href="/favorites/{{favorites.data.0.nasa_id}}"><img
+          class="img-gallery"
+          src="{{favorites.links.0.href}}"
+          alt=""
+        /></a>
+    </div>
+    <br />
+    <a class="library-link" href="/favorites">Go to Library</a>
+  </div>
+</div>
 
 {{#if isAdmin}}
   <a class="profile-btn" href="/admin">Private</a>
