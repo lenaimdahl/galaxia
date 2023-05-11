@@ -35,8 +35,8 @@ h3 {
   width: 200px;
   height: 200px;
   border-radius: 20px;
-  box-shadow: 2px 4px 8px 2px rgba(0, 11, 64, 0.542),
-    0 6px 20px 0 rgba(130, 130, 130, 0.393);
+  box-shadow: 0 4px 8px 0 rgba(255, 255, 255, 0.542),
+    0 6px 20px 0 rgba(255, 255, 255, 0.2);
 }
 .img-day {
   height: 400px;
@@ -49,8 +49,13 @@ h3 {
   height: auto;
   width: 600px;
   border-radius: 20px;
-  box-shadow: 0 4px 8px 0 rgba(0, 11, 211, 0.542),
-    0 6px 20px 0 rgba(0, 10, 205, 0.2);
+  box-shadow: 0 4px 8px 0 rgba(255, 255, 255, 0.542),
+    0 6px 20px 0 rgba(255, 255, 255, 0.2);
+}
+.img-carousel {
+  width: 100%;
+  height: 50%;
+  border-radius: 20px;
 }
 
 /* general style */
@@ -61,8 +66,8 @@ h3 {
   text-align: center;
   background-color: rgb(20, 20, 20);
   border-radius: 20px;
-  box-shadow: 0 4px 8px 0 rgba(0, 11, 211, 0.542),
-    0 6px 20px 0 rgba(0, 10, 205, 0.2);
+  box-shadow: 0 4px 8px 0 rgba(215, 0, 0, 0.542),
+    0 6px 20px 0 rgba(70, 0, 0, 0.2);
 }
 .flex-container-column {
   display: flex;
@@ -84,8 +89,6 @@ h3 {
 }
 .gallery-container {
   padding: 5px;
-  box-shadow: 0 4px 8px 0 rgba(20, 32, 255, 0.642),
-    0 6px 20px 0 rgba(121, 128, 255, 0.568);
   border-radius: 20px;
 }
 .subtitle {
@@ -107,7 +110,8 @@ h3 {
 }
 
 /* carousel */
-.carousel-inner {
+.carousel .slide {
+  border-radius: 20px;
 }
 
 /* library */
@@ -120,8 +124,8 @@ h3 {
   flex-wrap: wrap;
   background-color: rgb(20, 20, 20);
   border-radius: 20px;
-  box-shadow: 0 4px 8px 0 rgba(0, 11, 211, 0.542),
-    0 6px 20px 0 rgba(0, 10, 205, 0.2);
+  box-shadow: 0 4px 8px 0 rgba(255, 255, 255, 0.542),
+    0 6px 20px 0 rgba(255, 255, 255, 0.2);
 }
 
 .search-form {

@@ -43,7 +43,9 @@
       {{/each}}
     </div>
     <br />
-    <a class="library-link" href="/Library">Go to Library</a>
+    <button type="button" class="btn btn-outline-secondary">
+      <a href="/Library">Go to Library</a></button>
+
   </div>
 </div>
 
@@ -84,45 +86,77 @@
       <div class="carousel-item">
         {{#each sunPhotoData}}
           <a href="/library/{{data.0.nasa_id}}">
-            <img src="{{links.0.href}}" class="d-block w-100" alt="..." /></a>
+            <img
+              class="img-carousel"
+              src="{{links.0.href}}"
+              class="d-block w-100"
+              alt="..."
+            /></a>
         {{/each}}
         <div class="carousel-caption d-none d-md-block">
           <h5>The Sun Gallery</h5>
-          <a class="library-link" href="/sun">Go to The Sun Gallery</a>
+          <button type="button" class="btn btn-outline-secondary">
+            <a href="/sun">Go to The Sun Gallery</a>
+          </button>
+
         </div>
       </div>
 
       <div class="carousel-item">
         {{#each moonPhotoData}}
           <a href="/library/{{data.0.nasa_id}}">
-            <img src="{{links.0.href}}" class="d-block w-100" alt="..." /></a>
+            <img
+              class="img-carousel"
+              src="{{links.0.href}}"
+              class="d-block w-100"
+              alt="..."
+            /></a>
         {{/each}}
         <div class="carousel-caption d-none d-md-block">
           <h5>The Moon Gallery</h5>
-          <a class="library-link" href="/moon">Go to The Moon Gallery</a>
+          <button type="button" class="btn btn-outline-secondary"><a
+              href="/moon"
+            >Go to The Moon Gallery</a>
+          </button>
+
         </div>
       </div>
 
       <div class="carousel-item">
         {{#each venusPhotoData}}
           <a href="/library/{{data.0.nasa_id}}">
-            <img src="{{links.0.href}}" class="d-block w-100" alt="..." /></a>
+            <img
+              class="img-carousel"
+              src="{{links.0.href}}"
+              class="d-block w-100"
+              alt="..."
+            /></a>
         {{/each}}
         <div class="carousel-caption d-none d-md-block">
           <h5>The Venus Gallery</h5>
-          <a class="library-link" href="/venus">Go to The Venus Gallery</a>
+          <button type="button" class="btn btn-outline-secondary">
+            <a href="/venus">Go to The Venus Gallery</a>
+          </button>
+
         </div>
       </div>
 
       <div class="carousel-item active">
         {{#each marsPhotoData}}
           <a href="/library/{{data.0.nasa_id}}">
-            <img src="{{links.0.href}}" class="d-block w-100" alt="..." /></a>
+            <img
+              class="img-carousel"
+              src="{{links.0.href}}"
+              class="d-block w-100"
+              alt="..."
+            /></a>
         {{/each}}
         <div class="carousel-caption d-none d-md-block">
           <h5>Mars Curiosity Gallery</h5>
-          <a class="library-link" href="/curiosity">Go to The Mars Curiosity
-            Gallery</a>
+          <button type="button" class="btn btn-outline-secondary">
+            <a href="/curiosity">Go to The Mars Curiosity Gallery</a>
+          </button>
+
         </div>
       </div>
     </div>
@@ -147,3 +181,10 @@
   </div>
 
 </div>
+
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
