@@ -128,18 +128,34 @@ h3 {
     0 6px 20px 0 rgba(255, 255, 255, 0.2);
 }
 
+.search-container {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+}
+
 .search-form {
+  color: #000000;
+  margin-top: 20px;
+  text-align: center;
   padding: 20px;
   font-size: 20px;
-  width: 500px;
+  /* border: 1px solid grey; */
+  width: 400px;
+  background: #000000;
+  border-radius: 20px;
+  box-shadow: 2px 4px 8px 0px rgba(205, 205, 205, 0.405),
+    0 6px 20px 0 rgba(130, 130, 130, 0.393);
 }
 .search-btn,
 input {
+  font-size: larger;
+  background-color: #000000;
   color: white;
   font-family: Fragile Bombers;
   border-radius: 10px;
   padding: 10px;
-  background-color: #000000;
+  margin: 5px;
 }
 
 /* form */
