@@ -301,6 +301,9 @@ a,
   display: flex;
   justify-content: center;
   background-color: #000000;
+  bottom: 0;
+  position: fixed;
+  width: 100%;
 }
 .nasa-logo {
   height: 80px;
