@@ -1,27 +1,33 @@
-<h1 class="h1-signup">Signup</h1>
+<div class="background-container">
+  <div class="flex-container-column">
 
-<div class="signup">
+    <h1 class="h1-signup">Signup</h1>
 
-  <form action="/signup" method="post">
-    <input
-      type="username"
-      name="username"
-      value=""
-      required="true"
-      placeholder="Enter your username"
-    />
-    <input
-      type="password"
-      name="password"
-      value=""
-      required="true"
-      placeholder="******"
-    />
+    <div class="signup">
 
-    <input type="submit" value="Signup" />
-  </form>
+      <form action="/signup" method="post">
+        <input
+          type="username"
+          name="username"
+          value=""
+          required="true"
+          placeholder="Enter your username"
+        />
+        <input
+          type="password"
+          name="password"
+          value=""
+          required="true"
+          placeholder="******"
+        />
 
-  {{! <button>
+        <input type="submit" value="Signup" />
+      </form>
+
+      {{! <button>
     <a href="/login">Go to log in page</a>
   </button> }}
+    </div>
+
+  </div>
 </div>
