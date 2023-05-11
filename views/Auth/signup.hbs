@@ -22,6 +22,9 @@
         />
 
         <input type="submit" value="Signup" />
+        {{#if errorMessage}}
+          <p class="error">{{errorMessage}}</p>
+        {{/if}}
       </form>
 
       {{! <button>
