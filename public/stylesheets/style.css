@@ -330,8 +330,8 @@ a,
 .nasa-logo {
   height: 80px;
 }
-
-@media (min-width: 768px) and (max-width: 1199px) {
+/* 
+@media (min-width: 1300px) and (max-width: 1500px) {
   .flex-container-column {
     flex-direction: row;
     flex-wrap: wrap;
@@ -345,4 +345,4 @@ a,
   .text-container {
     display: none;
   }
-}
+} */
