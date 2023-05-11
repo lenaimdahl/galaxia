@@ -42,7 +42,12 @@ router.get("/private/create", isLoggedIn, (req, res) => {
 
 router.post("/private/create", async (req, res) => {
   try {
-    await PrivateSpaceModel.create(req.body);
+    await PrivateSpaceModel.create({
+      username: req.body.username,
+      image: req.body.image,
+      user: req.session.user.id,
+    });
+
     res.redirect("/private-library");
   } catch (err) {
     console.log("there was an error", err);

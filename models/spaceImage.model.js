@@ -2,6 +2,7 @@ const { Schema, model } = require("mongoose");
 
 const privateSpaceSchema = new Schema({
   name: String,
+  user: String,
   description: String,
   image: String,
 });
