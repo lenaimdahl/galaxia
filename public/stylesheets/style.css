@@ -296,3 +296,12 @@ a,
 .dropdown:hover .dropdown-content {
   display: block;
 }
+
+.footer-container {
+  display: flex;
+  justify-content: center;
+  background-color: #000000;
+}
+.nasa-logo {
+  height: 80px;
+}
