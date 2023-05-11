@@ -1,6 +1,9 @@
 <div class="background-container">
   <h1>This is your private Library</h1>
-  <a class="library-link" href="/private/create">Create a new image</a>
+  <button type="button" class="btn btn-outline-secondary">
+    <a href="/private/create">Create a new image</a>
+  </button>
+
   <br />
   <div class="flex-container">
 
@@ -12,7 +15,9 @@
         </a>
       {{/if}}
       <h3>{{description}}</h3>
-      <a class="link-button" href="/private-library/{{_id}}">See more</a>
+      <button type="button" class="btn btn-outline-secondary">
+        <a href="/private-library/{{_id}}">See more</a>
+      </button>
 
     {{/each}}
 

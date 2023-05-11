@@ -14,11 +14,12 @@
   </div>
 
   <div>
-    <button class="edit-btn">
+    <button class="btn btn-outline-primary">
       <a href="/private-library/edit/{{imageData._id}}">Edit Image</a></button>
+
     <div>
       <form action="/private-library/delete/{{imageData._id}}" method="post">
-        <button class="delete-btn" type="submit">Delete Image</button>
+        <button class="btn btn-outline-danger" type="submit">Delete Image</button>
       </form>
     </div>
   </div>
