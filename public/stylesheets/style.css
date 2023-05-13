@@ -151,6 +151,12 @@ h3 {
 .carousel .slide {
   border-radius: 20px;
 }
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  padding: 30px 30px;
+  border-radius: 20px;
+  background-color: rgba(109, 100, 132, 0.682);
+}
 
 /* library */
 .center-container {
