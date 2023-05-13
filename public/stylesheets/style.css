@@ -37,6 +37,12 @@ h3 {
 } */
 
 /* images */
+.background-img {
+  height: 100%;
+  width: fit-content;
+  background-image: url("/images/universe.avif");
+  z-index: -1;
+}
 .moon-logo {
   height: 80px;
 }
@@ -70,7 +76,7 @@ h3 {
   margin: 50px;
   padding: 5px;
   text-align: center;
-  background-color: rgb(58, 58, 58);
+  background-color: rgb(44, 44, 44);
   border-radius: 20px;
   box-shadow: 0 4px 8px 0 rgba(153, 153, 153, 0.542),
     0 6px 20px 0 rgba(0, 52, 5, 0.407);
