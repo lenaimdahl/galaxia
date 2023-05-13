@@ -81,8 +81,8 @@ h3 {
   text-align: center;
   background-color: rgb(33, 33, 33);
   border-radius: 20px;
-  box-shadow: 0 4px 8px 0 rgba(153, 153, 153, 0.542),
-    0 6px 20px 0 rgba(0, 52, 5, 0.407);
+  box-shadow: 0 4px 8px 0 rgba(109, 100, 132, 0.542),
+    0 6px 20px 0 rgba(109, 100, 132, 0.542);
 }
 .background-container-profile {
   align-items: center;
@@ -91,8 +91,8 @@ h3 {
   text-align: center;
   background-color: rgb(33, 33, 33);
   border-radius: 20px;
-  box-shadow: 0 4px 8px 0 rgba(153, 153, 153, 0.542),
-    0 6px 20px 0 rgba(0, 52, 5, 0.407);
+  box-shadow: 0 4px 8px 0 rgba(109, 100, 132, 0.542),
+    0 6px 20px 0 rgba(109, 100, 132, 0.542);
 }
 .flex-container-column {
   display: flex;
@@ -116,6 +116,9 @@ h3 {
   padding: 5px;
   border-radius: 20px;
 }
+.title {
+  font-size: 45pt;
+}
 
 .subtitle {
   width: 500px;
@@ -125,12 +128,17 @@ h3 {
   color: blue;
 }
 .text-container {
-  background-color: rgb(239, 108, 0);
   border-radius: 10px;
-  margin: 10px;
-  border: 2px solid rgb(83, 83, 83);
+  margin: 20px 80px;
   padding: 5px;
+  box-shadow: 0 4px 8px 0 rgba(109, 100, 132, 0.542),
+    0 6px 20px 0 rgba(109, 100, 132, 0.542);
 }
+/* .subtitle-container {
+  border-radius: 10px;
+  margin-bottom: 20px;
+  padding: 5px;
+} */
 .grid-container {
   display: grid;
   grid-template-columns: repeat(auto-fill, 200px);
@@ -154,8 +162,8 @@ h3 {
   flex-wrap: wrap;
   background-color: rgb(20, 20, 20);
   border-radius: 20px;
-  box-shadow: 0 4px 8px 0 rgba(255, 255, 255, 0.542),
-    0 6px 20px 0 rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 8px 0 rgba(109, 100, 132, 0.542),
+    0 6px 20px 0 rgba(109, 100, 132, 0.542);
 }
 
 .search-container {
@@ -174,8 +182,8 @@ h3 {
   width: 400px;
   background: #000000;
   border-radius: 20px;
-  box-shadow: 2px 4px 8px 0px rgba(205, 205, 205, 0.405),
-    0 6px 20px 0 rgba(130, 130, 130, 0.393);
+  box-shadow: 0 4px 8px 0 rgba(109, 100, 132, 0.542),
+    0 6px 20px 0 rgba(109, 100, 132, 0.542);
 }
 .search-btn,
 input {
@@ -213,12 +221,13 @@ input {
 }
 
 .favorites-btn {
-  background-color: #000000;
-  color: white;
+  background-color: #ffffff73;
+  color: black;
   font-family: Fragile Bombers;
   border-radius: 10px;
   padding: 10px;
   margin: 5px;
+  border: none;
 }
 
 .submit-btn {
@@ -228,9 +237,8 @@ input {
   font-size: 20px;
   border-radius: 10px;
   padding: 20px;
-
-  box-shadow: 0 4px 8px 0 rgba(0, 11, 211, 0.542),
-    0 6px 20px 0 rgba(0, 10, 205, 0.2);
+  box-shadow: 0 4px 8px 0 rgba(109, 100, 132, 0.542),
+    0 6px 20px 0 rgba(109, 100, 132, 0.542);
 }
 
 .new-img-form {
@@ -244,23 +252,27 @@ input {
 }
 
 .edit-btn {
-  background-color: #000000;
+  background-color: rgba(84, 67, 126, 0.542);
   color: white;
   font-family: Fragile Bombers;
   font-size: 20px;
   border-radius: 10px;
   padding: 10px;
   margin: 5px;
+  border: none;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.542);
 }
 
 .delete-btn {
-  background-color: #000000;
+  background-color: rgba(141, 32, 39, 0.542);
   color: white;
   font-family: Fragile Bombers;
   font-size: 20px;
   border-radius: 10px;
   padding: 10px;
   margin: 5px;
+  border: none;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.542);
 }
 
 .edit-form {
@@ -303,12 +315,14 @@ a,
 .layout-nav {
   font-family: "Fragile Bombers";
   background-color: #000000;
-  padding: 20px;
+  padding: 10px;
   text-align: center;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  box-shadow: 0 4px 8px 0 rgba(109, 100, 132, 0.542),
+    0 6px 20px 0 rgba(109, 100, 132, 0.542);
 }
 .nav-links-container {
   display: flex;

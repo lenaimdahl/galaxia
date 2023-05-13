@@ -11,15 +11,18 @@
       <div class="grid-container">
        {{#each randomLibrary}}
         <div>
-          <a href="/library/{{data.0.nasa_id}}"><img
+          <a href="/library/{{data.0.nasa_id}}">  <button class="favorites-btn" type="submit">Add to favorites</button>
+          <img
             class="img-gallery"
             src="{{links.0.href}}"
             alt="Picture of the day"
-          /></a>
+          />
+          </a>
+          
           <h3>{{data.0.title}}</h3>
           {{#if ../isLoggedIn}}
           <form action="/favorites" method="post">
-            <button class="favorites-btn" type="submit">Add to favorites</button>
+          
             <input
               type="text"
               name="imageId"
