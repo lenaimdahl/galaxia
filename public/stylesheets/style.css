@@ -1,6 +1,6 @@
 @font-face {
   font-family: Fragile Bombers;
-  src: url("/fonts/fragile-bombers-attack.otf");
+  src: url("/fonts/fragile-bombers.otf");
 }
 
 @media (max-width: 767px) {
@@ -38,9 +38,12 @@ h3 {
 
 /* images */
 .background-img {
+  top: 0;
+  padding: 50px;
   height: 100%;
-  width: fit-content;
-  background-image: url("/images/universe.avif");
+  width: 100vw;
+  background-size: cover;
+  background-image: url("/images/universe.jpg");
   z-index: -1;
 }
 .moon-logo {
@@ -76,7 +79,17 @@ h3 {
   margin: 50px;
   padding: 5px;
   text-align: center;
-  background-color: rgb(44, 44, 44);
+  background-color: rgb(33, 33, 33);
+  border-radius: 20px;
+  box-shadow: 0 4px 8px 0 rgba(153, 153, 153, 0.542),
+    0 6px 20px 0 rgba(0, 52, 5, 0.407);
+}
+.background-container-profile {
+  align-items: center;
+  margin: 0 50px;
+  padding: 5px;
+  text-align: center;
+  background-color: rgb(33, 33, 33);
   border-radius: 20px;
   box-shadow: 0 4px 8px 0 rgba(153, 153, 153, 0.542),
     0 6px 20px 0 rgba(0, 52, 5, 0.407);
@@ -112,7 +125,11 @@ h3 {
   color: blue;
 }
 .text-container {
-  padding: 20px;
+  background-color: rgb(239, 108, 0);
+  border-radius: 10px;
+  margin: 10px;
+  border: 2px solid rgb(83, 83, 83);
+  padding: 5px;
 }
 .grid-container {
   display: grid;
