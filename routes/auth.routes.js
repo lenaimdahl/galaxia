@@ -73,7 +73,9 @@ router.post("/login", async (req, res, next) => {
     const user = await User.findOne({ username: req.body.username });
 
     if (!user) {
-      return res.render("auth/login", { error: "User is not existent" });
+      return res.render("auth/login", {
+        errorMessage: "Please enter both, username and password to login.",
+      });
     }
 
     const passwordsMatch = await bcryptjs.compare(
@@ -83,7 +85,8 @@ router.post("/login", async (req, res, next) => {
 
     if (!passwordsMatch) {
       return res.render("auth/login", {
-        error: "Sorry the password is incorrect!",
+        errorMessage:
+          "Sorry the password does not exist or is incorrect ! Try again.",
       });
     }
 
