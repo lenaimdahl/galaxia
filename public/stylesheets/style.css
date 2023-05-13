@@ -137,6 +137,7 @@ h3 {
 }
 
 .img-description {
+  padding: 20px;
   text-align: justify;
   text-justify: auto;
 }

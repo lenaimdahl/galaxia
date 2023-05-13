@@ -55,7 +55,9 @@
               <a href="/private-library">Private Library</a>
               <a href="/favorites">Favorites</a>
               <a href="/private/create">Create new Image</a>
-              <a href="/admin">Settings</a>
+              {{#if isAdmin}}
+                <a class="profile-btn" href="/admin">Private</a>
+              {{/if}}
             </div>
           </div>
         {{/if}}
