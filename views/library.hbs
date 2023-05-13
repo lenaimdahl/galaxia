@@ -13,7 +13,8 @@
       <div class="grid-container">
        {{#each randomLibrary}}
         <div>
-          <a href="/library/{{data.0.nasa_id}}">  <button class="favorites-btn" type="submit">Add to favorites</button>
+          <i class="bi bi-moon-stars-fill icon-white"></i>
+          <a href="/library/{{data.0.nasa_id}}">  
           <img
             class="img-gallery"
             src="{{links.0.href}}"
@@ -24,7 +25,10 @@
           <h3>{{data.0.title}}</h3>
           {{#if ../isLoggedIn}}
           <form action="/favorites" method="post">
-          
+
+          <button class="favorites-btn" type="submit">Add to favorites</button>
+
+         
             <input
               type="text"
               name="imageId"

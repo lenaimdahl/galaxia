@@ -50,6 +50,7 @@ h3 {
 .img-gallery {
   width: 200px;
   height: 200px;
+  /* object-fit: cover; */
   border-radius: 20px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.542), 0 6px 20px 0 rgba(0, 0, 0, 0.2);
 }
@@ -426,4 +427,11 @@ a,
 
 .input-style-search {
   border: 1px solid rgb(62, 62, 62);
+}
+
+/* favorite */
+.icon-white {
+  color: white;
+  font-size: 25pt;
+  position: absolute;
 }

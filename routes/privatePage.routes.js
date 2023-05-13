@@ -123,6 +123,7 @@ router.post("/favorites", async (req, res, next) => {
       { _id: req.session.user.id },
       { $push: { favorites: imageId } }
     );
+
     res.redirect("/favorites");
   } catch (err) {
     console.log("there was an error", err);
