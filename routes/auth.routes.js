@@ -19,18 +19,19 @@ router.post("/signup", async (req, res, next) => {
   try {
     const foundUser = await User.findOne({ username: req.body.username });
     if (foundUser) {
-      res.send("Username is already taken.");
+      res.status(500).render("auth/signup", {
+        errorMessage: "Username is already taken.",
+      });
       return;
     }
 
-    // const { username, email, password } = req.body;
-    // if (!username || !password) {
-    //   res.render("auth/signup", {
-    //     errorMessage:
-    //       "All fields are mandatory. Please provide your username and your password.",
-    //   });
-    //   return;
-    // }
+    if (req.body.username === "" || req.body.password === "") {
+      res.render("auth/signup", {
+        errorMessage:
+          "All fields are mandatory ! Please provide your username and your password !",
+      });
+      return;
+    }
 
     const regex = /(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}/;
     if (!regex.test(req.body.password)) {
