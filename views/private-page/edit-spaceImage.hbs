@@ -1,37 +1,39 @@
-<h2 class="title">
-  Edit the Image
-</h2>
-<div class="background-container">
-  <div class="flex-container-column">
-    <form
-      class="edit-form"
-      action="/private-library/edit/{{spaceImage._id}}"
-      method="post"
-    >
+<div class="background-img">
+  <h2 class="title">
+    Edit the Image
+  </h2>
+  <div class="background-container">
+    <div class="flex-container-column">
+      <form
+        class="edit-form"
+        action="/private-library/edit/{{spaceImage._id}}"
+        method="post"
+      >
 
-      <div class="form-container">
-        <label>Name:
-          <input type="text" name="name" value="{{spaceImage.name}}" />
-        </label></div>
+        <div class="form-container">
+          <label>Name:
+            <input type="text" name="name" value="{{spaceImage.name}}" />
+          </label></div>
 
-      <div class="form-container">
-        <label>Description:
-          <input
-            type="text"
-            name="description"
-            value="{{spaceImage.description}}"
-          />
-        </label></div>
+        <div class="form-container">
+          <label>Description:
+            <input
+              type="text"
+              name="description"
+              value="{{spaceImage.description}}"
+            />
+          </label></div>
 
-      <div class="form-container">
-        <label>Image:
-          <input type="text" name="image" value="{{spaceImage.image}}" />
-        </label></div>
+        <div class="form-container">
+          <label>Image:
+            <input type="text" name="image" value="{{spaceImage.image}}" />
+          </label></div>
 
-      <div class="save-div">
-        <button class="edit-btn" type="submit">Save Updated Image</button>
-      </div>
+        <div class="save-div">
+          <button class="edit-btn" type="submit">Save Updated Image</button>
+        </div>
 
-    </form>
+      </form>
+    </div>
   </div>
 </div>

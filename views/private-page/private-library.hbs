@@ -1,27 +1,29 @@
-<h1 class="title">This is your private Library</h1>
-<div class="background-container">
+<div class="background-img">
+  <h1 class="title">This is your private Library</h1>
+  <div class="background-container">
 
-  <br />
-  <div class="flex-container">
+    <br />
+    <div class="flex-container">
 
-    {{#each allImages}}
-      <h1>{{name}}</h1>
-      {{#if image}}
-        <a href="/private-library/{{_id}}">
-          <img class="img-day" src="{{image}}" alt={{title}} />
-        </a>
-      {{/if}}
-      <h3>{{description}}</h3>
-      <button type="button" class="btn btn-outline-secondary">
-        <a href="/private-library/{{_id}}">See more</a>
-      </button>
-      <br />
-      <br />
-      <button type="button" class="edit-btn">
-        <a href="/private/create">Create a new image</a>
-      </button>
+      {{#each allImages}}
+        <h1>{{name}}</h1>
+        {{#if image}}
+          <a href="/private-library/{{_id}}">
+            <img class="img-day" src="{{image}}" alt={{title}} />
+          </a>
+        {{/if}}
+        <h3>{{description}}</h3>
+        <button type="button" class="btn btn-outline-secondary">
+          <a href="/private-library/{{_id}}">See more</a>
+        </button>
+        <br />
+        <br />
+        <button type="button" class="edit-btn">
+          <a href="/private/create">Create a new image</a>
+        </button>
 
-    {{/each}}
+      {{/each}}
 
+    </div>
   </div>
 </div>

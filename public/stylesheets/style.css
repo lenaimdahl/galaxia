@@ -75,17 +75,7 @@ h3 {
 /* general style */
 .background-container {
   align-items: center;
-  margin: 150px 150px 200px 150px;
-  padding: 5px;
-  text-align: center;
-  background-color: rgb(33, 33, 33);
-  border-radius: 20px;
-  box-shadow: 0 4px 8px 0 rgba(109, 100, 132, 0.542),
-    0 6px 20px 0 rgba(109, 100, 132, 0.542);
-}
-.background-container-profile {
-  /* align-items: center; */
-  margin: 40 20 20 20px;
+  margin: 50px 150px 200px 150px;
   padding: 5px;
   text-align: center;
   background-color: rgb(33, 33, 33);

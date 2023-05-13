@@ -1,17 +1,19 @@
-<h1 class="title">Favorites</h1>
-<div class="background-container">
+<div class="background-img">
+  <h1 class="title">Favorites</h1>
+  <div class="background-container">
 
-  <div class="grid-container">
-    {{#each favorites}}
-      <div>
-        <a href="/favorites/{{this.0.data.0.nasa_id}}"><img
-            class="img-gallery"
-            src="{{this.0.links.0.href}}"
-            alt="Picture of the day"
-          /></a>
-        <h3>{{this.0.data.0.title}}</h3>
+    <div class="grid-container">
+      {{#each favorites}}
+        <div>
+          <a href="/favorites/{{this.0.data.0.nasa_id}}"><img
+              class="img-gallery"
+              src="{{this.0.links.0.href}}"
+              alt="Picture of the day"
+            /></a>
+          <h3>{{this.0.data.0.title}}</h3>
 
-      </div>
-    {{/each}}
+        </div>
+      {{/each}}
+    </div>
   </div>
 </div>

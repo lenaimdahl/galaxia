@@ -1,23 +1,25 @@
-<div class="background-container">
-  <h2>{{imageData.data.0.title}}</h2>
-
-  <div>
-    {{#if imageData.links.0.href}}
-      <img
-        class="img-detail"
-        src="{{imageData.links.0.href}}"
-        alt={{imageData.data.0.title}}
-      />
-    {{/if}}
+<div class="background-img">
+  <div class="background-container">
+    <h2>{{imageData.data.0.title}}</h2>
 
     <div>
-      <h2><strong>Description</strong></h2>
-      <p class="img-description">{{imageData.data.0.description}}</p>
-    </div>
-    <div>
-      <form action="/favorites/{{imageData.data.0.nasa_id}}" method="post">
-        <button class="favorites-btn" type="submit">Remove from favorites</button>
-      </form>
+      {{#if imageData.links.0.href}}
+        <img
+          class="img-detail"
+          src="{{imageData.links.0.href}}"
+          alt={{imageData.data.0.title}}
+        />
+      {{/if}}
+
+      <div>
+        <h2><strong>Description</strong></h2>
+        <p class="img-description">{{imageData.data.0.description}}</p>
+      </div>
+      <div>
+        <form action="/favorites/{{imageData.data.0.nasa_id}}" method="post">
+          <button class="favorites-btn" type="submit">Remove from favorites</button>
+        </form>
+      </div>
     </div>
   </div>
 </div>
