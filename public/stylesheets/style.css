@@ -1,6 +1,6 @@
 @font-face {
   font-family: Fragile Bombers;
-  src: url("/fonts/fragile-bombers.otf");
+  src: url("/fonts/fragile-bombers-attack.otf");
 }
 
 @media (max-width: 767px) {
@@ -12,11 +12,13 @@ body {
   color: rgb(255, 255, 255);
 }
 h1 {
+  font-family: Fragile Bombers;
   text-align: center;
   padding: 10px;
   color: rgb(255, 255, 255);
 }
 h2 {
+  font-family: Fragile Bombers;
   font-size: 40px;
   text-align: center;
   padding: 20px;
