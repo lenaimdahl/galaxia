@@ -58,7 +58,8 @@ h3 {
   height: 400px;
   width: 400px;
   border-radius: 20px;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.542), 0 6px 20px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 8px 0 rgba(131, 131, 131, 0.542),
+    0 6px 20px 0 rgba(111, 111, 111, 0.2);
 }
 .img-detail {
   height: auto;
