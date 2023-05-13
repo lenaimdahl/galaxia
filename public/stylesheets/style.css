@@ -1,7 +1,12 @@
+@font-face {
+  font-family: Fragile Bombers;
+  src: url("/fonts/fragile-bombers.otf");
+}
+
 @media (max-width: 767px) {
 }
 body {
-  font: 14px Fragile Bombers;
+  font: 14px Helvetica, Arial, sans-serif;
   margin: 0;
   background-image: url("/images/stars-background.avif");
   color: rgb(255, 255, 255);
@@ -37,22 +42,19 @@ h3 {
   width: 200px;
   height: 200px;
   border-radius: 20px;
-  box-shadow: 0 4px 8px 0 rgba(255, 255, 255, 0.542),
-    0 6px 20px 0 rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.542), 0 6px 20px 0 rgba(0, 0, 0, 0.2);
 }
 .img-day {
   height: 400px;
   width: 400px;
   border-radius: 20px;
-  box-shadow: 0 4px 8px 0 rgba(255, 255, 255, 0.542),
-    0 6px 20px 0 rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.542), 0 6px 20px 0 rgba(0, 0, 0, 0.2);
 }
 .img-detail {
   height: auto;
   width: 600px;
   border-radius: 20px;
-  box-shadow: 0 4px 8px 0 rgba(255, 255, 255, 0.542),
-    0 6px 20px 0 rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.542), 0 6px 20px 0 rgba(0, 0, 0, 0.2);
 }
 .img-carousel {
   width: 100%;
@@ -66,10 +68,10 @@ h3 {
   margin: 50px;
   padding: 5px;
   text-align: center;
-  background-color: rgb(20, 20, 20);
+  background-color: rgb(58, 58, 58);
   border-radius: 20px;
-  box-shadow: 0 4px 8px 0 rgba(215, 0, 0, 0.542),
-    0 6px 20px 0 rgba(70, 0, 0, 0.2);
+  box-shadow: 0 4px 8px 0 rgba(153, 153, 153, 0.542),
+    0 6px 20px 0 rgba(0, 52, 5, 0.407);
 }
 .flex-container-column {
   display: flex;
@@ -93,6 +95,7 @@ h3 {
   padding: 5px;
   border-radius: 20px;
 }
+
 .subtitle {
   width: 500px;
 }
@@ -273,6 +276,7 @@ a,
 }
 
 .layout-nav {
+  font-family: "Fragile Bombers";
   background-color: #000000;
   padding: 20px;
   text-align: center;
