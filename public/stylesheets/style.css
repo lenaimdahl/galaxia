@@ -130,16 +130,17 @@ h3 {
 }
 .text-container {
   border-radius: 10px;
-  margin: 20px 80px;
+  margin: 50px 80px;
   padding: 5px;
   box-shadow: 0 4px 8px 0 rgba(109, 100, 132, 0.542),
     0 6px 20px 0 rgba(109, 100, 132, 0.542);
 }
-/* .subtitle-container {
-  border-radius: 10px;
-  margin-bottom: 20px;
-  padding: 5px;
-} */
+
+.img-description {
+  text-align: justify;
+  text-justify: auto;
+}
+
 .grid-container {
   display: grid;
   grid-template-columns: repeat(auto-fill, 200px);
