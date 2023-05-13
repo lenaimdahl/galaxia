@@ -5,23 +5,37 @@ const User = require("../models/User.model");
 //instantiation of NasaAPI class
 const nasaAPIInstance = new NasaAPIHandler();
 
-// get Picture of the day
+// get Images for Home Page
 router.get("/", async (req, res, next) => {
-  const pictureOfTheDay = await nasaAPIInstance.getPictureOfTheDay();
-  const randomLibrary = await nasaAPIInstance.getRandomSpaceImages(6);
-  const marsPhotoData = await nasaAPIInstance.getMarsCuriosityImages(1);
-  const sunPhotoData = await nasaAPIInstance.SearchNasaImages("sun", 1);
-  const moonPhotoData = await nasaAPIInstance.SearchNasaImages("moon", 1);
-  const venusPhotoData = await nasaAPIInstance.SearchNasaImages("venus", 1);
+  try {
+    const pictureOfTheDay = await nasaAPIInstance.getPictureOfTheDay();
+    const randomLibrary = await nasaAPIInstance.getRandomSpaceImages(6);
+    const marsPhotoData = await nasaAPIInstance.getMarsCuriosityImages(1);
+    const sunPhotoData = await nasaAPIInstance.SearchNasaImages("sun", 1);
+    const moonPhotoData = await nasaAPIInstance.SearchNasaImages("moon", 1);
+    const venusPhotoData = await nasaAPIInstance.SearchNasaImages("venus", 1);
 
-  res.render("index", {
-    ...pictureOfTheDay,
-    randomLibrary,
-    marsPhotoData,
-    sunPhotoData,
-    moonPhotoData,
-    venusPhotoData,
-  });
+    res.render("index", {
+      ...pictureOfTheDay,
+      randomLibrary,
+      marsPhotoData,
+      sunPhotoData,
+      moonPhotoData,
+      venusPhotoData,
+    });
+  } catch (err) {
+    console.log("There was an error", err);
+  }
+});
+
+//Picture of the Day Page
+router.get("/Picture-of-the-day", async (req, res, next) => {
+  try {
+    const pictureOfTheDay = await nasaAPIInstance.getRangeOfPicturesOfTheDay();
+    res.render("picture-of-day", { pictureOfTheDay });
+  } catch (err) {
+    console.log("There was an error", err);
+  }
 });
 
 //get Nasa Space Image
