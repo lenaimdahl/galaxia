@@ -106,7 +106,7 @@ h3 {
   color: blue;
 }
 .text-container {
-  width: 400px;
+  padding: 20px;
 }
 .grid-container {
   display: grid;
