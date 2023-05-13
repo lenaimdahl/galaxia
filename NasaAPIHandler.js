@@ -20,7 +20,7 @@ class NasaAPI {
     const response = await axios.get(`${this.BASE_URL}/planetary/apod`, {
       params: {
         api_key: this.API_KEY,
-        start_date: "2023-01-01",
+        start_date: "2023-05-01",
         end_date: "2023-05-13",
       },
     });
