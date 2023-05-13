@@ -16,6 +16,17 @@ class NasaAPI {
     return response.data;
   }
 
+  async getRangeOfPicturesOfTheDay() {
+    const response = await axios.get(`${this.BASE_URL}/planetary/apod`, {
+      params: {
+        api_key: this.API_KEY,
+        start_date: "2023-01-01",
+        end_date: "2023-05-13",
+      },
+    });
+    return response.data;
+  }
+
   async getRandomSpaceImages(num) {
     const response = await axios.get(`${this.BASE_URL_IMG}/search`, {
       params: {

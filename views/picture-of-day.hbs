@@ -1,0 +1,40 @@
+<div class="background-container">
+  <div class="gallery-container">
+
+    <div class="flex-container-column-day">
+      <h2 class="title"> Pictures Of the day</h2>
+    </div>
+
+   
+       {{#each pictureOfTheDay}}
+        <div>
+         
+          <img
+            class="img-detail"
+            src="{{url}}"
+              loading="lazy"
+            alt="Picture of the day"
+          />
+         
+            <div class="text-container">
+              <h2>{{title}} <br /> {{date}}</h2>
+               <h3 class="img-description">{{explanation}}</h3>
+               <button class="favorites-btn" type="submit">Add to favorites</button>
+          </div>
+          
+          {{#if ../isLoggedIn}}
+          <form action="/favorites" method="post">
+          
+            <input
+              type="text"
+              name="imageId"
+              value="{{data.0.nasa_id}}"
+              hidden="true"
+            />
+          </form>
+            {{/if}}
+        
+        {{/each}}
+ 
+   </div>
+</div>
