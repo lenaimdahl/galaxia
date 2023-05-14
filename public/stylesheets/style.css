@@ -435,3 +435,9 @@ a,
 .input-style-search {
   border: 1px solid rgb(62, 62, 62);
 }
+
+#clock {
+  /* background-color: rgba(109, 100, 132, 0.542); */
+  color: white;
+  border-radius: 10px;
+}
