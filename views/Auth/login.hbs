@@ -20,6 +20,9 @@
           placeholder="******"
         />
         <input class="edit-btn" type="submit" value="Log in" />
+        {{#if errorMessage}}
+          <p class="error">{{errorMessage}}</p>
+        {{/if}}
       </form>
     </div>
   </div>
