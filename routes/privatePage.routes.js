@@ -124,6 +124,7 @@ router.get("/favorites", isLoggedIn, async (req, res) => {
 router.post("/favorites", async (req, res, next) => {
   try {
     const { imageId } = req.body;
+
     await User.findByIdAndUpdate(
       { _id: req.session.user.id },
       { $push: { favorites: imageId } }

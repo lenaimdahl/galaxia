@@ -22,6 +22,8 @@ require("./config")(app);
 const capitalize = require("./utils/capitalize");
 const projectName = "Nasa-Library";
 
+app.use(express.json());
+
 // 👇 Start handling routes here
 const indexRoutes = require("./routes/index.routes");
 app.use("/", indexRoutes);
