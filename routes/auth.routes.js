@@ -2,12 +2,6 @@ const router = require("express").Router();
 const User = require("../models/User.model");
 const bcryptjs = require("bcryptjs");
 const saltRounds = 12;
-const isAdmin = require("../middlewares/isAdmin");
-const isLoggedIn = require("../middlewares/isLoggedIn");
-
-router.get("/admin", isAdmin, isLoggedIn, (req, res) => {
-  res.render("auth/admin-settings");
-});
 
 //signup
 router.get("/signup", (req, res) => {

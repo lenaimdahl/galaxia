@@ -1,7 +1,10 @@
 const express = require("express");
 const router = express.Router();
 const NasaAPIHandler = require("../NasaAPIHandler");
-const User = require("../models/User.model");
+const PrivateSpaceModel = require("../models/spaceImage.model");
+
+const isAdmin = require("../middlewares/isAdmin");
+const isLoggedIn = require("../middlewares/isLoggedIn");
 //instantiation of NasaAPI class
 const nasaAPIInstance = new NasaAPIHandler();
 
@@ -116,6 +119,17 @@ router.post("/library/search", async (req, res) => {
   } catch (err) {
     console.log("there was an error", err);
     res.redirect("/library");
+  }
+});
+
+//admin page
+router.get("/admin", isAdmin, isLoggedIn, async (req, res) => {
+  try {
+    const allImages = await PrivateSpaceModel.find();
+    res.render("admin-settings", { allImages });
+  } catch (err) {
+    console.log("There was an error", err);
+    res.render("admin-settings");
   }
 });
 
