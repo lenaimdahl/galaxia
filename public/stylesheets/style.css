@@ -45,7 +45,7 @@ h3 {
   z-index: -1;
 }
 .moon-logo {
-  height: 80px;
+  height: 85px;
 }
 .img-gallery {
   width: 200px;
@@ -132,6 +132,12 @@ h3 {
 .title {
   margin-top: 20px;
   font-size: 40pt;
+}
+
+.nav-title {
+  font-size: 40pt;
+  display: flex;
+  justify-content: flex-start;
 }
 
 .subtitle {
@@ -392,9 +398,11 @@ a,
 }
 .footer-text {
   font-family: Fragile Bombers;
+  margin: 5px;
 }
 .nasa-logo {
-  height: 80px;
+  height: 60px;
+  margin: 20px;
 }
 
 .error {
@@ -437,7 +445,11 @@ a,
 }
 
 #clock {
-  /* background-color: rgba(109, 100, 132, 0.542); */
+  /* background-color: rgba(109, 100, 132, 0.233); */
   color: white;
   border-radius: 10px;
+  font-size: 20px;
+  margin: 5px;
+  display: flex;
+  justify-content: center;
 }
