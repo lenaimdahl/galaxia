@@ -8,7 +8,9 @@ const isLoggedIn = require("../middlewares/isLoggedIn");
 router.get("/profile", isLoggedIn, async (req, res) => {
   try {
     const isAdmin = req.session.user.admin;
-    const allImages = await PrivateSpaceModel.find();
+    const allImages = await PrivateSpaceModel.find({
+      user: req.session.user.id,
+    });
     const userId = req.session.user.id;
     const { favorites: favoritesIds } = await User.findById(userId);
 
@@ -26,12 +28,14 @@ router.get("/profile", isLoggedIn, async (req, res) => {
 //get all images
 router.get("/private-library", isLoggedIn, async (req, res) => {
   try {
-    const allImages = await PrivateSpaceModel.find();
+    const allImages = await PrivateSpaceModel.find({
+      user: req.session.user.id,
+    });
     res.render("private-page/private-library", { allImages });
   } catch (err) {
     console.log("There was an error", err);
+    res.render("private-page/private-library");
   }
-  res.render("private-page/private-library");
 });
 
 //create new private image
@@ -42,7 +46,9 @@ router.get("/private/create", isLoggedIn, (req, res) => {
 router.post("/private/create", async (req, res) => {
   try {
     await PrivateSpaceModel.create({
+      name: req.body.name,
       username: req.body.username,
+      description: req.body.description,
       image: req.body.image,
       user: req.session.user.id,
     });
