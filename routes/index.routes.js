@@ -74,7 +74,7 @@ router.get("/curiosity", async (req, res) => {
 });
 
 // get Nasa Sun Image
-router.get("/The-Sun", async (req, res) => {
+router.get("/sun", async (req, res) => {
   try {
     const sunPhotoData = await nasaAPIInstance.SearchNasaImages("sun", 15);
 
@@ -85,7 +85,7 @@ router.get("/The-Sun", async (req, res) => {
 });
 
 // get Nasa Moon Image
-router.get("/The-Moon", async (req, res) => {
+router.get("/moon", async (req, res) => {
   try {
     const moonPhotoData = await nasaAPIInstance.SearchNasaImages("moon", 15);
 
@@ -96,7 +96,7 @@ router.get("/The-Moon", async (req, res) => {
 });
 
 // get Venus  Images
-router.get("/The-Venus", async (req, res) => {
+router.get("/venus", async (req, res) => {
   try {
     const venusPhotoData = await nasaAPIInstance.SearchNasaImages("venus", 15);
 
