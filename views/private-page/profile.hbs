@@ -1,6 +1,6 @@
 {{! <h1>Hello</h1> }}
 <div class="background-img">
-<h2 class="title"> Welcome to your private Library</h2>
+  <h2 class="title"> Welcome to your private Library</h2>
   <div class="background-container">
     <div class="gallery-container">
 
@@ -37,7 +37,7 @@
         {{! do background image in a div}}
         <a href="/favorites"><img
             class="img-gallery"
-            src="{{favorites.0.links.0.href}}"
+            src="{{firstFavorite.0.links.0.href}}"
             alt=""
           /></a>
       </div>
@@ -48,14 +48,11 @@
 
     </div>
   </div>
-  <br />
-  <br />
-  <br />
+
   <br />
   <br />
   {{#if isAdmin}}
     <a class="profile-btn" href="/admin">Private</a>
   {{/if}}
 
-</div>
 </div>

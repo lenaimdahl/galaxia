@@ -12,16 +12,15 @@ router.get("/profile", isLoggedIn, async (req, res) => {
     const userId = req.session.user.id;
     const { favorites: favoritesIds } = await User.findById(userId);
 
-    const listOfPromises = favoritesIds.map((favoriteId) => {
-      return nasaAPIInstance.getDetailsForNasaId(favoriteId);
-    });
-    const favorites = await Promise.all(listOfPromises);
-    console.log(isAdmin);
-    res.render("private-page/profile", { isAdmin, allImages, favorites });
+    const firstFavorite = await nasaAPIInstance.getDetailsForNasaId(
+      favoritesIds[0]
+    );
+
+    res.render("private-page/profile", { isAdmin, allImages, firstFavorite });
   } catch (err) {
     console.log("There was an error", err);
+    res.render("private-page/profile");
   }
-  res.render("private-page/profile");
 });
 
 //get all images
