@@ -13,11 +13,9 @@ router.get("/profile", isLoggedIn, async (req, res) => {
     });
     const userId = req.session.user.id;
     const { favorites: favoritesIds } = await User.findById(userId);
-
     const firstFavorite = await nasaAPIInstance.getDetailsForNasaId(
       favoritesIds[0]
     );
-
     res.render("private-page/profile", { isAdmin, allImages, firstFavorite });
   } catch (err) {
     console.log("There was an error", err);
@@ -52,7 +50,6 @@ router.post("/private/create", isLoggedIn, async (req, res) => {
       image: req.body.image,
       user: req.session.user.id,
     });
-
     res.redirect("/private-library");
   } catch (err) {
     console.log("there was an error", err);
@@ -70,6 +67,7 @@ router.get("/private-library/:spaceImageId", isLoggedIn, async (req, res) => {
     console.log("There was an error", err);
   }
 });
+
 //delete  created image
 router.post(
   "/private-library/delete/:spaceImageId",
@@ -92,7 +90,6 @@ router.get(
   async (req, res) => {
     const { spaceImageId } = req.params;
     const spaceImage = await PrivateSpaceModel.findById(spaceImageId);
-
     res.render("private-page/edit-spaceImage", { spaceImage });
   }
 );
@@ -119,7 +116,6 @@ router.get("/favorites", isLoggedIn, async (req, res) => {
   try {
     const userId = req.session.user.id;
     const { favorites: favoritesIds } = await User.findById(userId);
-
     const listOfPromises = favoritesIds.map((favoriteId) => {
       return nasaAPIInstance.getDetailsForNasaId(favoriteId);
     });
@@ -132,12 +128,11 @@ router.get("/favorites", isLoggedIn, async (req, res) => {
 });
 
 // added favorites to user in library
-router.post("/favorites", isLoggedIn, async (req, res, next) => {
+router.post("/favorites", isLoggedIn, async (req, res) => {
   try {
     const { imageId } = req.body;
     const userId = req.session.user.id;
     const { favorites: favoritesIds } = await User.findById(userId);
-
     if (!favoritesIds.includes(imageId)) {
       await User.findByIdAndUpdate(
         { _id: userId },
@@ -162,7 +157,6 @@ router.get("/favorites/:nasaImageId", isLoggedIn, async (req, res) => {
 });
 
 //delete favorite image
-//use fetch with eventlistener
 router.post("/favorites/:imageId", isLoggedIn, async (req, res) => {
   try {
     const { imageId } = req.params;

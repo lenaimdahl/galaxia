@@ -80,8 +80,7 @@ router.post("/login", async (req, res, next) => {
 
     if (!passwordsMatch) {
       return res.render("auth/login", {
-        errorMessage:
-          "Sorry the password does not exist or is incorrect ! Try again.",
+        errorMessage: "Sorry the password is incorrect! Try again.",
       });
     }
 

@@ -23,7 +23,6 @@ class NasaAPI {
     startdate = startdate.format("YYYY-MM-DD");
 
     let enddate = moment();
-
     enddate = enddate.format("YYYY-MM-DD");
 
     const response = await axios.get(`${this.BASE_URL}/planetary/apod`, {
@@ -50,13 +49,8 @@ class NasaAPI {
   }
 
   async getdetailedNasaImage(id) {
-    const response = await axios.get(`${this.BASE_URL_IMG}/search`, {
-      params: {
-        nasa_id: id,
-      },
-    });
-    const item = response.data.collection.items[0];
-    return item;
+    const items = await this.getDetailsForNasaId(id);
+    return items[0];
   }
 
   async getMarsCuriosityImages(num) {
@@ -72,7 +66,7 @@ class NasaAPI {
     return shuffled.slice(0, num);
   }
 
-  async SearchNasaImages(keyword, num) {
+  async searchNasaImages(keyword, num) {
     const response = await axios.get(`${this.BASE_URL_IMG}/search`, {
       params: {
         media_type: "image",
@@ -90,8 +84,8 @@ class NasaAPI {
         nasa_id: id,
       },
     });
-    const item = response.data.collection.items;
-    return item;
+    const items = response.data.collection.items;
+    return items;
   }
 }
 
