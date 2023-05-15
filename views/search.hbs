@@ -1,17 +1,24 @@
 <div class="background-container">
-
-  <h1>Your search results for "{{keyword}}"</h1>
-  <div class="grid-container">
-    {{#each searchedImages}}
-      <div>
-        <a href="/library/{{data.0.nasa_id}}"><img
-            class="img-day"
-            src="{{links.0.href}}"
-            alt="Picture of the day"
-          /></a>
-        <h1>{{data.0.title}}</h1>
-        <a href="/library/{{data.0.nasa_id}}">See more</a>
-      </div>
-    {{/each}}
+  <div class="gallery-container">
+    <h1>Your search results for "{{keyword}}"</h1>
+    <div class="grid-container">
+      {{#each searchedImages}}
+        <div>
+          {{#if ../isLoggedIn}}
+            <i
+              id="favorite-icon-{{data.0.nasa_id}}"
+              class="bi bi-star-fill icon-white"
+              onclick="saveFavorite(this, '{{data.0.nasa_id}}')"
+            ></i>
+          {{/if}}
+          <a href="/library/{{data.0.nasa_id}}"><img
+              class="img-gallery"
+              src="{{links.0.href}}"
+              alt="Picture of the day"
+            /></a>
+          <h3>{{data.0.title}}</h3>
+        </div>
+      {{/each}}
+    </div>
   </div>
 </div>

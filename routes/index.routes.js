@@ -32,7 +32,7 @@ router.get("/", async (req, res, next) => {
 });
 
 //Picture of the Day Page
-router.get("/Picture-of-the-day", async (req, res, next) => {
+router.get("/picture-of-the-day", async (req, res, next) => {
   try {
     const pictureOfTheDay = await nasaAPIInstance.getRangeOfPicturesOfTheDay();
     res.render("picture-of-day", { pictureOfTheDay });
