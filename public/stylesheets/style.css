@@ -30,10 +30,6 @@ h3 {
   color: rgb(255, 255, 255);
 }
 
-/* .img-logo {
-  height: 50px;
-} */
-
 /* images */
 .background-img {
   top: 0;
@@ -266,7 +262,7 @@ input {
   padding: 20px;
 }
 
-.edit-btn {
+.default-btn {
   background-color: rgba(84, 67, 126, 0.542);
   color: white;
   font-family: Fragile Bombers;

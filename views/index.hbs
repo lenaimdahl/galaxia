@@ -12,7 +12,8 @@
           alt="Picture of the day"
         />
         <div class="text-container">
-          <h2>{{title}} <br /> {{date}}</h2>
+          <h2>{{title}}</h2>
+          <h2>{{date}}</h2>
           <h3 class="img-description">{{explanation}}</h3>
         </div>
       </div>
@@ -23,10 +24,8 @@
 <div class="background-container">
   <div class="gallery-container">
     <h2> NASA Image Library</h2>
-
     <div class="grid-container">
       {{#each randomLibrary}}
-        {{! do background image in a div}}
         <a href="/library/{{data.0.nasa_id}}"><img
             class="img-gallery"
             src="{{links.0.href}}"
