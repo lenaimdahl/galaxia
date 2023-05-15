@@ -1,31 +1,25 @@
-    <h1 class="title">The Venus</h1>
-    <div class="background-container">
+<h1 class="title">The Venus</h1>
+<div class="background-container">
   <div class="gallery-container">
 
     <div class="grid-container">
       {{#each venusPhotoData}}
-       <div>
-         <a href="/library/{{data.0.nasa_id}}"><img
-            class="img-gallery"
-            src="{{links.0.href}}"
-            alt="Venus Image"
-          /></a>
-          <h3>{{data.0.title}}</h3>
-     
-      
+        <div>
           {{#if ../isLoggedIn}}
-          <form action="/favorites" method="post">
-            <button class="favorites-btn" type="submit">Add to favorites</button>
-            <input
-              type="text"
-              name="imageId"
-              value="{{data.0.nasa_id}}"
-              hidden="true"
-            />
-          </form>
-         {{/if}}
-       </div>
-        {{/each}}
+            <i
+              id="favorite-icon-{{data.0.nasa_id}}"
+              class="bi bi-star-fill icon-white"
+              onclick="saveFavorite(this, '{{data.0.nasa_id}}')"
+            ></i>
+          {{/if}}
+          <a href="/library/{{data.0.nasa_id}}"><img
+              class="img-gallery"
+              src="{{links.0.href}}"
+              alt="Venus Image"
+            /></a>
+          <h3>{{data.0.title}}</h3>
+        </div>
+      {{/each}}
     </div>
   </div>
 </div>

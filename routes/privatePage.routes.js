@@ -124,13 +124,15 @@ router.get("/favorites", isLoggedIn, async (req, res) => {
 router.post("/favorites", async (req, res, next) => {
   try {
     const { imageId } = req.body;
+    const userId = req.session.user.id;
+    const { favorites: favoritesIds } = await User.findById(userId);
 
-    await User.findByIdAndUpdate(
-      { _id: req.session.user.id },
-      { $push: { favorites: imageId } }
-    );
-
-    res.redirect("/favorites");
+    if (!favoritesIds.includes(imageId)) {
+      await User.findByIdAndUpdate(
+        { _id: userId },
+        { $push: { favorites: imageId } }
+      );
+    }
   } catch (err) {
     console.log("there was an error", err);
     res.redirect("/profile");
