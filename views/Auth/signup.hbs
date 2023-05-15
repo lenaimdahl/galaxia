@@ -1,10 +1,7 @@
 <div class="background-container">
   <div class="flex-container-column">
-
     <h1 class="h1-signup">Signup</h1>
-
     <div class="signup">
-
       <form novalidate="novalidate" action="/signup" method="post">
         <input
           class="input-style"
@@ -22,14 +19,11 @@
           required="true"
           placeholder="******"
         />
-
         <input class="default-btn" type="submit" value="Signup" />
         {{#if errorMessage}}
           <p class="error">{{errorMessage}}</p>
         {{/if}}
       </form>
-
     </div>
-
   </div>
 </div>

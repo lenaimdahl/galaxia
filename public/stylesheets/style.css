@@ -34,7 +34,7 @@ h3 {
 .background-img {
   top: 0;
   padding: 50px;
-  height: 100hw;
+  height: 100vh;
   width: 100vw;
   background-size: cover;
   background-image: url("/images/stars.jpg");
