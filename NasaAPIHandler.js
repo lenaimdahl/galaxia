@@ -1,4 +1,5 @@
 const axios = require("axios");
+const moment = require("moment");
 
 class NasaAPI {
   constructor() {
@@ -17,14 +18,22 @@ class NasaAPI {
   }
 
   async getRangeOfPicturesOfTheDay() {
+    let startdate = moment();
+    startdate = startdate.subtract(15, "days");
+    startdate = startdate.format("YYYY-MM-DD");
+
+    let enddate = moment();
+
+    enddate = enddate.format("YYYY-MM-DD");
+
     const response = await axios.get(`${this.BASE_URL}/planetary/apod`, {
       params: {
         api_key: this.API_KEY,
-        start_date: "2023-05-01",
-        end_date: "2023-05-13",
+        start_date: startdate.toString(),
+        end_date: enddate.toString(),
       },
     });
-    return response.data;
+    return response.data.reverse();
   }
 
   async getRandomSpaceImages(num) {
