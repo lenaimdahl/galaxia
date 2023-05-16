@@ -31,6 +31,8 @@ module.exports = (app) => {
   app.use(express.urlencoded({ extended: false }));
   app.use(cookieParser());
 
+  console.log("process.env", process.env);
+
   app.use(
     session({
       secret: process.env.SESS_SECRET, // create SESS_SECRET const in env file
