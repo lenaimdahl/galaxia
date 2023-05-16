@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 async function saveFavorite(element, imageId) {
-  element.style.color = "yellow";
+  element.style.color = "rgb(109, 100, 132)";
   const url = "/favorites";
   await fetch(url, {
     method: "POST",
