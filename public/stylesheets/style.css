@@ -37,6 +37,7 @@ h3 {
 
 /* images */
 .background-img {
+  background-position: center;
   top: 0;
   padding: 50px;
   height: 170vh;
