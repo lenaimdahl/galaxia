@@ -1,5 +1,3 @@
-// const moment = require("moment");
-
 const clock = document.getElementById("clock");
 function updateTime() {
   const now = moment();
