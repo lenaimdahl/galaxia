@@ -1,14 +1,10 @@
-<div class="background-img">   
-  <h1 class="profile-title"> Welcome to your profile  !</h1>
-  <div class="background-container">
+<div class="background-img">
+  <h1 class="profile-title"> Welcome to your profile !</h1>
 
+  <div class="background-container">
+    <h2 class="title"> Your Private Library</h2>
     <div class="gallery-container">
       <br />
-
-  <h2 class="title"> Your Private Library</h2>
-  <div class="background-container">
-    <div class="gallery-container">
-      <br /> 
       <div class="flex-container-column">
         {{#if allImages.0.image}}
           <a href="/private-library/{{allImages.0._id}}">
@@ -26,15 +22,18 @@
         <a href="/private-library">Go to Library
         </a>
       </button>
-
+      <br />
+      <br />
+      <button type="button" class="default-btn">
+        <a href="/private/create">Add your own image</a>
+      </button>
     </div>
-    <button type="button" class="default-btn">
-      <a href="/private/create">Add your own image</a>
-    </button>
+
   </div>
-  {{#if firstFavorite}}
+  <div class="background-container">
     <h2 class="title"> Your Favorites</h2>
-    <div class="background-container">
+    {{#if firstFavorite}}
+
       <div class="gallery-container">
         <div class="flex-container-column">
           <a href="/favorites"><img
@@ -47,7 +46,7 @@
         <button type="button" class="btn btn-outline-secondary">
           <a href="/favorites">Go to Library</a>
         </button>
-    </div> 
+      </div>
+    {{/if}}
   </div>
-  {{/if}}
 </div>

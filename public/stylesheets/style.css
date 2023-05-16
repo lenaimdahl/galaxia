@@ -37,11 +37,12 @@ h3 {
   background-position: center;
   top: 0;
   padding: 50px;
-  height: 100vh;
+  height: 170vh;
   width: 100vw;
   background-size: cover;
   background-image: url("/images/stars.jpg");
   z-index: -1;
+  margin-bottom: 50px;
 }
 .moon-logo {
   height: 85px;
@@ -346,6 +347,7 @@ a,
   font-family: "Fragile Bombers";
   background-color: #000000;
   padding: 10px;
+  width: 100%;
   text-align: center;
   display: flex;
   flex-direction: row;
@@ -464,4 +466,17 @@ a,
   margin: 5px;
   display: flex;
   justify-content: center;
+}
+
+#time-title {
+  font-family: Fragile Bombers;
+  font-size: 22px;
+  /* text-align: center; */
+}
+
+.time-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
 }
