@@ -18,7 +18,7 @@ router.get("/", async (req, res) => {
     const moonPhotoData = await nasaAPIInstance.searchNasaImages("moon", 1);
     const venusPhotoData = await nasaAPIInstance.searchNasaImages("venus", 1);
 
-    res.render("index", {
+    res.render("./index", {
       ...pictureOfTheDay,
       randomLibrary,
       marsPhotoData,
@@ -35,7 +35,7 @@ router.get("/", async (req, res) => {
 router.get("/picture-of-the-day", async (req, res) => {
   try {
     const pictureOfTheDay = await nasaAPIInstance.getRangeOfPicturesOfTheDay();
-    res.render("picture-of-day", { pictureOfTheDay });
+    res.render("./picture-of-day", { pictureOfTheDay });
   } catch (err) {
     console.log("There was an error", err);
   }
@@ -45,7 +45,7 @@ router.get("/picture-of-the-day", async (req, res) => {
 router.get("/library", async (req, res) => {
   try {
     const randomLibrary = await nasaAPIInstance.getRandomSpaceImages(15);
-    res.render("library", { randomLibrary });
+    res.render("./library", { randomLibrary });
   } catch (err) {
     console.log("There was an error", err);
   }
@@ -56,7 +56,7 @@ router.get("/library/:nasaImageId", async (req, res) => {
   try {
     const { nasaImageId } = req.params;
     const imageData = await nasaAPIInstance.getdetailedNasaImage(nasaImageId);
-    res.render("nasaImage-detail", { imageData });
+    res.render("./nasaImage-detail", { imageData });
   } catch (err) {
     console.log("There was an error", err);
   }
@@ -66,7 +66,7 @@ router.get("/library/:nasaImageId", async (req, res) => {
 router.get("/curiosity", async (req, res) => {
   try {
     const marsPhotoData = await nasaAPIInstance.getMarsCuriosityImages(15);
-    res.render("curiosity", { marsPhotoData });
+    res.render("./curiosity", { marsPhotoData });
   } catch (err) {
     console.log("There was an error", err);
   }
@@ -76,7 +76,7 @@ router.get("/curiosity", async (req, res) => {
 router.get("/sun", async (req, res) => {
   try {
     const sunPhotoData = await nasaAPIInstance.searchNasaImages("sun", 15);
-    res.render("sun", { sunPhotoData });
+    res.render("./sun", { sunPhotoData });
   } catch (err) {
     console.log("There was an error", err);
   }
@@ -86,7 +86,7 @@ router.get("/sun", async (req, res) => {
 router.get("/moon", async (req, res) => {
   try {
     const moonPhotoData = await nasaAPIInstance.searchNasaImages("moon", 15);
-    res.render("moon", { moonPhotoData });
+    res.render("./moon", { moonPhotoData });
   } catch (err) {
     console.log("There was an error", err);
   }
@@ -96,7 +96,7 @@ router.get("/moon", async (req, res) => {
 router.get("/venus", async (req, res) => {
   try {
     const venusPhotoData = await nasaAPIInstance.searchNasaImages("venus", 15);
-    res.render("venus", { venusPhotoData });
+    res.render("./venus", { venusPhotoData });
   } catch (err) {
     console.log("There was an error", err);
   }
@@ -104,14 +104,14 @@ router.get("/venus", async (req, res) => {
 
 //create new private image
 router.get("/library/search", (req, res) => {
-  res.render("search");
+  res.render("./search");
 });
 
 router.post("/library/search", async (req, res) => {
   try {
     const { keyword } = req.body;
     const searchedImages = await nasaAPIInstance.searchNasaImages(keyword, 12);
-    res.render("search", { searchedImages, keyword });
+    res.render("./search", { searchedImages, keyword });
   } catch (err) {
     console.log("there was an error", err);
     res.redirect("/library");
@@ -122,10 +122,10 @@ router.post("/library/search", async (req, res) => {
 router.get("/admin", isAdmin, isLoggedIn, async (req, res) => {
   try {
     const allImages = await PrivateSpaceModel.find();
-    res.render("admin-settings", { allImages });
+    res.render("./admin-settings", { allImages });
   } catch (err) {
     console.log("There was an error", err);
-    res.render("admin-settings");
+    res.render("./admin-settings");
   }
 });
 

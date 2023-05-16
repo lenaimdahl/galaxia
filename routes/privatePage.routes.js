@@ -16,10 +16,10 @@ router.get("/profile", isLoggedIn, async (req, res) => {
     const firstFavorite = await nasaAPIInstance.getDetailsForNasaId(
       favoritesIds[0]
     );
-    res.render("private-page/profile", { isAdmin, allImages, firstFavorite });
+    res.render("./private-page/profile", { isAdmin, allImages, firstFavorite });
   } catch (err) {
     console.log("There was an error", err);
-    res.render("private-page/profile");
+    res.render("./private-page/profile");
   }
 });
 
@@ -29,16 +29,16 @@ router.get("/private-library", isLoggedIn, async (req, res) => {
     const allImages = await PrivateSpaceModel.find({
       user: req.session.user.id,
     });
-    res.render("private-page/private-library", { allImages });
+    res.render("./private-page/private-library", { allImages });
   } catch (err) {
     console.log("There was an error", err);
-    res.render("private-page/private-library");
+    res.render("./private-page/private-library");
   }
 });
 
 //create new private image
 router.get("/private/create", isLoggedIn, (req, res) => {
-  res.render("private-page/new-space-image");
+  res.render("./private-page/new-space-image");
 });
 
 router.post("/private/create", isLoggedIn, async (req, res) => {
@@ -62,7 +62,7 @@ router.get("/private-library/:spaceImageId", isLoggedIn, async (req, res) => {
   try {
     const { spaceImageId } = req.params;
     const imageData = await PrivateSpaceModel.findById(spaceImageId);
-    res.render("private-page/image-detail", { imageData });
+    res.render("./private-page/image-detail", { imageData });
   } catch (err) {
     console.log("There was an error", err);
   }
@@ -90,7 +90,7 @@ router.get(
   async (req, res) => {
     const { spaceImageId } = req.params;
     const spaceImage = await PrivateSpaceModel.findById(spaceImageId);
-    res.render("private-page/edit-spaceImage", { spaceImage });
+    res.render("./private-page/edit-spaceImage", { spaceImage });
   }
 );
 
@@ -120,7 +120,7 @@ router.get("/favorites", isLoggedIn, async (req, res) => {
       return nasaAPIInstance.getDetailsForNasaId(favoriteId);
     });
     const favorites = await Promise.all(listOfPromises);
-    res.render("private-page/favorites", { favorites });
+    res.render("./private-page/favorites", { favorites });
   } catch (err) {
     console.log("there was an error", err);
     res.redirect("/profile");
@@ -150,7 +150,7 @@ router.get("/favorites/:nasaImageId", isLoggedIn, async (req, res) => {
   try {
     const { nasaImageId } = req.params;
     const imageData = await nasaAPIInstance.getdetailedNasaImage(nasaImageId);
-    res.render("private-page/favorite-Imagedetail", { imageData });
+    res.render("./private-page/favorite-Imagedetail", { imageData });
   } catch (err) {
     console.log("There was an error", err);
   }
