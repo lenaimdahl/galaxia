@@ -1,40 +1,38 @@
-  <h1 class="title">Nasa Image Library</h1>
-  
-  <div class="search-container">
+<h1 class="title">Nasa Image Library</h1>
+<div class="search-container">
   <form class="search-form" action="/library/search" method="post">
-    <input class="input-style-search" type="text" placeholder="Search.." name="keyword" />
-    <button class="edit-btn" type="submit">Search</button>
+    <input
+      class="input-style-search"
+      type="text"
+      placeholder="Search.."
+      name="keyword"
+    />
+    <button class="default-btn" type="submit">Search</button>
   </form>
 </div>
 
 <div class="background-container">
   <div class="gallery-container">
-      
-      <div class="grid-container">
+    <div class="grid-container">
       {{#each randomLibrary}}
         <div>
-          <a href="/library/{{data.0.nasa_id}}">  <button class="favorites-btn" type="submit">Add to favorites</button>
-          <img
-            class="img-gallery"
-            src="{{links.0.href}}"
-            alt="Picture of the day"
-          />
-          </a>
-          
-          <h3>{{data.0.title}}</h3>
           {{#if ../isLoggedIn}}
-          <form action="/favorites" method="post">
-          
-            <input
-              type="text"
-              name="imageId"
-              value="{{data.0.nasa_id}}"
-              hidden="true"
+            <i
+              id="favorite-icon-{{data.0.nasa_id}}"
+              class="bi bi-star-fill icon-white"
+              onclick="saveFavorite(this, '{{data.0.nasa_id}}')"
+            ></i>
+          {{/if}}
+          <a href="/library/{{data.0.nasa_id}}">
+            <img
+              class="img-gallery"
+              src="{{links.0.href}}"
+              alt="Picture of the day"
             />
-          </form>
-            {{/if}}
+          </a>
+          <h3>{{data.0.title}}</h3>
         </div>
-        {{/each}}
-      </div>
+      {{/each}}
+    </div>
   </div>
 </div>

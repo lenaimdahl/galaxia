@@ -1,9 +1,7 @@
 <br /><br /><br /><br />
 <div class="background-container">
   <div class="flex-container-column">
-
     <h1 class="h1-login">Log in</h1>
-
     <div class="login">
       <form action="/login" method="post">
         <input
@@ -20,7 +18,7 @@
           value=""
           placeholder="******"
         />
-        <input class="edit-btn" type="submit" value="Log in" />
+        <input class="default-btn" type="submit" value="Log in" />
         {{#if errorMessage}}
           <p class="error">{{errorMessage}}</p>
         {{/if}}

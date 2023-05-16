@@ -1,12 +1,10 @@
-{{! <h1>Hello Spacelover!</h1> }}
-<br /><br /><br /><br />
+
 <div class="background-container">
   <div class="flex-container-column">
     <div class="flex-container-row">
       <div class="flex-container-column-day">
         <h1 class="title"> Picture Of the day</h1>
       </div>
-      {{! </div> }}
       <div class="flex-container-column-day">
         <img
           class="img-day"
@@ -15,22 +13,20 @@
           alt="Picture of the day"
         />
         <div class="text-container">
-          <h2>{{title}} <br /> {{date}}</h2>
+          <h2>{{title}}</h2>
+          <h2>{{date}}</h2>
           <h3 class="img-description">{{explanation}}</h3>
         </div>
       </div>
     </div>
-
   </div>
 </div>
 
 <div class="background-container">
   <div class="gallery-container">
     <h2> NASA Image Library</h2>
-
     <div class="grid-container">
       {{#each randomLibrary}}
-        {{! do background image in a div}}
         <a href="/library/{{data.0.nasa_id}}"><img
             class="img-gallery"
             src="{{links.0.href}}"
@@ -40,14 +36,13 @@
     </div>
     <br />
     <button type="button" class="btn btn-outline-secondary">
-      <a href="/Library">Go to Library</a></button>
-    <br />
-
+      <a href="/Library">Go to Library</a>
+    </button>
   </div>
 </div>
 
+<h1 class="title"> Image Galleries</h1>
 <div class="background-container">
-
   <div id="carouselExampleCaptions" class="carousel slide">
     <div class="carousel-indicators">
       <button
@@ -79,7 +74,6 @@
     </div>
 
     <div class="carousel-inner">
-
       <div class="carousel-item">
         {{#each sunPhotoData}}
           <a href="/library/{{data.0.nasa_id}}">
@@ -91,14 +85,11 @@
             /></a>
         {{/each}}
         <div class="carousel-caption d-none d-md-block">
-
           <button type="button" class="btn btn-outline-secondary">
             <a href="/sun">Go to The Sun Gallery</a>
           </button>
-
         </div>
       </div>
-
       <div class="carousel-item">
         {{#each moonPhotoData}}
           <a href="/library/{{data.0.nasa_id}}">
@@ -110,15 +101,12 @@
             /></a>
         {{/each}}
         <div class="carousel-caption d-none d-md-block">
-
           <button type="button" class="btn btn-outline-secondary"><a
               href="/moon"
             >Go to The Moon Gallery</a>
           </button>
-
         </div>
       </div>
-
       <div class="carousel-item">
         {{#each venusPhotoData}}
           <a href="/library/{{data.0.nasa_id}}">
@@ -130,14 +118,11 @@
             /></a>
         {{/each}}
         <div class="carousel-caption d-none d-md-block">
-
           <button type="button" class="btn btn-outline-secondary">
             <a href="/venus">Go to The Venus Gallery</a>
           </button>
-
         </div>
       </div>
-
       <div class="carousel-item active">
         {{#each marsPhotoData}}
           <a href="/library/{{data.0.nasa_id}}">
@@ -149,11 +134,9 @@
             /></a>
         {{/each}}
         <div class="carousel-caption d-none d-md-block">
-
           <button type="button" class="btn btn-outline-secondary">
             <a href="/curiosity">Go to The Mars Curiosity Gallery</a>
           </button>
-
         </div>
       </div>
     </div>
@@ -176,12 +159,4 @@
       <span class="visually-hidden">Next</span>
     </button>
   </div>
-
 </div>
-
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />

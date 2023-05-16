@@ -1,7 +1,6 @@
 <div class="background-img">
   <div class="background-container">
     <h2>{{imageData.name}}</h2>
-
     <div>
       {{#if imageData.image}}
         <img
@@ -15,13 +14,10 @@
         <h4><strong>Description :</strong></h4>
         <p class="img-description">{{imageData.description}}</p>
       </div>
-
     </div>
-
     <div>
-      <button class="edit-btn">
+      <button class="default-btn">
         <a href="/private-library/edit/{{imageData._id}}">Edit Image</a></button>
-
       <div>
         <form action="/private-library/delete/{{imageData._id}}" method="post">
           <button class="delete-btn" type="submit">Delete Image</button>

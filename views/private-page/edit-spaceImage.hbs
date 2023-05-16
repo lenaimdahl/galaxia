@@ -9,12 +9,11 @@
         action="/private-library/edit/{{spaceImage._id}}"
         method="post"
       >
-
         <div class="form-container">
           <label>Name:
             <input type="text" name="name" value="{{spaceImage.name}}" />
-          </label></div>
-
+          </label>
+        </div>
         <div class="form-container">
           <label>Description:
             <input
@@ -22,17 +21,16 @@
               name="description"
               value="{{spaceImage.description}}"
             />
-          </label></div>
-
+          </label>
+        </div>
         <div class="form-container">
           <label>Image:
             <input type="text" name="image" value="{{spaceImage.image}}" />
-          </label></div>
-
-        <div class="save-div">
-          <button class="edit-btn" type="submit">Save Updated Image</button>
+          </label>
         </div>
-
+        <div class="save-div">
+          <button class="default-btn" type="submit">Save Updated Image</button>
+        </div>
       </form>
     </div>
   </div>

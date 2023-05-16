@@ -1,13 +1,8 @@
 const router = require("express").Router();
 const User = require("../models/User.model");
+const isLoggedIn = require("../middlewares/isLoggedIn");
 const bcryptjs = require("bcryptjs");
 const saltRounds = 12;
-const isAdmin = require("../middlewares/isAdmin");
-const isLoggedIn = require("../middlewares/isLoggedIn");
-
-router.get("/admin", isAdmin, isLoggedIn, (req, res) => {
-  res.render("auth/admin-settings");
-});
 
 //signup
 router.get("/signup", (req, res) => {
@@ -15,7 +10,6 @@ router.get("/signup", (req, res) => {
 });
 
 router.post("/signup", async (req, res, next) => {
-  console.log(req.body.password);
   try {
     const foundUser = await User.findOne({ username: req.body.username });
     if (foundUser) {
@@ -28,7 +22,7 @@ router.post("/signup", async (req, res, next) => {
     if (req.body.username === "" || req.body.password === "") {
       res.render("auth/signup", {
         errorMessage:
-          "All fields are mandatory ! Please provide your username and your password !",
+          "All fields are mandatory! Please provide your username and your password!",
       });
       return;
     }
@@ -86,8 +80,7 @@ router.post("/login", async (req, res, next) => {
 
     if (!passwordsMatch) {
       return res.render("auth/login", {
-        errorMessage:
-          "Sorry the password does not exist or is incorrect ! Try again.",
+        errorMessage: "Sorry the password is incorrect! Try again.",
       });
     }
 
@@ -103,7 +96,7 @@ router.post("/login", async (req, res, next) => {
   }
 });
 
-router.get("/logout", (req, res, next) => {
+router.get("/logout", isLoggedIn, (req, res, next) => {
   req.session.destroy((err) => {
     if (err) {
       next(err);

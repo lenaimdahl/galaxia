@@ -1,10 +1,13 @@
 <div class="background-img">
-<h1 class="profile-title"> Welcome to your profile  !</h1>
-  <h2 class="title"> Your Private Library</h2>
 
+  <h2 class="title"> Welcome to your private Library</h2>
   <div class="background-container">
     <div class="gallery-container">
-
+      <br />
+<h1 class="profile-title"> Welcome to your profile  !</h1>
+  <h2 class="title"> Your Private Library</h2>
+  <div class="background-container">
+    <div class="gallery-container">
       <br /> 
       <div class="flex-container-column">
         {{#if allImages.0.image}}
@@ -18,10 +21,33 @@
         {{/if}}
         <h2>{{allImages.0.name}}</h2>
       </div>
+      <br />
       <button type="button" class="btn btn-outline-secondary">
         <a href="/private-library">Go to Library
         </a>
       </button>
+
+    </div>
+    <button type="button" class="default-btn">
+      <a href="/private/create">Add your own image</a>
+    </button>
+  </div>
+  {{#if firstFavorite}}
+    <h2 class="title"> Your Favorites</h2>
+    <div class="background-container">
+      <div class="gallery-container">
+        <div class="flex-container-column">
+          <a href="/favorites"><img
+              class="img-gallery"
+              src="{{firstFavorite.0.links.0.href}}"
+              alt=""
+            /></a>
+        </div>
+        <br />
+        <button type="button" class="btn btn-outline-secondary">
+          <a href="/favorites">Go to Library</a>
+        </button>
+
     </div> <br>
     <button type="button" class="edit-btn">
       <a href="/private/create">Create your own image</a>
@@ -41,21 +67,6 @@
             alt=""
           /></a>
       </div>
-      <br />
-      <button type="button" class="btn btn-outline-secondary">
-        <a href="/favorites">Go to Library</a>
-      </button>
-
     </div>
-  </div>
-  <br />
-  <br />
-  <br />
-  <br />
-  <br />
-  {{#if isAdmin}}
-    <a class="profile-btn" href="/admin">Private</a>
   {{/if}}
-
-</div>
 </div>

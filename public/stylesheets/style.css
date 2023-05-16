@@ -31,20 +31,17 @@ h3 {
   color: rgb(255, 255, 255);
 }
 
-/* .img-logo {
-  height: 50px;
-} */
-
 /* images */
 .background-img {
   background-position: center;
   top: 0;
   padding: 50px;
-  height: 170vh;
+  height: 100vh;
   width: 100vw;
   background-size: cover;
   background-image: url("/images/stars.jpg");
   z-index: -1;
+  margin-bottom: 50px;
 }
 .moon-logo {
   height: 85px;
@@ -52,6 +49,7 @@ h3 {
 .img-gallery {
   width: 200px;
   height: 200px;
+  object-fit: cover;
   border-radius: 20px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.542), 0 6px 20px 0 rgba(0, 0, 0, 0.2);
 }
@@ -283,7 +281,7 @@ input {
   padding: 20px;
 }
 
-.edit-btn {
+.default-btn {
   background-color: rgba(84, 67, 126, 0.542);
   color: white;
   font-family: Fragile Bombers;
@@ -450,6 +448,13 @@ a,
   border: 1px solid rgb(62, 62, 62);
 }
 
+
+/* favorite */
+.icon-white {
+  color: white;
+  font-size: 25pt;
+  position: absolute;
+}
 #clock {
   /* background-color: rgba(109, 100, 132, 0.233); */
   color: white;
@@ -458,4 +463,5 @@ a,
   margin: 5px;
   display: flex;
   justify-content: center;
+}
 }

@@ -1,19 +1,22 @@
 const express = require("express");
 const router = express.Router();
 const NasaAPIHandler = require("../NasaAPIHandler");
-const User = require("../models/User.model");
+const PrivateSpaceModel = require("../models/spaceImage.model");
+
+const isAdmin = require("../middlewares/isAdmin");
+const isLoggedIn = require("../middlewares/isLoggedIn");
 //instantiation of NasaAPI class
 const nasaAPIInstance = new NasaAPIHandler();
 
 // get Images for Home Page
-router.get("/", async (req, res, next) => {
+router.get("/", async (req, res) => {
   try {
     const pictureOfTheDay = await nasaAPIInstance.getPictureOfTheDay();
     const randomLibrary = await nasaAPIInstance.getRandomSpaceImages(6);
     const marsPhotoData = await nasaAPIInstance.getMarsCuriosityImages(1);
-    const sunPhotoData = await nasaAPIInstance.SearchNasaImages("sun", 1);
-    const moonPhotoData = await nasaAPIInstance.SearchNasaImages("moon", 1);
-    const venusPhotoData = await nasaAPIInstance.SearchNasaImages("venus", 1);
+    const sunPhotoData = await nasaAPIInstance.searchNasaImages("sun", 1);
+    const moonPhotoData = await nasaAPIInstance.searchNasaImages("moon", 1);
+    const venusPhotoData = await nasaAPIInstance.searchNasaImages("venus", 1);
 
     res.render("index", {
       ...pictureOfTheDay,
@@ -29,7 +32,7 @@ router.get("/", async (req, res, next) => {
 });
 
 //Picture of the Day Page
-router.get("/Picture-of-the-day", async (req, res, next) => {
+router.get("/picture-of-the-day", async (req, res) => {
   try {
     const pictureOfTheDay = await nasaAPIInstance.getRangeOfPicturesOfTheDay();
     res.render("picture-of-day", { pictureOfTheDay });
@@ -63,7 +66,6 @@ router.get("/library/:nasaImageId", async (req, res) => {
 router.get("/curiosity", async (req, res) => {
   try {
     const marsPhotoData = await nasaAPIInstance.getMarsCuriosityImages(15);
-
     res.render("curiosity", { marsPhotoData });
   } catch (err) {
     console.log("There was an error", err);
@@ -71,10 +73,9 @@ router.get("/curiosity", async (req, res) => {
 });
 
 // get Nasa Sun Image
-router.get("/The-Sun", async (req, res) => {
+router.get("/sun", async (req, res) => {
   try {
-    const sunPhotoData = await nasaAPIInstance.SearchNasaImages("sun", 15);
-
+    const sunPhotoData = await nasaAPIInstance.searchNasaImages("sun", 15);
     res.render("sun", { sunPhotoData });
   } catch (err) {
     console.log("There was an error", err);
@@ -82,10 +83,9 @@ router.get("/The-Sun", async (req, res) => {
 });
 
 // get Nasa Moon Image
-router.get("/The-Moon", async (req, res) => {
+router.get("/moon", async (req, res) => {
   try {
-    const moonPhotoData = await nasaAPIInstance.SearchNasaImages("moon", 15);
-
+    const moonPhotoData = await nasaAPIInstance.searchNasaImages("moon", 15);
     res.render("moon", { moonPhotoData });
   } catch (err) {
     console.log("There was an error", err);
@@ -93,10 +93,9 @@ router.get("/The-Moon", async (req, res) => {
 });
 
 // get Venus  Images
-router.get("/The-Venus", async (req, res) => {
+router.get("/venus", async (req, res) => {
   try {
-    const venusPhotoData = await nasaAPIInstance.SearchNasaImages("venus", 15);
-
+    const venusPhotoData = await nasaAPIInstance.searchNasaImages("venus", 15);
     res.render("venus", { venusPhotoData });
   } catch (err) {
     console.log("There was an error", err);
@@ -111,11 +110,22 @@ router.get("/library/search", (req, res) => {
 router.post("/library/search", async (req, res) => {
   try {
     const { keyword } = req.body;
-    const searchedImages = await nasaAPIInstance.SearchNasaImages(keyword, 12);
+    const searchedImages = await nasaAPIInstance.searchNasaImages(keyword, 12);
     res.render("search", { searchedImages, keyword });
   } catch (err) {
     console.log("there was an error", err);
     res.redirect("/library");
+  }
+});
+
+//admin page
+router.get("/admin", isAdmin, isLoggedIn, async (req, res) => {
+  try {
+    const allImages = await PrivateSpaceModel.find();
+    res.render("admin-settings", { allImages });
+  } catch (err) {
+    console.log("There was an error", err);
+    res.render("admin-settings");
   }
 });
 

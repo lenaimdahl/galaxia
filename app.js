@@ -11,16 +11,14 @@ const express = require("express");
 
 // Handles the handlebars
 // https://www.npmjs.com/package/hbs
-const hbs = require("hbs");
+require("hbs");
 
 const app = express();
 
 // ℹ️ This function is getting exported from the config folder. It runs most pieces of middleware
 require("./config")(app);
 
-// default value for title local
-const capitalize = require("./utils/capitalize");
-const projectName = "Nasa-Library";
+app.use(express.json());
 
 // 👇 Start handling routes here
 const indexRoutes = require("./routes/index.routes");
