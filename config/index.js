@@ -49,8 +49,8 @@ module.exports = (app) => {
   );
 
   // Normalizes the path to the views folder
-  app.set("views", path.join(__dirname, "../views"));
-  console.log("__dirname", __dirname);
+  app.set("views", path.join(__dirname, "../views2"));
+
   // Sets the view engine to handlebars
   app.set("view engine", "hbs");
   // Handles access to the public folder

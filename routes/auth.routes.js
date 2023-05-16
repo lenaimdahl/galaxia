@@ -6,21 +6,21 @@ const saltRounds = 12;
 
 //signup
 router.get("/signup", (req, res) => {
-  res.render("./auth/signup");
+  res.render("./auth2/signup");
 });
 
 router.post("/signup", async (req, res, next) => {
   try {
     const foundUser = await User.findOne({ username: req.body.username });
     if (foundUser) {
-      res.status(500).render("auth/signup", {
+      res.status(500).render("auth2/signup", {
         errorMessage: "Username is already taken.",
       });
       return;
     }
 
     if (req.body.username === "" || req.body.password === "") {
-      res.render("./auth/signup", {
+      res.render("./auth2/signup", {
         errorMessage:
           "All fields are mandatory! Please provide your username and your password!",
       });
@@ -29,7 +29,7 @@ router.post("/signup", async (req, res, next) => {
 
     const regex = /(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}/;
     if (!regex.test(req.body.password)) {
-      res.status(500).render("auth/signup", {
+      res.status(500).render("auth2/signup", {
         errorMessage:
           "Password needs to have at least 6 chars and must contain at least one number, one lowercase and one uppercase letter.",
       });
@@ -60,7 +60,7 @@ router.post("/signup", async (req, res, next) => {
 
 //Login
 router.get("/login", (req, res) => {
-  res.render("./auth/login");
+  res.render("./auth2/login");
 });
 
 router.post("/login", async (req, res, next) => {
@@ -68,7 +68,7 @@ router.post("/login", async (req, res, next) => {
     const user = await User.findOne({ username: req.body.username });
 
     if (!user) {
-      return res.render("./auth/login", {
+      return res.render("./auth2/login", {
         errorMessage: "Please enter both, username and password to login.",
       });
     }
@@ -79,7 +79,7 @@ router.post("/login", async (req, res, next) => {
     );
 
     if (!passwordsMatch) {
-      return res.render("./auth/login", {
+      return res.render("./auth2/login", {
         errorMessage: "Sorry the password is incorrect! Try again.",
       });
     }
