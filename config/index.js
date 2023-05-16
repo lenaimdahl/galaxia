@@ -49,7 +49,7 @@ module.exports = (app) => {
   );
 
   // Normalizes the path to the views folder
-  app.set("views", path.join(__dirname, "../views2"));
+  app.set("views", path.join(__dirname, "../views"));
 
   // Sets the view engine to handlebars
   app.set("view engine", "hbs");
