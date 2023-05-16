@@ -8,6 +8,7 @@
 body {
   font-family: Fragile Bombers;
   margin: 0;
+  margin-bottom: 50px;
   overflow-x: hidden;
   background-image: url("/images/stars-background.avif");
   color: rgb(255, 255, 255);
@@ -41,7 +42,6 @@ h3 {
   background-size: cover;
   background-image: url("/images/stars.jpg");
   z-index: -1;
-  margin-bottom: 50px;
 }
 .moon-logo {
   height: 85px;
@@ -83,7 +83,7 @@ h3 {
 .background-container {
   align-items: center;
   margin: 50px 150px 200px 150px;
-  padding: 5px;
+  padding: 20px;
   text-align: center;
   background-color: rgb(33, 33, 33);
   border-radius: 20px;
@@ -93,7 +93,7 @@ h3 {
 
 .background-container-favorites {
   margin: 40 20 20 20px;
-  padding: 5px;
+  padding: 20px;
   text-align: center;
   background-color: rgb(33, 33, 33);
   border-radius: 20px;
@@ -395,6 +395,7 @@ a,
 .footer-container {
   display: flex;
   justify-content: center;
+  align-items: center;
   background-color: #000000;
   bottom: 0;
   position: fixed;
