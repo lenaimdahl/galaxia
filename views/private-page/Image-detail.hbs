@@ -3,10 +3,15 @@
     <h2>{{imageData.name}}</h2>
     <div>
       {{#if imageData.image}}
-        <img src="{{imageData.image}}" alt={{imageData.name}} />
+        <img
+          class="detailed-created-img"
+          src="{{imageData.image}}"
+          alt={{imageData.name}}
+        />
       {{/if}}
       <div>
-        <h2><strong>Description</strong></h2>
+        <br />
+        <h4><strong>Description :</strong></h4>
         <p class="img-description">{{imageData.description}}</p>
       </div>
     </div>
