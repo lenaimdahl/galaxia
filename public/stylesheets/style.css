@@ -531,8 +531,8 @@ a,
     align-items: center;
     box-shadow: 0 4px 8px 0 rgba(109, 100, 132, 0.542),
       0 6px 20px 0 rgba(109, 100, 132, 0.542);
+    margin-bottom: 20px;
   }
-
   .footer-container {
     display: flex;
     justify-content: center;
@@ -544,11 +544,13 @@ a,
   }
   .footer-text {
     font-family: Fragile Bombers;
+    font-size: 15pt;
     margin: 5px;
+    padding: 0;
   }
   .nasa-logo {
     height: 60px;
-    margin: 20px;
+    margin: 0;
   }
 }
 
