@@ -90,7 +90,7 @@ router.get(
   async (req, res) => {
     const { spaceImageId } = req.params;
     const spaceImage = await PrivateSpaceModel.findById(spaceImageId);
-    res.render("./private-page/edit-spaceImage", { spaceImage });
+    res.render("./private-page/edit-space-image", { spaceImage });
   }
 );
 
@@ -150,7 +150,7 @@ router.get("/favorites/:nasaImageId", isLoggedIn, async (req, res) => {
   try {
     const { nasaImageId } = req.params;
     const imageData = await nasaAPIInstance.getdetailedNasaImage(nasaImageId);
-    res.render("./private-page/favorite-Imagedetail", { imageData });
+    res.render("./private-page/favorite-imagedetail", { imageData });
   } catch (err) {
     console.log("There was an error", err);
   }
