@@ -28,6 +28,9 @@ h3 {
 .link-button {
   color: rgb(255, 255, 255);
 }
+.layout-nav-small {
+  display: none;
+}
 
 /* images */
 .background-img {
