@@ -31,8 +31,6 @@ module.exports = (app) => {
   app.use(express.urlencoded({ extended: false }));
   app.use(cookieParser());
 
-  console.log("process.env", process.env);
-
   app.use(
     session({
       secret: process.env.SESS_SECRET, // create SESS_SECRET const in env file
@@ -44,7 +42,7 @@ module.exports = (app) => {
       cookie: {
         sameSite: process.env.NODE_ENV === "production" ? "none" : "lax",
         secure: process.env.NODE_ENV === "production",
-        httpOnly: true,
+        httpOnly: false,
         maxAge: 600000, // 60 * 1000 * 10 ms === 10 min
       },
     })
