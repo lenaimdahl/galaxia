@@ -2,9 +2,6 @@
   font-family: Fragile Bombers;
   src: url("/fonts/fragile-bombers.otf");
 }
-
-@media (max-width: 767px) {
-}
 body {
   font-family: Fragile Bombers;
   margin: 0;
@@ -479,4 +476,81 @@ a,
   align-items: center;
   justify-content: center;
   margin: 0;
+}
+
+@media only screen and (max-width: 850px) {
+  /* For mobile phones: */
+  body {
+  }
+  h1 {
+    font-size: 25pt;
+  }
+  .title {
+    font-size: 25pt;
+  }
+  .layout-nav {
+    background-color: aqua;
+  }
+  .background-container {
+    margin: 20px;
+  }
+  .background-container-favorites {
+    margin: 20px;
+  }
+  .img-day {
+    width: 250px;
+    height: 250px;
+  }
+  .img-detail {
+    width: 250px;
+    height: 250px;
+  }
+  .text-container {
+    margin: 0;
+    margin-top: 15px;
+  }
+  .nav-title {
+    font-size: 40pt;
+    display: flex;
+    justify-content: flex-start;
+  }
+  /* nav bar */
+
+  .layout-nav {
+    display: none;
+  }
+  .layout-nav-small {
+    font-family: "Fragile Bombers";
+    background-color: #000000;
+    padding: 10px;
+    width: 100%;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 8px 0 rgba(109, 100, 132, 0.542),
+      0 6px 20px 0 rgba(109, 100, 132, 0.542);
+  }
+
+  .footer-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #000000;
+    bottom: 0;
+    position: fixed;
+    width: 100%;
+  }
+  .footer-text {
+    font-family: Fragile Bombers;
+    margin: 5px;
+  }
+  .nasa-logo {
+    height: 60px;
+    margin: 20px;
+  }
+}
+
+@media (min-width: 769px) {
 }
