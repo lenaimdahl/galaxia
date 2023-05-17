@@ -44,7 +44,7 @@ router.get("/picture-of-the-day", async (req, res) => {
 //get Nasa Space Image
 router.get("/library", async (req, res) => {
   try {
-    const randomLibrary = await nasaAPIInstance.getRandomSpaceImages(15);
+    const randomLibrary = await nasaAPIInstance.getRandomSpaceImages(200);
     res.render("./library", { randomLibrary });
   } catch (err) {
     console.log("There was an error", err);
