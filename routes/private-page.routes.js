@@ -7,6 +7,7 @@ const isLoggedIn = require("../middlewares/isLoggedIn");
 
 router.get("/profile", isLoggedIn, async (req, res) => {
   try {
+    const user = await User.findById(req.session.user.id);
     const isAdmin = req.session.user.admin;
     const allImages = await PrivateSpaceModel.find({
       user: req.session.user.id,
@@ -16,7 +17,12 @@ router.get("/profile", isLoggedIn, async (req, res) => {
     const firstFavorite = await nasaAPIInstance.getDetailsForNasaId(
       favoritesIds[0]
     );
-    res.render("./private-page/profile", { isAdmin, allImages, firstFavorite });
+    res.render("./private-page/profile", {
+      user,
+      isAdmin,
+      allImages,
+      firstFavorite,
+    });
   } catch (err) {
     console.log("There was an error", err);
     res.render("./private-page/profile");
