@@ -99,10 +99,9 @@
 
       <div class="dropdown">
         <button
-          class="btn btn-primary dropdown-toggle"
+          class="btn btn-secondary btn-sm dropdown-toggle"
           type="button"
-          id="dropdownMenuButton"
-          data-mdb-toggle="dropdown"
+          data-bs-toggle="dropdown"
           aria-expanded="false"
         >
           Menu
@@ -168,47 +167,6 @@
         </ul>
       </div>
     </nav>
-
-    {{! <nav class="layout-nav-small">
-      <div>
-        <a href="/">
-          <a class="nav-title" href="/">
-            <img
-              class="moon-logo"
-              src="/images/moon2.webp"
-              alt="moon"
-            />Galaxia</a>
-        </a>
-      </div> }}
-
-    {{!-- <div class="nav-links-container">
-        <div class="dropdown container-layout">
-          <span>Menu</span>
-          <div class="dropdown-content">
-            <a href="/">Home</a>
-            <a href="/library">Nasa Image Library</a>
-            <a href="/picture-of-the-day">Pictures of the Day</a>
-            <a href="/sun">Sun</a>
-            <a href="/moon">Moon</a>
-            <a href="/venus">Venus</a>
-            <a href="/curiosity">Curiosity</a>
-            {{#if isLoggedIn}}
-              <a class="dropdown-item" href="/profile">Profile</a>
-              <a href="/private-library">Private Library</a>
-              <a href="/favorites">Favorites</a>
-              <a href="/private/create">Add new Image</a>
-              <a href="/logout">Logout</a>
-            {{else}}
-              <a href="/signup">Sign up</a>
-              <a href="/login">Login</a>
-            {{/if}}
-            {{#if isAdmin}}
-              <a class="profile-btn" href="/admin">Admin</a>
-            {{/if}}
-          </div>
-        </div>
-      </div>
-    </nav> --}}
 
     {{{body}}}
     <footer>
