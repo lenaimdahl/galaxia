@@ -318,6 +318,20 @@ input {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.542);
 }
 
+.delete-btn-admin {
+  background-color: rgba(141, 32, 39, 0.542);
+  color: white;
+  font-family: Fragile Bombers;
+  font-size: 20px;
+  border-radius: 10px;
+  padding: 10px;
+  margin: 5px;
+  border: none;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.542);
+  position: relative;
+  top: -110px;
+}
+
 .edit-form {
   text-align: center;
   padding: 30px;
