@@ -1,15 +1,9 @@
 # Galaxia
 
-Galaxia is a web application that allows users to explore and interact with images from space, obtained through NASA's API. The app provides various galleries, including the Sun, Moon, and Venus, where users can browse captivating space images. Users also have the ability to create a profile, save their favorite images, and contribute by adding their own images to the galleries.
-
-## Introduction
-
-Galaxia is a user-friendly web application designed to bring the wonders of space closer to users. By leveraging NASA's API, the app provides a vast collection of high-quality space images. Users can register and create personalized profiles to enhance their experience, such as saving their favorite images and contributing their own captivating space-related photographs.
+Galaxia is a web application that allows users to explore and interact with images from space, obtained through NASA's API. The app provides various galleries, including the Sun, Moon, Venus and Mars curiosity, where users can browse captivating space images. Users also have the ability to create a profile, and contribute by adding their own space-related photographs to their private gallery.
 
 ### Features
 
-Browse and view captivating space images from various galleries, including the Sun, Moon, and Venus.
-User registration and profile creation to personalize the experience.
 Save favorite images for quick access.
 Contribute by uploading and sharing your own space images.
 Edit or delete the images you have added.
@@ -19,7 +13,7 @@ Search functionality to find specific images or explore related content.
 
 Upon accessing Galaxia, users can start exploring the space image galleries without the need to create an account. However, by registering and logging in, users gain additional features such as the ability to save favorite images and contribute their own content.
 
-- Browse galleries: Visit the different galleries, including the Sun, Moon, and Venus, to view breathtaking space images.
+- Browse galleries: Visit the different galleries, including the Sun, Moon, Venus and Mars curiosity, to view breathtaking space images.
 
 - User registration: Create a personalized account to unlock additional features.
 
@@ -31,7 +25,7 @@ Upon accessing Galaxia, users can start exploring the space image galleries with
 
 ## Installation
 
-### To run Galaxia locally, please follow these steps:
+To run Galaxia locally, please follow these steps:
 
 1. Clone the repository from GitHub:
 
@@ -61,7 +55,7 @@ Upon accessing Galaxia, users can start exploring the space image galleries with
 
 ## Technology Used
 
-The Website was developed using HTML, CSS, MongoDB, NASA's API and JavaScript. The [p5.js](https://p5js.org/) library was used for generating animations.
+The Website was developed using HTML, CSS, MongoDB, Express, NASA's API and JavaScript.
 
 ## API Reference
 
