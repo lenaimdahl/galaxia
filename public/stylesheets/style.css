@@ -230,7 +230,7 @@ input {
 .keyword-link {
   color: rgb(26, 197, 254);
   font-size: 12pt;
-  text-decoration: underline;
+  /* text-decoration: underline; */
 }
 
 /* form */
