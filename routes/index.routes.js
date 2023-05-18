@@ -95,7 +95,7 @@ router.get("/venus", async (req, res) => {
 router.get("/library/search", async (req, res) => {
   try {
     const keyword = req.query.q;
-    const searchedImages = await nasaAPIInstance.searchNasaImages(keyword, 12);
+    const searchedImages = await nasaAPIInstance.searchNasaImages(keyword, 50);
     res.render("./search", { searchedImages, keyword });
   } catch (err) {
     console.log("there was an error", err);

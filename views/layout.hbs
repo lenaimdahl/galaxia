@@ -134,19 +134,23 @@
           </li>
           {{#if isLoggedIn}}
             <li>
-              <a class="dropdown-item" href="/profile">Profile</a>
+              <a class="dropdown-item" href="#">
+                Profile &raquo;
+              </a>
+
+              <ul class="dropdown-menu dropdown-submenu">
+                <li>
+                  <a class="dropdown-item" href="/private-library">Private
+                    Library</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="/favorites">Favorites</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="/private/create">Add new Image</a>
+                </li>
+              </ul>
             </li>
-            <ul class="dropdown-menu dropdown-submenu">
-              <li>
-                <a class="dropdown-item" href="/private-library">Private Library</a>
-              </li>
-              <li>
-                <a class="dropdown-item" href="/favorites">Favorites</a>
-              </li>
-              <li>
-                <a class="dropdown-item" href="/private/create">Add new Image</a>
-              </li>
-            </ul>
           {{else}}
             <li>
               <a class="dropdown-item" href="/signup">Sign up</a>
