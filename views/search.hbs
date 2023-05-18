@@ -16,7 +16,11 @@
               src="{{links.0.href}}"
               alt="Picture of the day"
             /></a>
+            {{#each data.0.keywords}}
+            <a class="keyword-link" href="/library/search?q={{this}}">#{{this}}</a> <br>
+          {{/each}}
           <h3>{{data.0.title}}</h3>
+          
         </div>
       {{/each}}
     </div>

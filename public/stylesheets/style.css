@@ -227,6 +227,12 @@ input {
   margin: 5px;
 }
 
+.keyword-link {
+  color: rgb(26, 117, 254);
+  font-size: 12pt;
+  text-decoration: underline;
+}
+
 /* form */
 .form-container {
   text-align: left;

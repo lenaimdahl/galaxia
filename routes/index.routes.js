@@ -51,17 +51,6 @@ router.get("/library", async (req, res) => {
   }
 });
 
-//get Nasa Space Image in detail
-router.get("/library/:nasaImageId", async (req, res) => {
-  try {
-    const { nasaImageId } = req.params;
-    const imageData = await nasaAPIInstance.getdetailedNasaImage(nasaImageId);
-    res.render("./nasa-image-detail", { imageData });
-  } catch (err) {
-    console.log("There was an error", err);
-  }
-});
-
 // get Nasa Space Image and Mars Photos for Mars Rover
 router.get("/curiosity", async (req, res) => {
   try {
@@ -103,18 +92,25 @@ router.get("/venus", async (req, res) => {
 });
 
 //create new private image
-router.get("/library/search", (req, res) => {
-  res.render("./search");
-});
-
-router.post("/library/search", async (req, res) => {
+router.get("/library/search", async (req, res) => {
   try {
-    const { keyword } = req.body;
+    const keyword = req.query.q;
     const searchedImages = await nasaAPIInstance.searchNasaImages(keyword, 12);
     res.render("./search", { searchedImages, keyword });
   } catch (err) {
     console.log("there was an error", err);
-    res.redirect("/library");
+    res.render("./search");
+  }
+});
+
+//get Nasa Space Image in detail
+router.get("/library/:nasaImageId", async (req, res) => {
+  try {
+    const { nasaImageId } = req.params;
+    const imageData = await nasaAPIInstance.getdetailedNasaImage(nasaImageId);
+    res.render("./nasa-image-detail", { imageData });
+  } catch (err) {
+    console.log("There was an error", err);
   }
 });
 
