@@ -5,16 +5,18 @@
     <br />
     <div class="flex-container-admin">
       {{#each allImages}}
-        <h3>The Image is from UserId: {{user}}</h3>
-        <h3>{{name}}</h3>
-        <img class="img-day" src="{{image}}" alt={{name}} />
-        <div class="background-container">
-          <h2>Description:</h2>
-          <h3>{{description}}</h3>
+        <div class="admin-border">
+          <h3>The Image is from UserId: {{user}}</h3>
+          <h3>{{name}}</h3>
+          <img class="img-day" src="{{image}}" alt={{name}} />
+          <div class="background-container">
+            <h2>Description:</h2>
+            <h3>{{description}}</h3>
+          </div>
+          <form action="/private-library/delete/{{_id}}" method="post">
+            <button class="delete-btn-admin" type="submit">Delete Image</button>
+          </form>
         </div>
-        <form action="/private-library/delete/{{_id}}" method="post">
-          <button class="delete-btn-admin" type="submit">Delete Image</button>
-        </form>
       {{/each}}
     </div>
   </div>
