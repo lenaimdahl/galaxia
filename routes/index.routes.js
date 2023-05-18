@@ -12,7 +12,7 @@ const nasaAPIInstance = new NasaAPIHandler();
 router.get("/", async (req, res) => {
   try {
     const pictureOfTheDay = await nasaAPIInstance.getPictureOfTheDay();
-    const randomLibrary = await nasaAPIInstance.getRandomSpaceImages(6);
+    const randomLibrary = await nasaAPIInstance.getRandomSpaceImages(5);
     const marsPhotoData = await nasaAPIInstance.getMarsCuriosityImages(1);
     const sunPhotoData = await nasaAPIInstance.searchNasaImages("sun", 1);
     const moonPhotoData = await nasaAPIInstance.searchNasaImages("moon", 1);
@@ -54,7 +54,7 @@ router.get("/library", async (req, res) => {
 // get Nasa Space Image and Mars Photos for Mars Rover
 router.get("/curiosity", async (req, res) => {
   try {
-    const marsPhotoData = await nasaAPIInstance.getMarsCuriosityImages(15);
+    const marsPhotoData = await nasaAPIInstance.getMarsCuriosityImages(50);
     res.render("./curiosity", { marsPhotoData });
   } catch (err) {
     console.log("There was an error", err);
@@ -64,7 +64,7 @@ router.get("/curiosity", async (req, res) => {
 // get Nasa Sun Image
 router.get("/sun", async (req, res) => {
   try {
-    const sunPhotoData = await nasaAPIInstance.searchNasaImages("sun", 15);
+    const sunPhotoData = await nasaAPIInstance.searchNasaImages("sun", 50);
     res.render("./sun", { sunPhotoData });
   } catch (err) {
     console.log("There was an error", err);
@@ -74,7 +74,7 @@ router.get("/sun", async (req, res) => {
 // get Nasa Moon Image
 router.get("/moon", async (req, res) => {
   try {
-    const moonPhotoData = await nasaAPIInstance.searchNasaImages("moon", 15);
+    const moonPhotoData = await nasaAPIInstance.searchNasaImages("moon", 50);
     res.render("./moon", { moonPhotoData });
   } catch (err) {
     console.log("There was an error", err);
@@ -84,7 +84,7 @@ router.get("/moon", async (req, res) => {
 // get Venus  Images
 router.get("/venus", async (req, res) => {
   try {
-    const venusPhotoData = await nasaAPIInstance.searchNasaImages("venus", 15);
+    const venusPhotoData = await nasaAPIInstance.searchNasaImages("venus", 50);
     res.render("./venus", { venusPhotoData });
   } catch (err) {
     console.log("There was an error", err);
