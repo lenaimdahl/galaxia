@@ -80,11 +80,7 @@ Submit a pull request, detailing your changes and the motivation behind them.
 License
 This project is licensed under the MIT License.
 
-## Contact
-
-If you have any questions or suggestions regarding Galaxia, please contact us at [your-email@example.com].
-
 ## Author
 
-This game was created by [Lena Imdahl](https://github.com/lenaimdahl) and [Natassa Tsapanidou-Kornilaki](https://github.com/natko22). If you have any questions or feedback, please feel free to [open an issue](https://github.com/lenaimdahl/harry-potter-quiz/issues). 🙂
+This game was created by [Lena Imdahl](https://github.com/lenaimdahl) and [Natassa Tsapanidou-Kornilaki](https://github.com/natko22). If you have any questions or feedback, please feel free to [open an issue](https://github.com/lenaimdahl/Nasa-Library/tree/main). 🙂
 Thank you for using Galaxia! We hope you enjoy exploring the wonders of space.
