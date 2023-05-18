@@ -500,7 +500,7 @@ a,
 .dropdown-menu .dropdown-submenu {
   display: none;
   position: absolute;
-  left: 100%;
+  right: 100%;
   top: -7px;
 }
 .dropdown-menu .dropdown-submenu-left {
