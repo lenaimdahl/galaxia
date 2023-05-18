@@ -96,8 +96,80 @@
             />Galaxia</a>
         </a>
       </div>
+      <div class="dropdown">
+        <button
+          class="btn btn-primary dropdown-toggle"
+          type="button"
+          id="dropdownMenuButton"
+          data-mdb-toggle="dropdown"
+          aria-expanded="false"
+        >
+          Menu
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <li><a class="dropdown-item" href="/">Home</a></li>
+          <li>
+            <a class="dropdown-item" href="#">
+              Galleries &raquo;
+            </a>
+            <ul class="dropdown-menu dropdown-submenu">
+              <li>
+                <a class="dropdown-item" href="/library">Nasa Image Library</a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="/sun">Sun</a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="/moon">Moon</a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="/venus">Venus</a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="/curiosity">Curiosity</a>
+              </li>
+               {{#if isLoggedIn}}
+              <li><a class="dropdown-item" href="/profile">Profile</a></li>
+              <ul class="dropdown-menu dropdown-submenu">
+              <li>
+                <a class="dropdown-item" href="/private-library">Private Library</a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="/favorites">Favorites</a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="/private/create">Add new Image</a>
+              </li>
+              {{else}}
+              <a class="dropdown-item" href="/signup">Sign up</a>
+              <a class="dropdown-item" href="/login">Login</a>
+            {{/if}}
+              <li><hr class="dropdown-divider" /></li>
+              <li>
+                <a class="dropdown-item" href="/logout">Logout</a>
+                {{#if isAdmin}}
+                  <a class="dropdown-item" href="/admin">Admin</a>
+                {{/if}}
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </nav>
 
-      <div class="nav-links-container">
+    {{! <nav class="layout-nav-small">
+      <div>
+        <a href="/">
+          <a class="nav-title" href="/">
+            <img
+              class="moon-logo"
+              src="/images/moon2.webp"
+              alt="moon"
+            />Galaxia</a>
+        </a>
+      </div> }}
+
+    {{!-- <div class="nav-links-container">
         <div class="dropdown container-layout">
           <span>Menu</span>
           <div class="dropdown-content">
@@ -109,7 +181,7 @@
             <a href="/venus">Venus</a>
             <a href="/curiosity">Curiosity</a>
             {{#if isLoggedIn}}
-              <a href="/profile">Profile</a>
+              <a class="dropdown-item" href="/profile">Profile</a>
               <a href="/private-library">Private Library</a>
               <a href="/favorites">Favorites</a>
               <a href="/private/create">Add new Image</a>
@@ -124,7 +196,7 @@
           </div>
         </div>
       </div>
-    </nav>
+    </nav> --}}
 
     {{{body}}}
     <footer>
