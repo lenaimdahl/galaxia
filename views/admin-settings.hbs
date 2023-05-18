@@ -3,15 +3,17 @@
   <div class="gallery-container">
     <h2 class="title">All created private Images</h2>
     <br />
-    <div class="grid-container">
+    <div class="flex-container-admin">
       {{#each allImages}}
+        <h3>{{name}}</h3>
+        <img class="img-day" src="{{image}}" alt={{name}} />
+        <div class="background-container">
+          <h2>Description:</h2>
+          <h3>{{description}}</h3>
+        </div>
         <form action="/private-library/delete/{{_id}}" method="post">
           <button class="delete-btn" type="submit">Delete Image</button>
         </form>
-        <h3>{{name}}</h3>
-        <h3>{{description}}</h3>
-        <br />
-        <img class="img-day" src="{{image}}" alt={{name}} />
       {{/each}}
     </div>
   </div>
