@@ -1,5 +1,6 @@
 const express = require("express");
 const router = express.Router();
+const User = require("../models/User.model");
 const NasaAPIHandler = require("../NasaAPIHandler");
 const PrivateSpaceModel = require("../models/spaceImage.model");
 
