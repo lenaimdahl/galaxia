@@ -497,6 +497,9 @@ a,
 .dropdown-menu li {
   position: relative;
 }
+.dropdown-item {
+  font-size: 15pt;
+}
 .dropdown-menu .dropdown-submenu {
   display: none;
   position: absolute;
