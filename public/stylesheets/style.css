@@ -54,6 +54,13 @@ h3 {
   border-radius: 20px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.542), 0 6px 20px 0 rgba(0, 0, 0, 0.2);
 }
+.img-quiz {
+  width: 500px;
+  height: 500px;
+  object-fit: cover;
+  border-radius: 20px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.542), 0 6px 20px 0 rgba(0, 0, 0, 0.2);
+}
 .img-day {
   height: 400px;
   width: 400px;
@@ -94,6 +101,10 @@ h3 {
 
 .subtitle-text {
   margin: 0 150px;
+}
+
+.margin {
+  margin: 20px;
 }
 
 .background-container-favorites {
@@ -613,6 +624,14 @@ a,
   .nasa-logo {
     height: 60px;
     margin: 0;
+  }
+  .img-quiz {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.542),
+      0 6px 20px 0 rgba(0, 0, 0, 0.2);
   }
 }
 

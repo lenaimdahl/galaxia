@@ -1,10 +1,13 @@
 <h1 class="title">Mystery Image Quiz</h1>
+<h3 class="subtitle-text">Become a geographical detective and solve the latest
+  mystery quiz from NASA's MISR (Multi-angle Imaging SpectroRadiometer)
+  instrument onboard the Terra satellite.</h3>
 <div class="background-container">
   <div class="gallery-container">
     <div class=".flex-container-admin">
       {{#each quizPhotoData}}
-      <div class="admin-border">
-        <div>
+        <div class="admin-border">
+
           {{#if ../isLoggedIn}}
             <i
               id="favorite-icon-{{data.0.nasa_id}}"
@@ -12,14 +15,16 @@
               onclick="saveFavorite(this, '{{data.0.nasa_id}}')"
             ></i>
           {{/if}}
-          <h3>Where on Earth is this?</h3>
-          <img
-              class="img-gallery"
-              src="{{links.0.href}}"
-              alt="Moon Image"
-            />
-            <a href="/library/{{data.0.nasa_id}}"><h3>Click to see answer!</h3></a>
-        </div>
+
+          <div class="margin">
+            <h3>Where on Earth is this?</h3>          
+                <img class="img-quiz" src="{{links.0.href}}" alt="Moon Image" /> 
+          </div>
+          <div class="margin">
+            <button type="button" class="btn btn-outline-secondary">
+              <a ref="/library/{{data.0.nasa_id}}">Click to see answer!</a>
+            </button>
+          </div>
         </div>
       {{/each}}
     </div>
