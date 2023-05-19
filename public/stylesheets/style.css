@@ -612,5 +612,28 @@ a,
   }
 }
 
-@media (min-width: 769px) {
+@media (max-width: 1400px) {
+  .layout-nav {
+    display: none;
+  }
+  .layout-nav-small {
+    font-family: "Fragile Bombers";
+
+    background-color: #000000;
+    padding: 20px;
+    width: 100%;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 8px 0 rgba(109, 100, 132, 0.542),
+      0 6px 20px 0 rgba(109, 100, 132, 0.542);
+    margin-bottom: 20px;
+  }
+
+  .btn-secondary {
+    font-size: 20pt;
+    padding: 10px;
+  }
 }
