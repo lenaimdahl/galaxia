@@ -7,18 +7,9 @@
     <div class=".flex-container-admin">
       {{#each quizPhotoData}}
         <div class="admin-border">
-
-          {{#if ../isLoggedIn}}
-            <i
-              id="favorite-icon-{{data.0.nasa_id}}"
-              class="bi bi-star-fill icon-white"
-              onclick="saveFavorite(this, '{{data.0.nasa_id}}')"
-            ></i>
-          {{/if}}
-
           <div class="margin">
-            <h3>Where on Earth is this?</h3>          
-                <img class="img-quiz" src="{{links.0.href}}" alt="Moon Image" /> 
+            <h3>Where on Earth is this?</h3>
+            <img class="img-quiz" src="{{links.0.href}}" alt="Moon Image" />
           </div>
           <div class="margin">
             <button type="button" class="btn btn-outline-secondary">
