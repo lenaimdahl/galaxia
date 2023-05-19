@@ -6,7 +6,7 @@ const PrivateSpaceModel = require("../models/spaceImage.model");
 
 const isAdmin = require("../middlewares/isAdmin");
 const isLoggedIn = require("../middlewares/isLoggedIn");
-//instantiation of NasaAPI class
+// instantiation of NasaAPI class
 const nasaAPIInstance = new NasaAPIHandler();
 
 // get Images for Home Page
@@ -19,7 +19,7 @@ router.get("/", async (req, res) => {
     const moonPhotoData = await nasaAPIInstance.searchNasaImages("moon", 1);
     const venusPhotoData = await nasaAPIInstance.searchNasaImages("venus", 1);
 
-    res.render("./index", {
+    res.render("index", {
       ...pictureOfTheDay,
       randomLibrary,
       marsPhotoData,
@@ -32,21 +32,21 @@ router.get("/", async (req, res) => {
   }
 });
 
-//Picture of the Day Page
+// Picture of the Day Page
 router.get("/picture-of-the-day", async (req, res) => {
   try {
     const pictureOfTheDay = await nasaAPIInstance.getRangeOfPicturesOfTheDay();
-    res.render("./picture-of-day", { pictureOfTheDay });
+    res.render("galleries/picture-of-the-day", { pictureOfTheDay });
   } catch (err) {
     console.log("There was an error", err);
   }
 });
 
-//get Nasa Space Image
+// get Nasa Space Image
 router.get("/library", async (req, res) => {
   try {
     const randomLibrary = await nasaAPIInstance.getRandomSpaceImages(200);
-    res.render("./library", { randomLibrary });
+    res.render("galleries/library", { randomLibrary });
   } catch (err) {
     console.log("There was an error", err);
   }
@@ -56,7 +56,7 @@ router.get("/library", async (req, res) => {
 router.get("/curiosity", async (req, res) => {
   try {
     const marsPhotoData = await nasaAPIInstance.getMarsCuriosityImages(50);
-    res.render("./curiosity", { marsPhotoData });
+    res.render("galleries/curiosity", { marsPhotoData });
   } catch (err) {
     console.log("There was an error", err);
   }
@@ -66,89 +66,89 @@ router.get("/curiosity", async (req, res) => {
 router.get("/sun", async (req, res) => {
   try {
     const sunPhotoData = await nasaAPIInstance.searchNasaImages("sun", 50);
-    res.render("./sun", { sunPhotoData });
+    res.render("galleries/sun", { sunPhotoData });
   } catch (err) {
     console.log("There was an error", err);
   }
 });
 
-// get Nasa Moon Image
+// get Nasa Moon image
 router.get("/moon", async (req, res) => {
   try {
     const moonPhotoData = await nasaAPIInstance.searchNasaImages("moon", 50);
-    res.render("./moon", { moonPhotoData });
+    res.render("galleries/moon", { moonPhotoData });
   } catch (err) {
     console.log("There was an error", err);
   }
 });
 
-// get Venus  Images
+// get Venus images
 router.get("/venus", async (req, res) => {
   try {
     const venusPhotoData = await nasaAPIInstance.searchNasaImages("venus", 50);
-    res.render("./venus", { venusPhotoData });
+    res.render("galleries/venus", { venusPhotoData });
   } catch (err) {
     console.log("There was an error", err);
   }
 });
 
-// get quiz  Images
+// get quiz images
 router.get("/earth-quiz", async (req, res) => {
   try {
     const quizPhotoData = await nasaAPIInstance.searchNasaImages(
       "Mystery Image quiz",
       50
     );
-    res.render("./quiz", { quizPhotoData });
+    res.render("galleries/quiz", { quizPhotoData });
   } catch (err) {
     console.log("There was an error", err);
   }
 });
 
-// get galex  Images
+// get galex images
 router.get("/galex", async (req, res) => {
   try {
     const galexPhotoData = await nasaAPIInstance.searchNasaImages(
       "Galaxy Evolution Explorer",
       50
     );
-    res.render("./galex", { galexPhotoData });
+    res.render("galleries/galex", { galexPhotoData });
   } catch (err) {
     console.log("There was an error", err);
   }
 });
 
-//create new private image
+// create new private image
 router.get("/library/search", async (req, res) => {
   try {
     const keyword = req.query.q;
     const searchedImages = await nasaAPIInstance.searchNasaImages(keyword, 50);
-    res.render("./search", { searchedImages, keyword });
+    res.render("search", { searchedImages, keyword });
   } catch (err) {
     console.log("there was an error", err);
-    res.render("./search");
+    res.render("search");
   }
 });
 
-//get Nasa Space Image in detail
+// get Nasa Space Image in detail
 router.get("/library/:nasaImageId", async (req, res) => {
   try {
     const { nasaImageId } = req.params;
     const imageData = await nasaAPIInstance.getdetailedNasaImage(nasaImageId);
-    res.render("./nasa-image-detail", { imageData });
+    res.render("galleries/nasa-image-detail", { imageData });
   } catch (err) {
     console.log("There was an error", err);
   }
 });
 
-//admin page
+// admin page
 router.get("/admin", isAdmin, isLoggedIn, async (req, res) => {
   try {
     const allImages = await PrivateSpaceModel.find();
-    res.render("./admin-settings", { allImages });
+    res.render("admin-settings", { allImages });
   } catch (err) {
     console.log("There was an error", err);
-    res.render("./admin-settings");
+    res.render("admin-settings");
   }
 });
 

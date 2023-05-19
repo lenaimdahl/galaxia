@@ -4,9 +4,9 @@ const isLoggedIn = require("../middlewares/isLoggedIn");
 const bcryptjs = require("bcryptjs");
 const saltRounds = 12;
 
-//signup
+// signup
 router.get("/signup", (req, res) => {
-  res.render("./auth/signup");
+  res.render("auth/signup");
 });
 
 router.post("/signup", async (req, res, next) => {
@@ -20,7 +20,7 @@ router.post("/signup", async (req, res, next) => {
     }
 
     if (req.body.username === "" || req.body.password === "") {
-      res.render("./auth/signup", {
+      res.render("auth/signup", {
         errorMessage:
           "All fields are mandatory! Please provide your username and your password!",
       });
@@ -58,9 +58,9 @@ router.post("/signup", async (req, res, next) => {
   }
 });
 
-//Login
+// Login
 router.get("/login", (req, res) => {
-  res.render("./auth/login");
+  res.render("auth/login");
 });
 
 router.post("/login", async (req, res, next) => {
@@ -68,7 +68,7 @@ router.post("/login", async (req, res, next) => {
     const user = await User.findOne({ username: req.body.username });
 
     if (!user) {
-      return res.render("./auth/login", {
+      return res.render("auth/login", {
         errorMessage: "Please enter both, username and password to login.",
       });
     }
@@ -79,7 +79,7 @@ router.post("/login", async (req, res, next) => {
     );
 
     if (!passwordsMatch) {
-      return res.render("./auth/login", {
+      return res.render("auth/login", {
         errorMessage: "Sorry the password is incorrect! Try again.",
       });
     }
