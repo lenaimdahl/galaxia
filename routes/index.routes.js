@@ -92,6 +92,19 @@ router.get("/venus", async (req, res) => {
   }
 });
 
+// get quiz  Images
+router.get("/earth-quiz", async (req, res) => {
+  try {
+    const quizPhotoData = await nasaAPIInstance.searchNasaImages(
+      "Mystery Image quiz",
+      50
+    );
+    res.render("./quiz", { quizPhotoData });
+  } catch (err) {
+    console.log("There was an error", err);
+  }
+});
+
 //create new private image
 router.get("/library/search", async (req, res) => {
   try {

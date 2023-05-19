@@ -1,0 +1,27 @@
+<h1 class="title">Mystery Image Quiz</h1>
+<div class="background-container">
+  <div class="gallery-container">
+    <div class=".flex-container-admin">
+      {{#each quizPhotoData}}
+      <div class="admin-border">
+        <div>
+          {{#if ../isLoggedIn}}
+            <i
+              id="favorite-icon-{{data.0.nasa_id}}"
+              class="bi bi-star-fill icon-white"
+              onclick="saveFavorite(this, '{{data.0.nasa_id}}')"
+            ></i>
+          {{/if}}
+          <h3>Where on Earth is?</h3>
+          <img
+              class="img-gallery"
+              src="{{links.0.href}}"
+              alt="Moon Image"
+            />
+            <a href="/library/{{data.0.nasa_id}}"><h3>Click to see answer!</h3></a>
+        </div>
+        </div>
+      {{/each}}
+    </div>
+  </div>
+</div>
