@@ -92,6 +92,10 @@ h3 {
     0 6px 20px 0 rgba(109, 100, 132, 0.542);
 }
 
+.subtitle-text {
+  margin: 0 150px;
+}
+
 .background-container-favorites {
   margin: 40 20 20 20px;
   padding: 20px;

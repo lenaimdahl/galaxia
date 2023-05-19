@@ -1,9 +1,9 @@
-<h1 class="title">Mars Rover Curiosity Image Gallery</h1>
-<h3 class="subtitle-text">Curiosity is a car-sized Mars rover designed to explore the Gale crater on Mars as part of NASA's Mars Science Laboratory (MSL) mission.</h3>
+<h1 class="title">Galaxy Evolution Explorer - GALEX</h1>
+<h3 class="subtitle-text">The Galaxy Evolution Explorer was an orbiting space telescope designed to observe the universe in ultraviolet wavelengths to measure the history of star formation in the universe.</h3>
 <div class="background-container">
   <div class="gallery-container">
     <div class="grid-container">
-      {{#each marsPhotoData}}
+      {{#each galexPhotoData}}
         <div>
           {{#if ../isLoggedIn}}
             <i
@@ -15,7 +15,7 @@
           <a href="/library/{{data.0.nasa_id}}"><img
               class="img-gallery"
               src="{{links.0.href}}"
-              alt="Mars Rover Image"
+              alt="galex Image"
             /></a>
           <h3>{{data.0.title}}</h3>
         </div>

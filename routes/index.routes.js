@@ -105,6 +105,19 @@ router.get("/earth-quiz", async (req, res) => {
   }
 });
 
+// get galex  Images
+router.get("/galex", async (req, res) => {
+  try {
+    const galexPhotoData = await nasaAPIInstance.searchNasaImages(
+      "Galaxy Evolution Explorer",
+      50
+    );
+    res.render("./galex", { galexPhotoData });
+  } catch (err) {
+    console.log("There was an error", err);
+  }
+});
+
 //create new private image
 router.get("/library/search", async (req, res) => {
   try {
