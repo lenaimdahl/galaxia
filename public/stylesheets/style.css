@@ -42,7 +42,8 @@ h3 {
   background-size: cover;
   background-image: url("/images/stars.jpg");
   z-index: -1;
-  margin-bottom: 50px;
+  margin-bottom: 80px;
+  overflow-x: hidden;
 }
 .moon-logo {
   height: 85px;
