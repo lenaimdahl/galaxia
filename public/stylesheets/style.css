@@ -553,6 +553,42 @@ a,
   display: block;
 }
 
+@media (max-width: 1400px) {
+  .background-img {
+    background-position: center;
+    top: 0;
+    padding: 50px;
+    height: 170vh;
+    width: 100vw;
+    background-size: cover;
+    background-image: url("/images/stars.jpg");
+    z-index: -1;
+    margin-bottom: 80px;
+    overflow-x: hidden;
+  }
+  .layout-nav {
+    display: none;
+  }
+  .layout-nav-small {
+    font-family: "Fragile Bombers";
+    background-color: #000000;
+    padding: 20px;
+    width: 100%;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 8px 0 rgba(109, 100, 132, 0.542),
+      0 6px 20px 0 rgba(109, 100, 132, 0.542);
+    margin-bottom: 0;
+  }
+
+  .btn-secondary {
+    font-size: 20pt;
+    padding: 10px;
+  }
+}
 @media only screen and (max-width: 850px) {
   /* For mobile phones: */
   h1 {
@@ -561,8 +597,17 @@ a,
   .title {
     font-size: 25pt;
   }
-  .layout-nav {
-    background-color: aqua;
+  .background-img {
+    background-position: center;
+    top: 0;
+    padding: 50px;
+    height: 170vh;
+    width: 100vw;
+    background-size: cover;
+    background-image: url("/images/stars.jpg");
+    z-index: -1;
+    margin-bottom: 50px;
+    overflow-x: hidden;
   }
   .background-container {
     margin: 20px;
@@ -604,7 +649,7 @@ a,
     align-items: center;
     box-shadow: 0 4px 8px 0 rgba(109, 100, 132, 0.542),
       0 6px 20px 0 rgba(109, 100, 132, 0.542);
-    margin-bottom: 20px;
+    margin-bottom: 0;
   }
   .footer-container {
     display: flex;
@@ -632,30 +677,5 @@ a,
     border-radius: 20px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.542),
       0 6px 20px 0 rgba(0, 0, 0, 0.2);
-  }
-}
-
-@media (max-width: 1400px) {
-  .layout-nav {
-    display: none;
-  }
-  .layout-nav-small {
-    font-family: "Fragile Bombers";
-    background-color: #000000;
-    padding: 20px;
-    width: 100%;
-    text-align: center;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    box-shadow: 0 4px 8px 0 rgba(109, 100, 132, 0.542),
-      0 6px 20px 0 rgba(109, 100, 132, 0.542);
-    margin-bottom: 20px;
-  }
-
-  .btn-secondary {
-    font-size: 20pt;
-    padding: 10px;
   }
 }
