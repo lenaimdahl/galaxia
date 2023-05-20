@@ -592,6 +592,14 @@ a,
   .subtitle-text {
     margin: 0 80px;
   }
+  .img-quiz {
+    width: 400px;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.542),
+      0 6px 20px 0 rgba(0, 0, 0, 0.2);
+  }
 }
 @media only screen and (max-width: 850px) {
   /* For mobile phones: */
