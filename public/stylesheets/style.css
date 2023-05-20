@@ -589,6 +589,9 @@ a,
     font-size: 20pt;
     padding: 10px;
   }
+  .subtitle-text {
+    margin: 0 80px;
+  }
 }
 @media only screen and (max-width: 850px) {
   /* For mobile phones: */
@@ -678,5 +681,8 @@ a,
     border-radius: 20px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.542),
       0 6px 20px 0 rgba(0, 0, 0, 0.2);
+  }
+  .subtitle-text {
+    margin: 0 20px;
   }
 }
