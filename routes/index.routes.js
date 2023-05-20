@@ -152,4 +152,15 @@ router.get("/admin", isAdmin, isLoggedIn, async (req, res) => {
   }
 });
 
+// delete image as admin
+router.post("/admin/delete/:spaceImageId", isLoggedIn, async (req, res) => {
+  try {
+    const { spaceImageId } = req.params;
+    await PrivateSpaceModel.findByIdAndDelete(spaceImageId);
+    res.redirect("/admin");
+  } catch (err) {
+    console.log("There was an error", err);
+  }
+});
+
 module.exports = router;
