@@ -18,10 +18,20 @@ router.get("/", async (req, res) => {
     const sunPhotoData = await nasaAPIInstance.searchNasaImages("sun", 1);
     const moonPhotoData = await nasaAPIInstance.searchNasaImages("moon", 1);
     const venusPhotoData = await nasaAPIInstance.searchNasaImages("venus", 1);
+    const quizPhotoData = await nasaAPIInstance.searchNasaImages(
+      "Mystery Image quiz",
+      1
+    );
+    const galexPhotoData = await nasaAPIInstance.searchNasaImages(
+      "Galaxy Evolution Explorer",
+      1
+    );
 
     res.render("index", {
       ...pictureOfTheDay,
       randomLibrary,
+      quizPhotoData,
+      galexPhotoData,
       marsPhotoData,
       sunPhotoData,
       moonPhotoData,
