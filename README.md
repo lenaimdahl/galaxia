@@ -1,3 +1,5 @@
+![Galaxia Logo](./logo.png)
+
 # Galaxia
 
 Galaxia is a web application that allows users to explore and interact with images from space, obtained through NASA's API. The app provides various galleries, including the Sun, Moon, Venus and Mars curiosity, where users can browse captivating space images. Users also have the ability to create a profile, and contribute by adding their own space-related photographs to their private gallery.
