@@ -32,7 +32,7 @@ To run Galaxia locally, please follow these steps:
 1. Clone the repository from GitHub:
 
    ```bash
-   git clone https://github.com/lenaimdahl/Nasa-Library.git
+   git clone https://github.com/lenaimdahl/galaxia.git
    ```
 
 2. Install the necessary dependencies using npm:
@@ -59,7 +59,7 @@ To run Galaxia locally, please follow these steps:
    ```
 
 6. Access Galaxia in your web browser:
-   1. http://localhost:3000/
+   http://localhost:3000/
 
 ## Technology Used
 
@@ -73,13 +73,14 @@ Galaxia relies on NASA's API to fetch space images. Please refer to NASA's API d
 
 Contributions are welcome! If you'd like to contribute to Galaxia, please follow these steps:
 
-## Fork the repository.
+1. Fork the repository
+2. Create a new branch for your feature or bug fix.
+3. Make your changes and commit them with descriptive commit messages.
+4. Push your changes to your forked repository.
+   Submit a pull request, detailing your changes and the motivation behind them.
 
-Create a new branch for your feature or bug fix.
-Make your changes and commit them with descriptive commit messages.
-Push your changes to your forked repository.
-Submit a pull request, detailing your changes and the motivation behind them.
-License
+## License
+
 This project is licensed under the MIT License.
 
 ## Author
