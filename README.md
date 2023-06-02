@@ -29,7 +29,7 @@ To run Galaxia locally, please follow these steps:
 
 1. Clone the repository from GitHub:
 
-   1. git clone https://github.com/your-username/galaxia.git
+   1. git clone https://github.com/lenaimdahl/Nasa-Library.git
 
 2. Install the necessary dependencies using npm:
 
