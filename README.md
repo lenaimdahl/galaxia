@@ -1,4 +1,4 @@
-![Galaxia Logo](./logo.png)
+<p align="center"><img src="./logo.png" width="250px" /></p>
 
 # Galaxia
 
