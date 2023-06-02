@@ -29,12 +29,16 @@ To run Galaxia locally, please follow these steps:
 
 1. Clone the repository from GitHub:
 
-   1. git clone https://github.com/lenaimdahl/Nasa-Library.git
+   ```bash
+   git clone https://github.com/lenaimdahl/Nasa-Library.git
+   ```
 
 2. Install the necessary dependencies using npm:
 
-   1. cd galaxia
-   1. npm install
+   ```bash
+   cd galaxia
+   npm install
+   ```
 
 3. Set up the MongoDB database:
 
@@ -48,7 +52,9 @@ To run Galaxia locally, please follow these steps:
 
 5. Start the application:
 
-   1. npm start
+   ```bash
+   npm start
+   ```
 
 6. Access Galaxia in your web browser:
    1. http://localhost:3000/
@@ -76,5 +82,5 @@ This project is licensed under the MIT License.
 
 ## Author
 
-This game was created by [Lena Imdahl](https://github.com/lenaimdahl) and [Natassa Tsapanidou-Kornilaki](https://github.com/natko22). If you have any questions or feedback, please feel free to [open an issue](https://github.com/lenaimdahl/Nasa-Library/tree/main). 🙂
+This game was created by [Lena Imdahl](https://github.com/lenaimdahl) and [Natassa Tsapanidou-Kornilaki](https://github.com/natko22). If you have any questions or feedback, please feel free to [open an issue](https://github.com/lenaimdahl/Nasa-Library/issues/new). 🙂
 Thank you for using Galaxia! We hope you enjoy exploring the wonders of space.
