@@ -9,30 +9,44 @@ class NasaAPI {
     this.API_KEY = process.env.NASA_API_KEY;
   }
   async getPictureOfTheDay() {
-    const response = await axios.get(`${this.BASE_URL}/planetary/apod`, {
-      params: {
-        api_key: this.API_KEY,
-      },
-    });
-    return response.data;
+    try {
+      const response = await axios.get(`${this.BASE_URL}/planetary/apod`, {
+        params: {
+          api_key: this.API_KEY,
+        },
+      });
+      return response.data;
+    } catch (err) {
+      return {
+        url: "https://api.nasa.gov/assets/img/favicons/favicon-192.png",
+      };
+    }
   }
 
   async getRangeOfPicturesOfTheDay() {
-    let startdate = moment();
-    startdate = startdate.subtract(15, "days");
-    startdate = startdate.format("YYYY-MM-DD");
+    try {
+      let startdate = moment();
+      startdate = startdate.subtract(15, "days");
+      startdate = startdate.format("YYYY-MM-DD");
 
-    let enddate = moment();
-    enddate = enddate.format("YYYY-MM-DD");
+      let enddate = moment();
+      enddate = enddate.format("YYYY-MM-DD");
 
-    const response = await axios.get(`${this.BASE_URL}/planetary/apod`, {
-      params: {
-        api_key: this.API_KEY,
-        start_date: startdate.toString(),
-        end_date: enddate.toString(),
-      },
-    });
-    return response.data.reverse();
+      const response = await axios.get(`${this.BASE_URL}/planetary/apod`, {
+        params: {
+          api_key: this.API_KEY,
+          start_date: startdate.toString(),
+          end_date: enddate.toString(),
+        },
+      });
+      return response.data.reverse();
+    } catch (err) {
+      return [
+        {
+          url: "https://api.nasa.gov/assets/img/favicons/favicon-192.png",
+        },
+      ];
+    }
   }
 
   async getRandomSpaceImages(num) {

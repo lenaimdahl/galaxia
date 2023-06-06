@@ -26,7 +26,7 @@ router.get("/", async (req, res) => {
       "Galaxy Evolution Explorer",
       1
     );
-
+    console.log("picture", pictureOfTheDay);
     res.render("index", {
       ...pictureOfTheDay,
       randomLibrary,
